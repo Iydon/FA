@@ -1,0 +1,86 @@
+% 版式
+\usepackage{geometry}
+    \geometry{a4paper,
+        left=2.5cm, right=2.5cm,
+        % left=1.8cm, right=3.2cm % 当打印时使用此选项
+        top=2.5cm, bottom=2cm,
+        headheight=13pt}
+
+% 页眉页脚
+\usepackage{fancyhdr}
+    \pagestyle{fancy}
+    \fancyhf{}
+    \fancyhead[OL]{\fangsong\nouppercase\rightmark}
+    \fancyhead[ER]{\fangsong\nouppercase\leftmark}
+    \fancyhead[OR,EL]{\thepage}
+    \fancyfoot[C]{}
+
+% 章节样式
+\usepackage[Glenn]{fncychap}
+
+% 数学环境
+\usepackage{mathtools, extarrows, amsfonts, amssymb, bm, mathrsfs} % TODO: 删减
+\usepackage{amsthm} % 定理环境
+    \newcounter{FA}[section]
+    \renewcommand{\theFA}{\thesection.\arabic{FA}}
+
+    \newtheoremstyle{normal}
+        {3pt}{3pt}{}{2\ccwd}{\bfseries}{}{1\ccwd}{}
+    \newtheoremstyle{Thm}
+        {3pt}{3pt}{\kaishu}{2\ccwd}{\bfseries}{}{1\ccwd}{}
+    \theoremstyle{normal}
+    \newtheorem{Theorem}[FA]{定理}
+    \newtheorem{Theoremn}{定理}
+    \renewcommand{\theTheoremn}{\theFA$'$}
+    \newtheorem{Lemma}[FA]{引理}
+    \newtheorem*{Proof}{证明}
+    \newtheorem{Remark}[FA]{注}
+    \newtheorem*{Solution}{解}
+    \newtheorem{Definition}[FA]{定义}
+    \newtheorem{Definitionn}{定义}
+    \renewcommand{\theDefinitionn}{\thefA$'$}
+    \newtheorem{Corollary}[FA]{推论}
+    \newtheorem{Example}[FA]{例}
+    \newtheorem{Proposition}[FA]{命题}
+    \newtheorem{ExtraExample}{补充题}
+
+% 图片
+\usepackage{graphicx}
+\usepackage{caption, subfig} % TODO: 改为 subcaption
+
+% 颜色
+\usepackage{xcolor}
+    \definecolor{Sumire}{RGB}{102,50,124}
+    \definecolor{Shion}{RGB}{143,119,181}
+
+% 交叉引用
+\usepackage{nameref}
+\usepackage{prettyref}
+\usepackage{hyperref}
+    \hypersetup{
+        colorlinks, linkcolor=Sumire}
+
+% Tikz 绘图
+\usepackage{tikz}
+    \usetikzlibrary{arrows.meta}
+
+% 字体
+\usepackage{dsfont}
+\usepackage{pifont}
+
+% 列表环境
+\usepackage[shortlabels]{enumitem}
+    \setlist[1]{left=\parindent..0pt}
+    \setlist{noitemsep, itemindent=2\parindent}
+
+% 索引
+\usepackage{imakeidx}
+
+% 表格
+\usepackage{array, diagbox, booktabs, tabularx} 
+
+% 其他
+% \usepackage{tasks}
+%     \NewTasks[counter-format=(tsk[1]), item-indent=2em, label-offset=1em, label-align=right]{lpbn}
+%     \NewTasks[counter-format=(tsk[a]), item-indent=2em, label-offset=1em]{alpbn}
+%     \NewTasks[counter-format=tsk[A].]{xrze}[*]
