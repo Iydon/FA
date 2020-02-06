@@ -3,6 +3,8 @@
 
 
 # 0x01 编译方式
+本仓库使用 TeX Live 2019 进行编译，最后使用 `tlmgr update --self --all` 时间为 2020-02-06。
+
 使用 `latexmk`：
 ```
 latexmk -xelatex main.tex
