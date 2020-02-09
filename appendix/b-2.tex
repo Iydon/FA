@@ -1,5 +1,5 @@
 \section{第6章习题}
-    
+
     \textbf{习题6.1}\ [作业] 证明以下命题:
     \begin{enumerate}[(1)]
         \item 证明 \J 是 \R 上的 \Gd 集, 并导出 \Q 不是 \Gd 集, 且不存在函数 $ f:\R\to\R $ 使得 $ \cont(f)=\Q $;
@@ -37,7 +37,7 @@
         且注意到 $ \forall n\geqslant1 $, $ f_{n} $ 可以用折线函数逼近, 则 $ f_{n} $ 是第一纲的.
 
         (另证: $ 1_{\Q}=\lim\limits_{n\to \infty}\lim\limits_{k\to\infty}\cos^{2k}(n!\pi x) $.)\qed
-    \end{Proof}    
+    \end{Proof}
 
     \textbf{习题6.6}\ [作业]\ \ 设$ E $和$ F $都是Banach空间, $ (u_n)_{n\geqslant 1} $是$ \CB(E,F) $的序列. 证明以下命题等价:
     \begin{enumerate}[(a)]
@@ -46,7 +46,7 @@
     \end{enumerate}
     \begin{Proof}
     (a)$ \Rightarrow $(b) : 由$ (u_n(x))_{n\geqslant 1} $对任意$ x\in E $收敛可知$ (u_n(a))_{n\geqslant 1} $收敛, 且可知其对任意$ x\in E $有界, 从而由共鸣定理可知$ \sup\limits_{n\geqslant 1}\norm{u_n}<\infty $.
-    
+
     (b)$ \Rightarrow $(a) : 由$ (u_n)_{n\geqslant 1} $有界, 可知存在$ M>0 $使得$ \sup\limits_{n\geqslant 1}\norm{u_n}\leqslant M $. 则
     \[ \forall x\in E\,\exists a\in\Span A\,(\norm{x-a}<\varepsilon/4M).
     \]
@@ -100,7 +100,7 @@
     \norm{u(x)}=\norm{u(x)-y+y}\geqslant\norm{y}-\norm{u(x)-y}\geqslant 1-\frac{\varepsilon}{2}-\frac{\varepsilon}{2}=1-\varepsilon.
     \]
     由$ \varepsilon $的任意性可知$ \norm{u}\geqslant 1 $, 故$ \norm{u}=1 $.
-    
+
     (2) 由题设可知$ B_F\subset\baro{u(B_E)} $, 往证$ B_F\subset u(B_E) $. 设$ y\in B_F $且$ 0<q<1 $, 则存在$ x_0\in B_E $使得
     \[
     \norm{y-u(x_0)}<q,
@@ -122,7 +122,7 @@
     B_F=\bigcup_{0<q<1}(1-q)B_F\subset u(B_E),
     \]
     由此可知$ u(B_E)=B_F $.
-    
+
     (3) 取
     \[
     v : E/\ker u\to F,\qquad x+\ker u\mapsto u(x),
@@ -136,7 +136,7 @@
     \norm{u(x)}=\norm{u(x+y)}\leqslant\norm{u}\norm{x+y}
     \]
     可知$ \norm{u(x)}\leqslant\norm{u}\norm{x+\ker u} $, 则$ \norm{v(x)}\leqslant\norm{u}\norm{x+\ker u} $, 从而$ \norm{v}\leqslant\norm{u} $.
-    
+
     由
     \[
     \forall f\in F\,\exists e\in E\,(u(e)=f)
@@ -146,7 +146,7 @@
     v(e+\ker u)=u(e)=0\Longleftrightarrow e\in\ker u\Longleftrightarrow e+\ker u=0+\ker u
     \]
     可知$ v $是单射. 从而$ v $是连续双射, 由开映射定理可知$ v^{-1} $连续.
-    
+
     若$ E/\ker u $与$ F $等距同构, 则有
     \[
     \forall e\in E\,(\norm{e+\ker u}=\norm{v(e+\ker u)})
@@ -156,7 +156,7 @@
     \forall e\in B_E\,(\norm{e+\ker u}\leqslant\norm{e}<1)
     \]
     可知$ q(B_E)\subset B_{E/\ker u} $. 而$ \forall e+\ker u\in B_{E/\ker u} $, 有$ \norm{e+\ker u}<1 $, 则存在$ a\in\ker u $使得$ \norm{e+a}<1 $. 且$ q(e+a)=e+\ker u $, 从而$ e+\ker u\subset q(B_E) $. 由$ e+\ker u $的任意性可知$ B_{E/\ker u}\subset q(B_E) $. 从而$ B_{E/\ker u}=q(B_E) $.
-    
+
     那么
     \[
     B_F=u(B_E)=v\circ q(B_E)=v(B_{E/\ker u}),
@@ -167,7 +167,7 @@
     \]
     从而$ v $等距.\qed
     \end{Proof}
-    
+
     \textbf{习题6.13}\ [习题课]\ \ 证明下列命题:
     \begin{enumerate}[(1)]
     \item 设$ E $是赋范空间, $ F $是$ E $的线性子空间. 证明: 若$ F\ne E $, 那么$ F $在$ E $中的内部是空集.
@@ -175,10 +175,10 @@
     \end{enumerate}
     \begin{Proof}
     (1) 若$ \mathring{F}\ne\varnothing $, 则存在$ B(x_0,r)\subset F $, 这等价于$ x_0\in F $且$ B(0,r)\subset F $. 由于$ F\ne E $, 故存在$ x $使得$ x\in E $但$ x\notin F $. 而$ \frac{r}{2\norm{x}}x\in B(0,r)\subset F $, 这说明$ x\in F $, 矛盾.
-    
+
     (2) 记$ P_n=\Span\{ 1,x,\dots,x^n \} $, 那么有$ P=\bigcup_{n\geqslant 1}P_n $. 由于$ P_n $有限维, 故$ P_n $闭. 设在某个范数下$ (P,\norm{\cdot}) $完备, 那么由Baire推论可知$ \bigcup_{n\geqslant 1}\mathring{P}_n $在$ P $稠密. 而由(1)可知$ \forall n\geqslant 1\,(\mathring{P}_n=\varnothing) $, 这即$ \varnothing $在$ P $中稠密. 矛盾.\qed
     \end{Proof}
-    
+
     \textbf{习题 6.14}\ [习题课]\ \ 设 $ E $ 是 Banach 空间, $ F, G $ 都是 $ E $ 是闭线性子空间, 并且 $ F+G $ 也是闭线性子空间. 证明: 存在一个常数 $ c\geqslant0 $, 使得 $ \forall x\in F+G $, $ \exists(f, g)\in F\times G $, 满足
     \[
         x=f+g, \norm{f}\leqslant c\norm{x}, \norm{g}\leqslant c\norm{x}.
@@ -188,7 +188,7 @@
         \[
             u:F\times G\to F+G,\quad (f, g)\mapsto f+g,
         \]
-        显然 $ u $ 是满的, 且由 
+        显然 $ u $ 是满的, 且由
         \[
             \norm{f+g}\leqslant 2\max\{ \norm{f}, \norm{g} \}=2\norm{(f, g)}
         \]
@@ -202,7 +202,7 @@
         \]
         即 $ x = c\norm{x}f_{0}+c\norm{g_{0}} $, 取 $ f=c\norm{x}f_{0} , g = c\norm{x}g_{0} $ 即可.\qed
     \end{Proof}
-    
+
     \textbf{习题 6.15}\ [习题课]\ \ 设 $ H $ 是 Hilbert空间, 且线性映射 $ u:H\to H $ 满足
     \[
         \lrangle{u(x), y}=\lrangle{x, u(y)}, \quad x, y\in H,
@@ -215,7 +215,7 @@
         \]
         且 $ \lim\limits_{n\to\infty}\lrangle{u(x_{n}), z}=\lrangle{y, z} $. 故对任意的 $ z\in H $, $ \lrangle{y, z}=0 $, 即 $ y=0 $.\qed
     \end{Proof}
-    
+
     \textbf{习题6.16}\ [作业]\ \ 设$ X=C^1([0,1],\R) $, 即由$ [0,1] $上连续可微的函数构成的集合, 其上赋予连续一致范数$ \norm\cdot_\infty $. 并设$ Y=C([0,1],\R) $, 其上也赋予一致范数. 考虑映射$ u : X\to Y $, $ u(f)=f' $. 证明: $ u $的图像是闭的, 但$ u $不连续. 并解释该结论的意义.
     \begin{Proof}
     设$ (x_n)_{n\geqslant 1}\subset X,\ y\in Y $满足$ x_n\to 0 $且$ x'_n\to y $. 为证明$ G(u) $是闭的, 只需证明$ y=0 $. 任取$ t\in[0,1] $, 则
@@ -223,7 +223,7 @@
     0=\lim_{n\to\infty}(x_n(t)-x_n(0))=\lim_{n\to\infty}\int_0^tx'_n\diff t=\int_0^ty\diff t,
     \]
     由$ y $的连续性可知$ y=0 $. 从而$ G(u) $闭集.
-    
+
     取$ x_n=t^n $, 那么$ \norm{x_n}=1 $但$ \norm{u(x_n)}=n\to\infty $, 从而$ u $不连续. 这说明当$ X $不完备时闭图像定理不成立.\qed
     \end{Proof}
 
@@ -241,13 +241,13 @@
         (1) 因为 $ X $ 是 $ \sigma $-有限的, 故存在一列递增的可测集 $ (A_{n})_{n\geqslant1} $ 时 $ X=\bigcup_{n\geqslant1}A_{n} $, 且 $ \forall n\geqslant1:\mu(A_{n})<\infty $, 考虑线性映射:
         \[
             I_{n}: L_{q}(X)\to L_{p}(X), \quad f\mapsto f\cdot 1_{A_{n}}.
-        \] 
+        \]
         则由习题 3.11 有
         \[
             \norm{I_{n}(f)}_{p}=\left( \int_{A_{n}}\abs{f}^{p}\diff\mu \right)^{1/p}\leqslant \mu(A_{n})^{1/p-1/q}\left( \int_{A_{n}}\abs{f}^{q}\diff\mu \right)^{1/q}=\mu(A_{n})^{1/p-1/q}\norm{f}_{q},
         \]
         即 $ \norm{I_{n}}\leqslant\mu(A_{n})^{1/p-1/q} $, 则 $ \lim\limits_{n\to\infty}I_{n}=\id $, 由推论~\ref{cor:逐点收敛}~知 $ \id $ 连续, 且 $ \sup\limits_{n\leqslant1}\norm{I_{n}}<\infty $, 且 $ \norm{\id}\leqslant\liminf\limits_{n\to\infty}\norm{I_{n}} $. 记 $ c=\liminf\limits_{n\to\infty}\norm{f_{n}} $, 则 $ \norm{f}_{p}\leqslant c\norm{f}_{q} $.
-        
+
         (2) a $ \Rightarrow $ b. 用反证法, 设 $ \mu(X)=\infty $, 则 $ \forall n\geqslant1 $, 存在 $ \mu $-可测集 $ B_{n} $ 使得 $ \mu(B_{n})\geqslant n $, 取 $ f = 1_{B_{n}} $, 则
         \[
             \norm{f}_{p}=\left( \int_{B_{n}}1\diff\mu \right)^{1/p}=\mu(B_{n})^{1/p}=n^{1/p}.
@@ -303,7 +303,7 @@
                 & = \lim_{\alpha\to0}\frac{(1-\alpha^{p})^{1/p}-1}{\alpha}=\left( (1+\alpha^{p})^{1/p} \right)'\Big|_{\alpha=0}=0
             \end{aligned}
         \]
-        从而 $ \abs{c}\leqslant0\Longrightarrow c=0 $, 故形如 
+        从而 $ \abs{c}\leqslant0\Longrightarrow c=0 $, 故形如
         \[
             \tilde{f}(x_{1}e_{1}+x_{2}e_{2})=x_{1}
         \]
@@ -314,7 +314,7 @@
             \begin{aligned}
                 \tnorm{f}=1& \Longleftrightarrow \forall x_{1}, x_{2}\in\R\,(\abs{x_{1}+cx_{2}} \leqslant\max\{ \abs{x_{1}}, \abs{x_{2}} \})\\
                 & \Longleftrightarrow x_{1}, x_{2}\in\R\,(\abs{x_{1}}+\abs{c}\abs{x_{2}}\leqslant\max\{ \abs{x_{1}}, \abs{x_{2}} \}).
-            \end{aligned}    
+            \end{aligned}
         \]
         当 $ \abs{x_{1}}\geqslant\abs{x_{2}} $ 时, $ \abs{x_{1}}+\abs{c}\abs{x_{2}}\leqslant\abs{x_{1}}\Longrightarrow c=0 $ (取 $ x_{2}\ne 0 $ 即可) 从而形如
         \[
@@ -338,7 +338,7 @@
     \abs{\sum_{k=1}^n\alpha_kf(a_k)}=\abs{\sum_{k=1}^n\alpha_k\hat{f}(a_k)}=\abs{\hat{f}\left( \sum_{k=1}^n\alpha_ka_k \right)}\leqslant\lambda\norm{\sum_{k=1}^n\alpha_ka_k}
     \]
     可得.
-    
+
     \textsl{充分性}. 考虑$ f $在$ \Span A $上的线性扩张
     \[
     \tilde{f} : \Span A\to\K,\qquad \sum_{k=1}^n\alpha_ka_k\mapsto\sum_{k=1}^n\alpha_kf(a_k),
@@ -349,7 +349,7 @@
     \]
     可知$ \tilde{f} $ well-defined且$ \tilde{f} $连续, $ \tnorm{\tilde{f}}\leqslant\lambda $. 由Hahn-Banach定理可知$ \tilde{f} $可以延拓为$ E $上的连续线性泛函$ \hat{f} $, 且它满足$ \hat{f}\rvert_A=f $和$ \tnorm{\hat{f}}\leqslant\lambda $.\qed
     \end{Proof}
-    
+
     \textbf{习题8.4}\ [习题课]\ \ 设$ E $是Hausdorff拓扑向量空间, $ A $是$ E $中包含原点的开凸集且$ x_0\in E\sm A $.
     \begin{enumerate}[(1)]
     \item 证明: 存在$ f\in\Star{E} $使得$ \Re f(x_0)=1 $且在$ A $上成立$ \Re f<1 $.
@@ -361,7 +361,7 @@
     \forall a\in A\,(\Re f_0(a)<\alpha\leqslant\Re f_0(x_0)),
     \]
     因$ 0\in A $, 故$ \alpha>0 $. 从而可取$ f=\frac{1}{\Re f_0(x_0)}f_0 $, 命题成立.
-    
+
     (2) 对$ \{ x_0 \} $与$ A $使用凸集隔离定理可知存在$ g\in\Star{E} $和常数$ \alpha\in\R $使得
     \[
     \forall a\in A\,(\Re g(a)<\alpha\leqslant\Re g(x_0))
@@ -376,7 +376,7 @@
     \]
     \qed
     \end{Proof}
-    
+
     \textbf{习题8.9}\ [习题课]\ \ 设$ E $是数域$ \K $上的拓扑向量空间, 称$ E $的线性子空间$ H $是超平面, 若存在$ x_0\in E\sm H $使得$ E=H+\K x_0 $.
     \begin{enumerate}[(1)]
     \item 证明: 若$ H $是超平面, 则对任意$ x\in E\sm H $, 都有$ E=H+\K x $成立.
@@ -388,7 +388,7 @@
     \[
     E=H+\K x_0=H+\K\frac{x-h}{\alpha}=H+\K\frac{-h}{\alpha}+\K\frac{x}{\alpha}=H+\K x.
     \]
-    
+
     (2) 设$ H $是超平面, 则存在$ x_0\in E\sm H $使得$ E=H+\K x_0 $. 若$ x_0\in\bar{H} $, 则$ E=H+\K x_0\subset\bar{H} $, 则$ E=\bar{H} $, 故$ H $稠密. 若$ x_0\notin \bar{H} $, 则存在$ f\in\Star{E} $使得$ f\rvert_H=0 $且$ f(x_0)\ne 0 $. 则$ H\subset\ker f $. 又因为$ \forall x\in E $有$ x=h+\alpha x_0 $, 则$ f(x)=0\Rightarrow\alpha f(x_0)=0\Rightarrow \alpha=0 $, 故$ x=h\in H $. 这说明$ \ker f=H $, 则$ H $是闭的.
 
     % 若$ H $稠密, 则命题得证. 若$ H $不稠密, 往证$ H $是闭集. 用反证法, 设$ (x_n)_{n\geqslant 1}\subset H $使得$ x_n\to x_0\notin H $, 则$ E=H+\K x_0 $. 任取$ y\in E\sm H $, 那么$ y=h+\alpha x_0 $, 其中$ h\in H $, $ \alpha\in\K $, 则
@@ -402,17 +402,17 @@
     % \forall\varepsilon>0\,\exists z\in H\,\exists n_0\in\N\,((d(x_0,z)<d(x_0,H)+\varepsilon)\land(n\geqslant n_0\Rightarrow d(x_n,x_0)<\varepsilon))
     % \]
     % 这与$ y\notin H $矛盾, 从而$ x_0\in H $, 故$ H $是闭的.
-    
+
     (3a) \textsl{充分性}. 由题设可知存在$ x_0\in E\sm H $使得$ f(x_0)\ne0 $且$ H=\ker f $, 则任取$ e\in E $都有
     \[
     e=e-\frac{f(e)}{f(x_0)}x_0+\frac{f(e)}{f(x_0)}x_0\Longrightarrow E=H+\K x_0,
     \]
     这说明$ \ker f $是超平面.
-    
+
     \textsl{必要性}. 若$ H $是超平面, 那么存在$ x_0\in E\sm H $使得$ E=H+\K x_0 $. 则$ \forall x\in E $, $ x=h+\alpha x_0 $, 其中$ h\in H $, $ \alpha\in\K $. 定义$ f(x)=\alpha $, 则$ \ker f=H $且$ f(x_0)=1\ne 0 $, 故$ f $非零.
-    
+
     (3b) \textsl{充分性}. $ f $连续, 则$ \ker f $闭.
-    
+
     \textsl{必要性}. 设$ \ker f $闭, 则任取$ x\in E $都有$ x=h+\alpha x_0 $. 只需构造$ f(x)=\alpha $即可. 取线性泛函
     \[
     \tilde{f}(h+\alpha x_0)=\alpha d(x_0,H),
@@ -444,7 +444,7 @@
     \abs{z_n^{(k)}-z_n}\leqslant\norm{z^{(k)}-z}_1\to 0,
     \]
     即$ (z^{(k)})_{k\geqslant 1} $逐点收敛到$ z\in\ell_1 $.
-    
+
     设$ (z^{(k)})_{k\geqslant 1}\subset A_0 $且收敛到$ z\in\ell_1 $, 则由
     \[
     \forall n\geqslant 1\,(z_{2n}=\lim_{k\to\infty}z_{2n}^{(k)}=0)
@@ -454,7 +454,7 @@
     z_{2n}=\lim_{k\to\infty}z_{2n}^{(k)}=\lim_{k\to\infty}\frac{z_{2n-1}^{(k)}}{2^n}=\frac{z_{2n-1}}{2^n}
     \]
     可知$ z\in B $, 于是$ B $也是闭的.
-    
+
     再证$ A_0+B $在$ \ell_1 $中稠密. 只需证明
     \[
     \forall f\in\Star{\ell_1}\,(f|_{A_0+B}=0\Rightarrow f=0)
@@ -464,7 +464,7 @@
     \forall n\geqslant 1\,\left(f(e_{2n-1})=0\land f\left(e_{2n-1}+\frac{e_{2n}}{2^n}\right)=0\right)
     \]
     故$ f(e_{2n})=0 $. 从而由$ \forall n\geqslant 1\,(f(e_n)=0) $可知$ f=0 $, 即$ A_0+B $在$ \ell_1 $中是稠密的.
-    
+
     (或者注意到$ \forall x\in\ell_1 $, 都有
     \[
     \begin{aligned}
@@ -473,22 +473,22 @@
     \end{aligned}
     \]
     )
-    
+
     (2) 先证明$ c\notin A_0+B $, 否则存在$ x=\sum\limits_{n\geqslant 1}x_{2n-1}e_{2n-1}\in A_0 $, $ y=\sum\limits_{n\geqslant 1}y_{2n-1}e_{2n-1}2^{-n}y_{2n-1}e_{2n}\in B $使得$ c=x+y $, 则由
     \[
     \sum_{n\geqslant 1}\frac{e_{2n}}{2^n}=\sum_{n\geqslant 1}(x_{2n-1}+y_{2n-1})e_{2n-1}+\frac{y_{2n-1}}{2^n}e_{2n}
     \]
     可知$ y_{2n-1}=1 $, 从而$ \norm{y}_1=\infty $, 与$ y\in B $矛盾, 故$ c\notin A_0+B $.
-    
+
     下证$ (A_0-c)\cap B=\varnothing $, 否则存在$ a\in A_0,\ b\in B $使得$ a_0-c=b $, 也即$ c=a_0-b\in A_0+B $, 矛盾. 故$ (A_0-c)\cap B=\varnothing $. 若有非零的$ f\in\Star{\ell_1} $使得$ A\subset\{ f\leqslant\alpha \} $且$ B\subset\{ f\geqslant\alpha \} $. 则
     \[
     f(A_0-c)\leqslant\alpha\Longrightarrow f(A_0)\leqslant\alpha+f(c),
     \]
     由$ f $的线性性与$ A_0 $是线性子空间可知只能$ f|_{A_0}=0 $. 同理, 由$ f(B)\geqslant\alpha $可知$ f|_B=0 $. 于是$ f|_{A_0+B}=0 $. 由$ A_0+B $在$ \ell_1 $中稠密, 则$ f=0 $.\qed
     \end{Proof}
-    
+
     \textbf{习题8.15(a)}\ [习题课]\ \ 本习题的目的是刻画连续线性泛函的 Hahn-Banach 延拓的唯一性问题. 设 $ E $ 是一个维数至少为 2 的赋范空间, 证明: $ E $ 的线性子空间 $ F $ 上的每个连续线性泛函有唯一的保范延拓的充分必要条件是 $ \Star{E} $ 是严格凸的.
-    
+
     \begin{Proof}
         \textsl{充分性}. 用反证法. 若存在 $ f\in \Star{F} $ 使得它有两个不同的保范延拓 $ f_{1}, f_{2} $, 且 $ f_{1}\ne f_{2} $, 则:
         \[
@@ -501,7 +501,7 @@
         但由 $ \Star{E} $ 严格凸, 只能 $ \tnorm{\tilde{f}}<\norm{f} $. 故 $ \norm{f}<\norm{f} $, 矛盾.
 
         \textsl{必要性}. 用反证法. 若 $ \Star{E} $ 不是严格凸的, 即 $ \exists f\in S_{\Star{E}}\,(f=(f_{1}+f_{2})/2) $, 其中 $ \norm{f_{1}}=\norm{f_{2}}=1 $ 且 $ f_{1}\ne f_{2} $.
-        
+
         因为 $ \norm{(f_{1}+f_{2})/2}=1 $, 故存在 $ (x_{n})_{n\geqslant1} $ 使得 $ \norm{x_{n}}=1 $ 且 $ \frac{f_{1}+f_{2}}{2}(x_{n})\to 1, n\to\infty $. 往证 $ f_{i}(x_{n})\to1, i=1, 2 $. 由
         \[
             \norm{f_{1}(x_{n})}\leqslant\norm{f_{1}}\norm{x_{n}}=\norm{f_{1}}=1
@@ -571,7 +571,7 @@
             \tau x-x=(x_{2}-x_{1}, x_{3}-x_{2}, \dots)
         \]
         则
-        \[ 
+        \[
             m_{n}(\tau x-x)=\frac{1}{n}\sum_{k=1}^{n}(x_{k+1}-x_{k})=\frac{1}{n}(x_{n+1}-x_{1})\to 0 ,
         \]
         从而 $ \tau x-x\in F $. 于是
@@ -579,7 +579,7 @@
             m(\tau x-x)=f(\tau x-x)=0.
         \]
         故 $ m(\tau x)=m(x) $, 即 $ m\circ \tau =m $.\qed
-    \end{Proof}    
+    \end{Proof}
 
     \textbf{习题8.21}\ [作业]\ \ 设$ e_n(t)=\exp(\imag nt) $, 其中$ t\in[0,2\pi] $.
     \begin{enumerate}[(1)]
@@ -596,7 +596,7 @@
     \norm{e_n}_p=(2\pi)^{1/p},
     \]
     故$ (e_n)_{n\geqslant 1} $不依范数收敛到0.
-    
+
     (2) 因$ \Star{L_2}(0,2\pi)=L_2(0,2\pi) $, 则对任意$ f\in L_2(0,2\pi) $, 都有
     \[
     \begin{aligned}
@@ -631,10 +631,10 @@
     \textbf{习题 9.1}\ [作业]\ \ 设 $ E $ 是赋范空间, 并设 $ \Star{E} $ 是可分的.
     \begin{enumerate}[(1)]
         \item 令 $ (f_{n})_{n\geqslant1} $ 是 $ \Star{E} $ 中的稠密子集. 选出 $ E $ 中的序列 $ (x_{n})_{n\geqslant1} $ 使得 $ f_{n}(x_{n})\geqslant \norm{f_{n}}/2 $.
-        \item 任取 $ f\in\Star{E} $. 证明: 若对每个 $ x_{n} $ 有 $ f(x_{n})=0 $, 则 $ f=0 $. 
+        \item 任取 $ f\in\Star{E} $. 证明: 若对每个 $ x_{n} $ 有 $ f(x_{n})=0 $, 则 $ f=0 $.
         \item 由此导出 $ \Span(x_{1}, x_{2}, \dots) $ 在 $ E $ 中稠密且 $ E $ 是可分的.
         \item 证明: 一个 Banach 空间是可分且自反的当且仅当它的对偶空间是可分且自反的.
-        \item 举一个可分赋范空间但其对偶空间不可分的例子. 
+        \item 举一个可分赋范空间但其对偶空间不可分的例子.
     \end{enumerate}
     \begin{Proof}
         (1) 设 $ \Star{E} $ 可分, 则存在一列 $ (f_{n})_{n\geqslant1}\subset\Star{E} $ 使得 $ \baro{(f_{n})_{n\geqslant1}}=\Star{E} $, 且 $ \norm{f_{n}}=\sup\limits_{\norm{x}=1}\abs{f_{n}(x)} $, 则存在 $ x_{n} $ 使得, $ \abs{f_{n}(x_{n})}\geqslant\norm{f_{n}}/2 $.
@@ -665,7 +665,7 @@
 
         (5) $ \ell_{1} $ 可分, 但 $ \Star{\ell_{1}}=\ell_{\infty} $ 不可分.\qed
     \end{Proof}
-    
+
     \textbf{习题9.2}\ [习题课]\ \ 设$ E $是Banach空间, $ B\subset\Star{E} $
     \begin{enumerate}[(1)]
         \item 证明: $ B $是相对$ \Star{w} $--紧的当且仅当$ B $是有界的.
@@ -673,7 +673,7 @@
     \end{enumerate}
     \begin{Proof}
     (1) \textsl{必要性}. 设$ B $相对$ \Star{w} $--紧, 即$ \bar{B}^{\Star{w}} $是$ \Star{w} $--紧的. 任取$ x\in E $, 都有$ \hat{x} $是连续的, 于是$ \hat{x}(\bar{B}^{\Star{w}}) $是$ \K $中的紧集, 即是有界闭集, 故$ \{ f(x) \}_{f\in \bar{B}^{\Star{w}}} $有界. 由一致有界原理可知$ \{ f\in\bar{B} \} $有界, 即$ B $是有界的.
-    
+
     \textsl{充分性}. 若$ B $是有界的, 则存在$ M>0 $使得$ B\subset MB_{\Star{E}} $, 从而$ \bar{B}^{\Star{w}}\subset M\bar{B}_{\Star{E}}^{\Star{w}} $. 由Banach-Alaoglu定理可知$ \bar{B}^{\Star{w}} $是$ \Star{w} $--紧的, 故$ B $是相对$ \Star{w} $--紧的.
 
     (2) 由 (1) 知 $ \bar{B}^{\Star{w}}\subset M\bar{B}_{\Star{E}} $, 故 $ \bar{B}^{\Star{w}}  $ 有界. 故不妨假设 $ B $ 是 $ \Star{w} $--闭的且有界的.
@@ -686,7 +686,7 @@
     \[
         d(\Star{x}, \Star{y})=0\Longleftrightarrow \forall n\geqslant1\,(\lrangle{\Star{x}-\Star{y}, x_{n}}=0)\Longleftrightarrow \Star{x}-\Star{y}=0.
     \]
-    将 $ d $ 诱导的拓扑记作 $ \tau_{d} $. 往证 $ \tau_{d} $ 与 $ B $ 上的 $ \Star{w} $--拓扑相同, 
+    将 $ d $ 诱导的拓扑记作 $ \tau_{d} $. 往证 $ \tau_{d} $ 与 $ B $ 上的 $ \Star{w} $--拓扑相同,
 
     先证 $ \tau_{d}\leqslant\sigma(\Star{E}, E) $. 对 $ \forall\Star{x}\in B, \forall r>0 $, 往证 $ \{ \Star{y}: d(\Star{x}, \Star{y}<r) \} $ 是 $ \Star{x} $ 点的一个 $ \Star{w} $--邻域. 设常数 $ M>0 $, 对 $ \forall \Star{x}\in B $ 有 $ \norm{\Star{x}}\leqslant M $, 由 $ \sum\limits_{n\geqslant1}2^{-n} $ 收敛, 则存在充分大的 $ N $ 使得
     \[
@@ -706,7 +706,7 @@
     \]
     是一个连续双射, 双射部分由 (1) 知 $ (B, \sigma(\Star{E}, E)) $ 紧, 则 $ \id $ 是同胚, 故 $ \tau_{d}=\sigma(\Star{E}, E) $.\qed
     \end{Proof}
-    
+
     (一个小练习: 赋范空间中弱收敛的序列一定有界.)
 
     \textbf{习题 9.4}\ [作业]\ \ 设 $ E $ 是自反空间, 证明: $ E $ 中的每个有界序列 $ (x_{n})_{n\geqslant1} $ 有弱收敛子序列.
@@ -719,27 +719,27 @@
         \]
         故 $ x_{n_{k}}\weakto x $.\qed
     \end{Proof}
-    
+
     \textbf{习题9.6(a)}\ [习题课]\ \ 令$ E $和$ F $是两个Banach空间, 且$ u\in\CB(E,F) $. 证明: $ u $是从$ E $到$ F $的满的等距映射当且仅当$ \Star{u} $是$ \Star{F} $到$ \Star{E} $的满的等距映射.
     \begin{Proof}
     由对偶关系可知
     \[
     \forall x\in E\,\forall\Star{f}\in\Star{F}\,(\lrangle{\Star{u}(\Star{f}),x}=\lrangle{\Star{f},u(x)}).
     \]
-    
+
     \textsl{必要性}. 由
     \[
     \norm{\Star{u}(\Star{f})}=\sup_{\norm{x}\leqslant 1}\abs{\lrangle{\Star{u}(\Star{f}),x}}=\sup_{\norm{x}\leqslant 1}\abs{\lrangle{\Star{f},u(x)}}
     \]
     因$ u $是满的等距映射, $ u(\bar{B}_E)=\bar{B}_F $, 从而$ \sup\limits_{\norm{x}\leqslant 1}\abs{\lrangle{\Star{f},u(x)}}=\norm{\Star{f}} $, 也即$ \norm{\Star{u}(\Star{f})}=1 $.
-    
+
     \textsl{充分性}. 注意到$ \tnorm{\widehat{u(x)}}=\norm{u(x)} $, 此因等距嵌入, 则
     \[
     \norm{u(x)}=\sup_{\norm{\Star{f}}\leqslant 1}\abs{\lrangle{\Star{f},u(x)}}=\sup_{\norm{\Star{f}}\leqslant 1}\abs{\lrangle{\Star{u}(\Star{f}),x}}
     \]
     因$ \Star{u} $是满的等距映射, $ \Star{u}(\bar{B}_{\Star{F}})=\bar{B}_{\Star{E}} $, 从而$ \sup\limits_{\norm{\Star{f}}\leqslant 1}\abs{\lrangle{\Star{u}(\Star{f}),x}}=\norm{x} $, 也即$ \norm{u(x)}=\norm{x} $.\qed
     \end{Proof}
-    
+
     \textbf{习题9.8}\ [习题课]\ \ 设$ P $是Banach空间$ X $上的线性映射并满足$ P\circ P=P $, 记$ R=P(X) $且$ N=\ker P $.
     \begin{enumerate}[(1)]
     \item 证明: $ X=R\oplus N $, 再证明$ P $连续的充分必要条件是$ R $和$ N $都是闭集.
@@ -747,7 +747,7 @@
     \end{enumerate}
     \begin{Proof}
     (1) $ \forall x\in X $, 有$ x=Px+x-Px $, 又注意到$ P $是幂等的, 于是$ P(x-Px)=0 $, 故$ x\in R+N $. 又$ R\cap N=\{0\} $是显然的, 故$ X=R\oplus N $, 由推论~\ref{cor:代数互补成为拓扑互补的条件}~可知结论成立.
-    
+
     (2) $ \forall f\in R^\bot\cap N^\bot $, 有$ f|_R=0 $且$ f|_N=0 $, 故$ f|_{R\oplus N}=0 $, 从而$ f=0 $, 故$ R^\bot\cap N^\bot =\{0\} $, 而
     \[
     \forall z\in X\,\exists!x\in R\,y\in N\,(z=x+y)
@@ -866,7 +866,7 @@
         \item 若 $ (x_{n})_{n\geqslant1} $ 是 $ E $ 中弱收敛的序列, 则 $ (x_{n})_{n\geqslant1} $ 有界.
         \item 若 $ T\in\CB(E, F) $ 且 $ x_{n} $ 弱收敛到 $ x $, 则 $ T(x_{n}) $ 弱收敛到 $ T(x) $.
         \item 若 $ T\in\CB(E, F) $ 是紧算子且 $ x_{n} $ 弱收敛到 $ x $, 则 $ T(x_{n}) $ 依范数收敛到 $ T(x) $.
-        \item 若$ E $自反, $ T\in\CB(E,F) $且当$ x_n $弱收敛到$ x $时, 有$ T(x_n) $依范数收敛到$ T(x) $, 则$ T $是紧算子. 
+        \item 若$ E $自反, $ T\in\CB(E,F) $且当$ x_n $弱收敛到$ x $时, 有$ T(x_n) $依范数收敛到$ T(x) $, 则$ T $是紧算子.
         \item 若 $ E $ 自反, $ T\in\CB(E, \ell_{1}) $ 或 $ T\in\CB(c_{0}, E) $, 则 $ T $ 是紧算子.
     \end{enumerate}
     \begin{Proof}
@@ -878,7 +878,7 @@
         \]
 
         (3) 先证明任意的赋范空间 $ F $ 中任意范数紧的子集 $ A $ 上范数拓扑等于弱拓扑. 恒等映射 $ \id: (A, \norm{\cdot})\to (A, \sigma(F, \Star{F})) $ 为连续双射, 又 $ (A, \norm{\cdot}) $ 紧, 故 $ \id $ 为同胚映射.
-        
+
         由 $ (x_{n})_{n\geqslant1} $ 弱收敛知 $ (x_{n})_{n\geqslant1} $ 有界, 则存在 $ M>0 $ 使得 $ (x_{n})_{n\geqslant 1}\cup\{ x \}\subset MB_{E} $. 因为 $ T $ 为紧算子, 则 $ T(MB_{E})=MT(B_{E}) $ 是范数意义下相对紧的, 因此 $ \baro{T(MB_{E})} $ 上范数拓扑等于弱拓扑, 又因为 $ T(x_{n}) $ 弱收敛到 $ T(x) $, 则 $ T(x_{n}) $ 依范数收敛到 $ T(x) $.
 
         (4) 只需证明 $ T(B_{E}) $ 相对紧, 则只需证明 $ T(B_{E}) $ 中任意无穷序列都有收敛于 $ F $ 中元素的子列. 设 $ (y_{n})_{n\geqslant1} $ 是 $ T(B_{E}) $ 中的一个无穷序列, 则存在 $ (x_{n})_{n\geqslant1}\subset B_{E} $ 使得 $ y_{n}=T(x_{n}), \forall n\geqslant1 $. 由习题 9.4 知 $ (x_{n})_{n\geqslant1} $ 有收敛于某个 $ x\in E $ 的子列 $ (x_{n_{k}})_{k\geqslant1} $, 由题知 $ T(x_{n_{k}}) $ 依范数收敛于 $ T(x) $, 即 $ (y_{n_{k}}) $ 依范数收敛于 $ T(x)\in F $, 故 $ T(B_{E}) $ 相对紧.
@@ -886,7 +886,7 @@
         (5) 设 $ E $ 自反, 注意到 $ T $ 为紧算子当且仅当 $ \Star{T} $ 为紧算子, 又因为 $ (c_{0})^{*}=\ell_{1} $, 所以只需证明 $ \forall T\in \CB(E, \ell_{1}) $ 是紧算子. 由 (4) 知只需证明当 $ x_{n} $ 弱收敛到 $ x $ 时有 $ T(x_{n}) $ 依范数收敛到 $ T(x) $. 当 $ x_{n} $ 弱收敛到 $ x $ 时, $ T(x_{n}) $ 弱收敛到 $ T(x) $, 由下面的命题可知 $ T(x_{n}) $ 依范数收敛到 $ T(x) $.\qed
     \end{Proof}
     \begin{Proposition}
-        $ \ell_{1} $ 中弱收敛的序列一定依范数收敛. 
+        $ \ell_{1} $ 中弱收敛的序列一定依范数收敛.
     \end{Proposition}
     \begin{Proof}
         设 $ (x_{n})_{n\geqslant1} $ 弱收敛到 0, 用反证法. 假设 $ (x_{n})_[n\geqslant1] $ 不依范数收敛到 0, 则存在 $ \varepsilon_{0}>0 $, 子列 $ (x_{n_{k}}) $ 使得 $ \norm{x_{n_{k}}}\geqslant\varepsilon_{0} $, 记 $ (x_{n_{k}}) $ 为 $ (y_{n})_{n\geqslant1} $. 由 $ (y_{1}^{k})\in\ell_{1} $ 可知存在 $ k_{1} $ 使得
@@ -895,7 +895,7 @@
         \]
         由 $ (y_{n})_{n\geqslant1} $ 弱收敛 (则逐点收敛), 对于取定的 $ k_{1} $, 存在 $ n_{2}>1 $ 使得 $ \sum\limits_{k\leqslant k_{1}}\abs{y_{n_{2}}^{k}}<2^{=1} $. 由 $ y_{n_{2}}\in\ell_{2} $ 知存在 $ k_{2}>k_{1} $ 使得
         \[
-            \sum_{k\geqslant k_{2}+1}\abs{y_{n_{2}}^{k}}<2^{-1}, \qquad \sum_{k = k_{1}+1}^{k_{2}}\abs{y_{n_{2}}^{k}}\geqslant \norm{y_{n_{2}}}-2\cdot2^{-1}, 
+            \sum_{k\geqslant k_{2}+1}\abs{y_{n_{2}}^{k}}<2^{-1}, \qquad \sum_{k = k_{1}+1}^{k_{2}}\abs{y_{n_{2}}^{k}}\geqslant \norm{y_{n_{2}}}-2\cdot2^{-1},
         \]
         对于取定的 $ k_{2} $, 存在 $ n_{3}>n_{2} $ 使得 $ \sum\limits_{k\leqslant k_{2}}\abs{y_{n_{3}}^{k}}<1/3 $. 以此类推, 对任意的 $ s\geqslant 2 $, 存在严格增加的 $ k_{s} $ 使得
         \[
@@ -938,7 +938,7 @@
     \norm{x+y}=\sup_{0<t\leqslant 1}\abs{x(t)+y(t)}\leqslant\sup_{0<t\leqslant 1}\abs{x(t)}+\sup_{0<t\leqslant 1}\abs{y(t)}=\norm{x}+\norm{y}
     \]
     可知三角不等式成立. 于是$ \norm{\cdot} $的确是$ C(0,1] $上的范数.
-    
+
     (2) 考虑映射
     \[
     T : \ell_\infty\to C(0,1],\qquad (x_n)_{n\geqslant 1}\mapsto f=\sum_{n\geqslant 1}\left(\frac{x_{n+1}-x_n}{\frac{1}{n+1}-\frac{1}{n}}\left(t-\frac{1}{n}\right)+x_n\right)1_{\left( \frac{1}{n+1},\frac{1}{n} \right]},
@@ -965,10 +965,10 @@
     于是$ F_1+F_2 $是闭集.\qed
     \end{Proof}
 
-    \begin{ExtraExample}[Ps1010-7]        
+    \begin{ExtraExample}[Ps1010-7]
         设
         \[
-        A=\begin{bmatrix}1 & t\\0 & 0\\\end{bmatrix} 
+        A=\begin{bmatrix}1 & t\\0 & 0\\\end{bmatrix}
         \]
         计算$ \norm{A} $.
     \end{ExtraExample}
@@ -981,7 +981,7 @@
     \end{bmatrix}
     \]
     可知$ \norm{A}=\sqrt{1+\abs{t}^2} $.
-    \end{Solution}    
+    \end{Solution}
 
     \begin{ExtraExample}[Ps1022-4]
         设$ E $是线性空间, $ \norm{\cdot}_1 $与$ \norm{\cdot}_2 $是$ E $上任意两个范数, 若$ (x_n)_{n\geqslant 1} $分别在$ \norm{\cdot}_1 $与$ \norm{\cdot}_2 $下收敛到$ a $和$ b $, 判断$ a $与$ b $是否相等.
@@ -1024,7 +1024,7 @@
     \end{Solution}
 
     \begin{ExtraExample}
-        计算 $ \mathbb{M}_{2}(\C) $ 中投影算子的一般形式. 
+        计算 $ \mathbb{M}_{2}(\C) $ 中投影算子的一般形式.
     \end{ExtraExample}
     \begin{Solution}
         设 $ P $ 是投影算子, 则 $ P=P^{\dagger}, P=P^{2} $, 由 $ P $ 自伴, 可设
@@ -1066,7 +1066,7 @@
         \]
         其中 $ 0\leqslant A\leqslant\1\footnote{若矩阵 $ A-B $ 为半正定的, 则记 $ A\leqslant B $ } $, $ u $ 是酉算子.
     \end{Solution}
-    
+
     \begin{ExtraExample}
         设 $ E $ 是\R 上的赋范空间, $ \varOmega $ 是 $ E $ 中原点处的吸收凸邻域, $ p_{\varOmega} $ 是 $ \varOmega $ 上的 Minkowski 泛函, 验证 $ p_{\varOmega} $ 是 $ E $ 上的次线性泛函.
     \end{ExtraExample}
@@ -1092,7 +1092,7 @@
     \begin{Remark}
         若 $ \varOmega $ 平衡, 则 $ p_{\varOmega} $ 为半范数. (见定理~\ref{thm:M凸}~).
     \end{Remark}
-    
+
     \begin{Definition}[严格凸]\index{Y!严格凸}\label{def:严格凸}
         设 $ E $  是一个赋范空间, 若其单位球面 $ S_{E} $ 上每个点是 $ \bar{B}_{E} $ 的端点, 则称 $ E $ 是\textbf{严格凸}的.(即任取 $ x\in S_{E} $, 不存在 $ \bar{B}_{E} $ 中相异的两点 $ x_{1}, x_{2} $, 使得 $ x=(x_{1}+x_{2})/2 $.)
     \end{Definition}

@@ -1,6 +1,3 @@
-% !TeX root = main.tex
-% This is the Appendix B.
-
 \chapter{一些习题课上讲过的题目}
 
 \section{第1、2章习题}
@@ -28,7 +25,7 @@
     \diam(\varphi(B_\rho(x,\delta)))\leqslant\diam(\varphi\{ y : x_n=y_n, 1\leqslant n\leqslant N \})<\sum_{n\geqslant N+1}\frac{2}{3^n},
     \]
     取足够小的$ \delta $使得$ N\geqslant n_0 $, 那么此时上式右侧$ <\varepsilon $, 于是$ \varphi $连续.
-    
+
     而$ \forall x,y\in E $且$ x\ne y $, 取最小的使得$ x_k\ne y_k $的正数$ k $, 那么
     \[
     \abs{\varphi(y)-\varphi(x)}\geqslant\frac{2\abs{x_k-y_k}}{3^k}-\sum_{n\geqslant k+1}\frac{2}{3^n}=\frac{2}{3^k}-\frac{1}{3^k}=\frac{1}{3^k}>0,
@@ -43,10 +40,10 @@
     d(x_n,x_{n+p})\leqslant\sum_{k=n}^{n+p-1}d(x_k,x_{k+1})<\sum_{k=n}^{n+p-1}2^{-k}<\sum_{k=n}^\infty 2^{-k}=2^{1-n}
     \]
     可知$ n, p\to\infty $时上式趋于0, 从而$ (x_n)_{n\geqslant 1} $是Cauchy列. 由度量空间完备可知$ (x_n)_{n\geqslant 1} $收敛.
-    
+
     \textsl{充分性}. 设$ (y_n)_{n\geqslant 1} $是$ (E,d) $上的Cauchy列, 则可取子列$ (y_{n_k})_{k\geqslant 1} $使得$ \forall k\geqslant 1 $有$ d(y_{n_k},y_{n_{k+1}})<2^{-k} $. 由题设可知$ (y_{n_k})_{k\geqslant 1} $收敛, 那么$ (y_n)_{n\geqslant 1} $也收敛.\qed
     \end{Proof}
-    
+
     \textbf{习题2.3}\ [作业]\ \ 设$ (E,d) $是度量空间, $ (x_n)_{n\geqslant 1} $是$ E $中的Cauchy列, 并有$ A\subset E $. 假设$ A $的闭包$ \bar{A} $在$ E $中完备且有$ \lim\limits_{n\to\infty}d(x_n,A)=0 $. 证明: $ (x_n)_{n\geqslant 1} $在$ E $中收敛.
     \begin{Proof}
     由$ d(x,A) $的定义与$ \lim\limits_{n\to\infty}d(x_n,A)=0 $可知
@@ -64,7 +61,7 @@
     \]
     于是$ (x_n)_{n\geqslant 1} $在$ E $中收敛.\qed
     \end{Proof}
-    
+
     \textbf{习题2.4}\ [作业]\ \ 设$ (E,d) $是度量空间, $ \alpha>0 $. 设$ A\subset E $满足$ \forall x,y\in A $且$ x\ne y $必有$ d(x,y)\geqslant\alpha $. 证明: $ A $是完备的.
     \begin{Proof}
     设$ (x_n)_{n\geqslant 1}\subset A $是Cauchy列, 则
@@ -73,13 +70,13 @@
     \]
     从而由题设可知只能$ x_n=x_m $. 即$ \forall n\geqslant n_0\,(x_n=x_{n_0}) $. 从而$ (x_n)_{n\geqslant 1} $收敛且极限为$ x_{n_0} $, 故$ A $完备.\qed
     \end{Proof}
-    
+
     \textbf{习题2.6}\ [习题课]\ \ 设$ (E,d) $是度量空间, $ (x_n)_{n\geqslant 1} $是$ E $中发散的Cauchy列. 证明:
-    
+
     (1) 任取$ x\in E $, 序列$ (d(x,x_n))_{n\geqslant 1} $收敛到一个正数, 记作$ g(x) $;
-    
+
     (2) 函数$ x\mapsto1/g(x) $是一个从$ E $到$ \R $的连续函数;
-    
+
     (3) 上面定义的函数无界.
     \begin{Proof}
     (1) $ \forall n,m\geqslant 1 $, 有
@@ -87,20 +84,20 @@
     \abs{d(x,x_n)-d(x,x_m)}\leqslant d(x_n,x_m)\to 0\qquad (n,m\to\infty)
     \]
     从而$ (d(x,x_n))_{n\geqslant 1} $是$ \R $上的Cauchy列. 于是它收敛, 并设其极限是$ \lambda $, 则有$ \lambda\geqslant 0 $. 若$ \lambda=0 $, 则有$ x_n\to x $, 这与$ (x_n)_{n\geqslant 1} $发散矛盾, 从而只能$ \lambda>0 $.
-    
+
     (2) 注意到函数$ t\mapsto 1/t $是连续的, 只需证明$ g $是连续函数. 对$ \forall x,y\in E $, 由
     \[
     \abs{g(x)-g(y)}=\abs{\lim\limits_{n\to\infty}d(x,x_n)-\lim\limits_{n\to\infty}d(y,x_n)}=\lim\limits_{n\to\infty}\abs{d(x,x_n)-d(y,x_n)}\leqslant d(x,y)
     \]
     可知$ g $是一致连续的, 从而$ g $连续.
-    
+
     (3) 因为$ (x_n)_{n\geqslant 1} $是Cauchy列, 则
     \[
     \forall\varepsilon>0\,\exists n_0\in\N\,(n\geqslant n_0\Rightarrow d(x_m,x_{n_0})<\varepsilon)
     \]
     则$ \lim\limits_{n\to\infty}d(x_n,x_{n_0})\leqslant\varepsilon $. 从而$ g(x_{n_0})\leqslant\varepsilon $, 于是$ 1/g(x_{n_0})\geqslant 1/\varepsilon $. 由$ \varepsilon $的任意性可知$ x\mapsto 1/g(x) $无界.\qed
     \end{Proof}
-    
+
     \textbf{习题2.8}\ [作业]\ \ 设 $ f: \R^{n}\to\R $ 是一致连续函数, 证明存在两个非负常数 $ a $ 和 $ b $, 使得
     \[
         \abs{f(x)}\leqslant a\norm{x}+b.
@@ -116,7 +113,7 @@
         \[
             x_{0}=0,\quad x_{1}=\delta\cdot\frac{x}{\norm{x}},\quad x_{2}=2\delta\cdot\frac{x}{\norm{x}}, \dots, x_{n}=n\delta\cdot\frac{x}{\norm{x}},\quad x_{n+1}=x.
         \]
-        则 
+        则
         \[
             \begin{aligned}
                 \abs{f(x)-f(0)} & \leqslant\sum_{k=0}^{n}\abs{f(x_{k+1})-f(x_{k})}\\
@@ -127,11 +124,11 @@
         \]
         故 $ \abs{f(x)}\leqslant\abs{f(0)}+\norm{x}/\delta+1 $. 取 $ a=1/\delta, b=\abs{f(0)}+1 $ 即可.\qed
     \end{Proof}
-    
+
     \begin{Remark}
         本题结论在1维情形下, 即是一致连续函数在无穷远处是线性增长的, 这是一个较强的结论, 它说明一个一致连续函数在充分远处可以使用线性函数控制.
     \end{Remark}
-    
+
     \textbf{习题2.10}\ [作业]\ \ 构造一个反例说明, 在压缩映照原理\,\ref{thm:压缩映照原理}\,中, 如果我们把映射 $ f $ 满足的条件减弱为
     \[
         d(f(x), f(y))<d(x, y)\qquad \forall x, y\in E\wedge x\neq y,
@@ -159,7 +156,7 @@
         \]
         可知如此构造的 $ f $ 满足题设条件, 但方程 $ f(x)=x $ 等价于 $ \arctan x=\pi/2 $ 无解, 从而不存在不动点.
     \end{Remark}
-    
+
     \textbf{习题2.10$\bm{'}$}\ [习题课]\ \ 设$ (E,d) $是紧的度量空间, 在压缩映照原理中若将映射$ f $满足的条件减弱到
     \[
     \forall x,y\in E\,,x\ne y\,(d(f(x),f(y))<d(x,y))
@@ -171,14 +168,14 @@
     d(f(x_0),f^2(x_0))<d(x_0,f(x_0))=\lambda.
     \]
     这与$ \lambda $是$ g $的最小值矛盾. 从而只能$ \lambda=0 $, 此时$ x_0 $即为$ f $的不动点.
-    
+
     再说明唯一性. 若$ x_0\ne y_0 $都是$ f $的不动点, 由
     \[
     d(f(x_0),f(y_0))=d(x_0,y_0)
     \]
     矛盾.\qed
     \end{Proof}
-    
+
     \textbf{习题2.11}\ [习题课]\ \ 设$ (E,d) $是一个完备的度量空间, $ f $是其上的映射, 且满足$ f^n $是压缩映射(这里$ f^n $表示$ f $的$ n $次复合). 证明: $ f $有唯一的不动点, 并给出例子说明$ f $可以不连续.
     \begin{Proof}
     因$ f^n $是压缩映射, 由压缩映照原理可知$ f^n $有唯一的不动点$ x_0 $, 也即$ f^n(x_0)=x_0 $, 那么
@@ -186,19 +183,19 @@
     f^n(f(x_0))=f^{n+1}(x_0)=f(f^n(x_0))=f(x_0),
     \]
     从而$ f(x_0) $也是$ f^n $的不动点. 由$ f^n $不动点的唯一性可知只能$ x_0=f(x_0) $, 即$ x_0 $是$ f $的不动点.
-    
+
     再说明唯一性. 若$ x_0\ne y_0 $都是$ f $的不动点, 则$ f^n(y_0)=y_0 $, 即$ y_0 $也是$ f^n $的不动点, 从而$ x_0=y_0 $.
-    
+
     取$ f=1_\Q $, 那么注意到$ f^2\equiv 1 $是压缩映射, 但$ f $并不连续.\qed
     \end{Proof}
-    
+
     \textbf{习题2.12}\ [习题课]\ \ 记区间$ I=(0,\infty) $上的自然拓扑为$ \tau $.
-    
+
     (1) 证明$ \tau $可以被以下完备的距离$ d $诱导:
     \[
     d(x,y)=\abs{\log x-\log y};
     \]
-    
+
     (2) 设函数$ f : I\to I $一次连续可微, 且满足对某个$ \lambda<1 $, 任取$ x\in I $都有$ x\abs{f'(x)}\leqslant\lambda f(x) $. 证明$ f $在$ I $上存在唯一的不动点.
     \begin{Proof}
     (1) $ d $是距离是显然的, 下证它完备: 任取$ (I,d) $中的Cauchy列$ (x_n)_{n\geqslant 1} $, 那么
@@ -210,13 +207,13 @@
     \lim_{n\to\infty}\abs{\log x_n-z}=0,
     \]
     也即$ \lim\limits_{n\to\infty}\abs{x_n-\exp z}=0 $, 从而$ (x_n)_{n\geqslant 1} $收敛到$ \exp z $, 于是$ (I,d) $完备.
-    
+
     再说明$ \tau $可以被$ d $诱导. 记$ d $诱导的拓扑为$ \tau_d $, 则$ \forall r>0,x\in I $, 考虑$ (I,d) $中的球$ B_0(x,r)=\{ y : d(y,x)<r \} $. 而
     \[
     d(y,x)<r\Longleftrightarrow\abs{\log y-\log x}<r\Longleftrightarrow y\in(x\exp (-r),x\exp r),
     \]
     于是$ \tau_d\subset \tau $. 而对$ I $中任意开区间$ (a,b) $, 设$ x=\sqrt{ab} $且$ r=\frac{1}{2}\log\frac{b}{a} $, 那么$ (a,b)=(x\exp(-r),x\exp r) $. 于是$ \tau\subset\tau_d $. 这说明$ \tau=\tau_d $.
-    
+
     (2) 由Cauchy中值定理可知$ \forall x,y\in I $, 不妨$ x<y $, 存在$ \xi\in(x,y) $使得
     \[
     \abs{\frac{\log f(x)-\log f(y)}{\log x-\log y}}=\abs{\frac{f'(\xi)/f(\xi)}{1/\xi}}\leqslant\lambda.
@@ -233,10 +230,10 @@
     \pm(\log f(y)-\log f(x))\leqslant\lambda(\log y-\log x),
     \]
     从而$ \abs{\log f(y)-\log f(x)}\leqslant\lambda\abs{\log y-\log x} $. 因此$ f : I\to I $是完备度量空间$ (I,d) $上的压缩映射. 因此由压缩映照原理可知$ f $在$ I $上存在唯一不动点.
-    
+
     并且注意到$ I $上的Euclid距离是不完备的, 尽管$ d $与Euclid距离诱导出的拓扑是相同的, 但$ d $却是完备的. 这说明完备性并不是一个拓扑概念, 它跟空间上赋予的度量有关.
     \end{Remark}
-    
+
     \textbf{习题2.15}\ [习题课]\ \ 设$ (E,d) $是完备度量空间, $ f $和$ g $是$ E $上两个可交换的压缩映射(即$ fg=gf $). 证明$ f $和$ g $有唯一的共同不动点. 并举出反例说明当可交换条件不满足时结论不成立.
     \begin{Proof}
     设$ f $的不动点是$ x_0 $, 即$ x_0=f(x_0) $. 那么
@@ -244,14 +241,14 @@
     g(x_0)=g(f(x_0))=f(g(x_0)),
     \]
     即$ g(x_0) $也是$ f $的不动点, 从而$ g(x_0)=x_0 $, $ x_0 $是$ g $的不动点. 由对称性可证另一侧.
-    
+
     若去掉可交换的条件, 取$ f\equiv\frac{1}{4} $而$ g\equiv\frac{3}{4} $即可. 此时注意到
     \[
     f(g(x))=\frac{1}{4},\qquad g(f(x))=\frac{3}{4},
     \]
     也即$ f $与$ g $的不动点分别是$ \frac{1}{4} $与$ \frac{3}{4} $.\qed
     \end{Proof}
-    
+
 \section{第3章习题}
 
     \textbf{习题3.2}\ [习题课]\ \ 设 $ E $ 是 $ \R $ 上所有的实系数多项式构成的线性空间, 对任一 $ p\in E $, 定义
@@ -289,7 +286,7 @@
         \[
             \abs{a}^{n}\leqslant\norm{L_{a}},
         \]
-        令 $ n\to\infty $, 则有 $ \abs{a}\leqslant1 $. 
+        令 $ n\to\infty $, 则有 $ \abs{a}\leqslant1 $.
 
         同理取 $ p_{n}=(1-x)^{n} $ , 类似可得 $ \abs{1-a}\leqslant1 $, 从而 $ a\in[0, 1] $.
 
@@ -323,7 +320,7 @@
         \[
             \abs{L_{a, b}(p)}=\abs{\int_{a}^{b}p(x)\diff x}\leqslant \abs{b-a}\cdot \norm{p}_{\infty},
         \]
-        则 $ L_{a, b} $ 连续. 
+        则 $ L_{a, b} $ 连续.
 
         因为 $ \norm{L_{a, b}}<b-a $, 而当 $ p(x)\equiv 1 $ 时 $ \abs{L_{a, b}(p)}=b-a $, 故 $ \norm{L_{a, b}}=b-a $.\qed
     \end{Proof}
@@ -349,28 +346,28 @@
     N(p+q)=\norm{p'+q'}_\infty\leqslant\norm{p'}_\infty+\norm{q'}_\infty\leqslant N(p)+N(q)
     \]
     可知齐次性与三角不等式也成立, 从而$ N(p) $是$ E_0 $上的范数.
-    
+
     再设$ p\in E_0 $, 任取$ x\in[0,1] $, 由Lagrange中值定理可知
     \[
     \abs{\frac{p(x)-p(0)}{x-0}}=\abs{p'(\xi)}\leqslant\norm{p'}_\infty=N(p),
     \]
     也即$ \abs{p(x)}\leqslant \norm{p'}_\infty\abs{x}\leqslant \norm{p'}_\infty $这说明$ \norm{p}_\infty\leqslant\norm{p'}_\infty=N(p) $.
-    
+
     (2) 由积分算子的线性性可知$ L(p) $是线性泛函, 且由Lagrange中值定理可知
     \[
     \abs{\int_0^1\frac{p(x)}{x}\diff x}\leqslant\sup_{0\leqslant x\leqslant 1}\abs{\frac{p(x)}{x}}\leqslant\sup_{0\leqslant x\leqslant 1}\abs{p'(x)}=N(p),
     \]
     从而$ L(p)\leqslant N(p) $, 这说明$ L $关于范数$ N $是连续的, 且有$ \norm{L}\leqslant 1 $. 再取$ p(x)=x\in E_0 $, 此时$ L(p)=1=N(p) $, 从而$ \norm{L}=1 $
-    
+
     (3) $ L $关于$ \norm{\cdot}_\infty $不连续. 用反证法证明, 假设$ L $关于$ \norm{\cdot}_\infty $连续, 设
     \[
      F_0=\{ f\in C[0,1] : f(0)=0 \},
     \]
     容易验证$ F_0 $是一个Banach空间. 由Weierstrass逼近定理可知$ \forall f\in C[0,1] $, 可以使用多项式一致逼近, 从而$ E_0 $在$ F_0 $中稠密, 于是$ E_0 $上的连续线性泛函可以唯一地扩张成$ F_0 $上的连续线性泛函, 将扩张后的连续线性泛函记作$ \tilde{L} $, 那么取$ F_0 $中的元素$ f(x)=x^{1/n} $后注意到$ \norm{f}_\infty=1 $且$ \tilde{L}(f)=n $可知$ \tilde{L} $关于$ \norm{\cdot}_\infty $不连续, 矛盾.
-    
+
     (4) 若两范数等价, 那么它们诱导出的拓扑应当是相同的, 而(3)已经说明了它们诱导的拓扑不相同, 于是两范数不等价.\qed
     \end{Proof}
-    
+
     \textbf{习题3.4}\ [习题课]\ \ 设$ E $是由$ [0,1] $上所有连续函数构成的线性空间, 定义$ E $的两个范数分别为$ \norm{f}_1=\int_0^1\abs{f(x)}\diff x $和$ N(f)=\int_0^1x\abs{f(x)}\diff x $.
     \begin{enumerate}[(1)]
     \item 验证$ N $的确是$ E $上的范数, 且$ N\leqslant\norm{\cdot}_1 $.
@@ -384,7 +381,7 @@
     证明函数列$ (f_n)_{n\geqslant 1} $在$ (E,N) $中收敛到0, 它在$ (E,\norm{\cdot}_1) $中是否收敛? 由这两个范数在$ E $上诱导的拓扑是否相同?
     \item 设$ a\in(0,1] $, 并令$ B=\{ f\in E : f(x)=0, \forall x\in[0,a] \} $. 证明这两个范数在$ B $上诱导相同的拓扑.
     \end{enumerate}
-    
+
     \begin{Proof}
     (1) 首先我们需要说明$ N $确实是一个范数. 其中正定性由
     \[
@@ -395,7 +392,7 @@
     N(f)=\int_0^1x\abs{f(x)}\diff x\leqslant\int_0^1\abs{f(x)}\diff x=\norm{f}_1
     \]
     对任意$ f\in C[0,1] $成立可知.
-    
+
     (2) 注意到
     \[
     N(f_n)=\int_0^{1/n}x(n-n^2x)\diff x=\int_0^{1/n}nx(1-nx)\diff x=\frac{1}{n}\int_0^1t(1-t)\diff t=\frac{1}{6n},
@@ -413,7 +410,7 @@
     \norm{f_n-f}_1=\norm{f_n}_{1}=\int_0^{1/n}\abs{n(1-nx)}\diff x=\frac{1}{2},
     \]
     这与它依范数$ \norm{\cdot}_1 $收敛到$ f $矛盾. 从而$ (f_n)_{n\geqslant 1} $不依范数$ \norm{\cdot}_1 $收敛. 这也说明了这两个范数在$ E $上诱导的拓扑不同.
-    
+
     (3) 由于等价的范数诱导相同的拓扑, 只需证明$ N $与$ \norm{\cdot}_1 $在空间$ B $上等价即可. 由(1)已知$ N\leqslant\norm\cdot_1 $成立, 而
     \[
     N(f)=\int_0^1x\abs{f(x)}\diff x=\int_a^1x\abs{f(x)}\diff x\geqslant a\int_a^1\abs{f(x)}\diff x\geqslant a\int_0^1\abs{f(x)}\diff x=a\norm{f}_1.
@@ -437,7 +434,7 @@
                 \norm{Tf-Tg} & =\sup_{0\leqslant x\leqslant 1}\int_{0}^{x}(f(\varphi(t))-g(\varphi(t)))\diff t \leqslant x\cdot \sup_{0\leqslant x\leqslant 1}\abs{f(x)-g(x)} = x\cdot \norm{f-g}.
             \end{aligned}
         \]
-        进一步 
+        进一步
         \[
             \begin{aligned}
                 \norm{T^{2}f-T^{2}g} & =\sup_{0\leqslant x\leqslant 1}\abs{\int_{0}^{x}(Tf)(\varphi(t))-(Tg)(\varphi(t))\diff t} \\
@@ -446,9 +443,9 @@
         \]
         其中 $ \lambda=\int_{0}^{1}\varphi(t)\diff t<1 $, 即 $ T^{2} $ 是压缩映射, 则 $ T $ 有唯一不动点.
 
-        而方程\,\eqref{eq:3.5题公式}\,成立 $ \Longleftrightarrow $ $ f(x)=\alpha +\int_{0}^{x} f(\varphi(t))\diff t $. 即 $ Tf=f $, 故方程\,\eqref{eq:3.5题公式}\,有唯一解. 
+        而方程\,\eqref{eq:3.5题公式}\,成立 $ \Longleftrightarrow $ $ f(x)=\alpha +\int_{0}^{x} f(\varphi(t))\diff t $. 即 $ Tf=f $, 故方程\,\eqref{eq:3.5题公式}\,有唯一解.
     \end{Proof}
-    
+
     \textbf{习题3.6}\ [习题课]\ \ 设$ \alpha\in\R,\ a>0,\ b>1 $, 考察如下微分方程
     \begin{equation}\label{eq:3.6题公式}
     f(0)=\alpha,\qquad f'(x)=af(x^b),\qquad x\in[0,1]
@@ -476,7 +473,7 @@
     \norm{f}=\sup_{0\leqslant x\leqslant 1}\abs{f(x)}\exp(-Mx)\geqslant\exp(-M)\norm{f}_\infty
     \]
     可知$ \exp(-M)\norm{\cdot}_\infty\leqslant\norm{\cdot}\leqslant\norm{\cdot}_\infty $, 从而$ \norm{\cdot} $与$ \norm{\cdot}_\infty $等价, 这说明$ (E,\norm{\cdot}) $也是一个Banach空间.
-    
+
     (2) 对任意的$ f, g\in E $与$ x\in[0,1] $, 有
     \[
     \begin{aligned}
@@ -503,10 +500,10 @@
     \norm{Tf-Tg}\leqslant\lambda\cdot\norm{f-g},
     \]
     即$ T $是一个压缩映射.
-    
+
     (3) 方程\,\eqref{eq:3.6题公式}\,成立当且仅当$ Tf=f $, 由压缩映照原理可知$ T $有唯一不动点, 即方程\,\eqref{eq:3.6题公式}\,有唯一解.\qed
     \end{Proof}
-    
+
     \textbf{习题3.7}\ [习题课]\ \ 设$ E $是域$ \K $上的无限维线性空间, 设$ (e_i)_{i\in\alpha} $是$ E $中的一组向量. 若$ E $中任意向量可以用$ (e_i)_{i\in\alpha} $中的有限个向量唯一线性表示, 即对任意$ x\in E $, 存在唯一一组$ (x_i)_{i\in\alpha}\subset\K $使得仅有有限多个$ x_i\ne 0 $且$ x=\sum\limits_{i\in\alpha}x_ie_i $成立, 则称$ (e_i)_{i\in\alpha} $是$ E $中的Hamel基.
     \begin{enumerate}[(1)]
     \item 由Zorn引理证明$ E $有一组Hamel基.
@@ -515,9 +512,9 @@
     \end{enumerate}
     \begin{Proof}
     (1) 记$ \mathcal G $是$ E $中线性无关集全体(线性无关集即其中元素线性无关, 在有限情形下与高等代数的定义相同, 在无限情形下要求任意有限子集均线性无关), 则$ (\mathcal G,\subseteq) $是一个偏序集. 任取$ \mathcal G $中的一个全序子集$ \mathcal E $, 并取$ D=\bigcup\mathcal E $, 再取$ F\in\fin D $. 那么对任意的$ x\in F $, 存在$ A(x)\in\mathcal E $使得$ x\in A(x) $, 注意到$ \{ A(x) : x\in F \} $是全序集, 取其最大元$ A(z) $, 则有$ F\subset A(z) $, 从而$ F $是线性无关集, 这说明$ D $也是线性无关集.
-    
+
     因$ D $是线性无关集可知$ D\in\mathcal G $, 且$ D $是$ \mathcal E $的一个上界, 从而有Zorn引理可知$ \mathcal G $存在极大元$ T $, 那么$ T $是$ E $的Hamel基.
-    
+
     (2) 设$ (e_i)_{i\in\alpha} $是$ E $的一组Hamel基, 任取$ e_1\in(e_i)_{i\in\alpha} $, 由$ \dim E\geqslant\aleph_0 $可知存在$ e_2\in(e_i)_{i\in\alpha} $使得$ \{ e_1,e_2 \} $线性无关, 且依此进行下去可以获得一线性无关的点列$ (e_n)_{n\geqslant 1} $, 并且可以用$ \frac{1}{n}\cdot\frac{e_n}{\norm{e_n}}=\mathrm{sgn}\,e_n/n $代替$ e_n $, 再记除上述$ (e_n)_{n\geqslant 1} $外其他的$ e_j $为$ (e_j)_{j\in\beta} $, 也即
     \[
     (e_i)_{i\in\alpha}=(e_n)_{n\geqslant 1}\cup(e_j)_{j\in\beta}.
@@ -527,7 +524,7 @@
     f : E\mapsto \K,\qquad x\to\sum_{i\in\alpha}x_i,
     \]
     则$ f $是$ E $上的线性泛函, 且$ f(e_n)=1 $, 但$ \lim\limits_{n\to\infty}e_n=0 $, 从而$ f $不连续.
-    
+
     (3) 记$ E $上原范数$ \norm{\cdot} $, 将(2)中找到的线性泛函记作$ f $, 并且取
     \[
     \norm{x}_1=\norm{x}+\abs{f(x)},\qquad \forall x\in E,
@@ -547,7 +544,7 @@
     \norm{u}=\norm{[u]}
     \]
     即是$ \CL(E) $上的一个范数, 这说明这一映射连续, 于是$ \CL(E) $与$ \mathbb{M}_n(\K) $同构.
-    
+
     (2) 由$ u $可被正交相似对角化可知存在酉矩阵$ p $与对角阵$ \lambda=\mathrm{diag}\,\{ \lambda_1,\lambda_2,\cdots,\lambda_n \} $使得
     \[
     u=p^{-1}\lambda p.
@@ -562,7 +559,7 @@
     \norm{ux_{k_0}}=\abs{\lambda_{k_0}}\norm{x_{k_0}}=\max_{k}\abs{\lambda_k}\norm{x_{k_0}},
     \]
     从而$ \norm{u}=\max\limits_{k}\abs{\lambda_k} $.
-    
+
     (3) 当$ p=1 $时, 对$ \forall x\in\K^n $, 有$ x=\sum\limits_{k=1}^n x_ke_k $成立, 那么由定义有
     \begin{align*}
     \norm{ux}_1=\norm{\begin{bmatrix}
@@ -575,7 +572,7 @@
     \norm{ue_{k_0}}_1=\max_{k}\left(\sum_{i=1}^n\abs{u_{i,k}}\right)\norm{e_{k_0}}_1,
     \]
     从而有$ \norm{u}_1=\max\limits_{k}\left(\sum\limits_{i=1}^n\abs{u_{i,k}}\right) $.
-    
+
     而当$ p=\infty $时, 有
     \begin{align*}
     \norm{ux}_\infty=\max_i\abs{\sum_{k=1}^nu_{i,k}x_k}&\leqslant\max_i\sum_{k=1}^n\abs{u_{i,k}}\abs{x_k}\\
@@ -587,14 +584,14 @@
     \]
     故$ \norm{u}_\infty=\max\limits_i\sum\limits_{k=1}^n\abs{u_{i,k}} $.\qed
     \end{Proof}
-    
+
     \textbf{习题3.9}\ [作业]\ \ 设$ E $是Banach空间.
     \begin{enumerate}[(1)]
     \item 设$ u\in\CB(E) $且$ \norm{u}<1 $, 证明$ \id_E-u $在$ \CB(E) $中可逆;
     \item 设$ GL(E) $是$ \CB(E) $中可逆元构成的集合, 证明: $ GL(E) $关于复合运算构成一个群, 且它是$ \CB(E) $中的开集;
     \item 证明$ u\mapsto u^{-1} $是$ GL(E) $上的同胚.
     \end{enumerate}
-    
+
     \begin{Proof}
     (1) 由$ \norm{u}<1 $和
     \[
@@ -605,7 +602,7 @@
     (\id_E-u)\sum_{n\geqslant 0}u^n=\sum_{n\geqslant 0}u^n-\sum_{n\geqslant 1}u^n=\id_E
     \]
     可知$ \id_E-u $是右可逆的, 其右逆为$ \sum\limits_{n\geqslant 0}u^n $. 同理可证它是左可逆的, 且左逆也是$ \sum\limits_{n\geqslant 0}u^n $, 故$ \id_E-u $可逆, 其逆就是$ \sum\limits_{n\geqslant 0}u^n $.
-    
+
     (2) 首先$ GL(E) $关于复合运算封闭, 且满足结合律, $ \id_E $是其中的单位元且由定义可知其中每个元素都有逆元. 于是$ (GL(E),\circ) $是一个群. 下面说明$ GL(E) $是$ \CB(E) $中的开集, 只需要说明对$ u\in GL(E) $, 对任意$ v $使得$ \norm{v-u}<\delta $, 都有$ v\in GL(E) $即可. 注意到
     \[
     v=u-(u-v)=u(\id_E-u^{-1}(u-v)),
@@ -615,7 +612,7 @@
     \norm{u^{-1}(u-v)}\leqslant \norm{u^{-1}}\norm{u-v}<1,
     \]
     由(1)的结论可知$ \id_E-u^{-1}(u-v) $可逆, 从而$ v\in GL(E) $, 也即$ GL(E) $是开集.
-    
+
     (3) 容易证明$ u\mapsto u^{-1} $是到自身的双射, 只需要证明它连续. 注意到当$ \norm{u}<1 $时, 有
     \[
     \norm{(\id_E-u)^{-1}}=\norm{\sum_{n\geqslant 0}u^n}\leqslant\sum_{n\geqslant 0}\norm{u}^n\leqslant(1-\norm{u})^{-1}.
@@ -639,10 +636,10 @@
     \int_\R\abs{f(x)g(x)}\diff x\leqslant\left(\int_\R\abs{f(x)}^2\diff x\right)^{1/2}\left(\int_R\abs{g(x)}^2\diff x\right)^{1/2}=\norm{f}_2<\infty,
     \]
     从而$ fg\in L_1(\R) $.
-    
+
     反例可取$ f_1=f_2=\frac{1}{\sqrt{x}}1_{(0,1]}(x) $, 则$ f_1,f_2\in L_1(\R) $, 但$ f_1f_2=\frac{1}{x}1_{(0,1]}(x)\notin L_1(R) $.\qed
     \end{Proof}
-    
+
     \textbf{习题3.11}\ [习题课]\ \ 设$ (X,\CA, \mu) $是有限测度空间.
     \begin{enumerate}[(1)]
     \item 证明: 若$ 0<p<q\leqslant\infty $, 那么$ L_q(X)\subset L_p(\varOmega) $, 并举反例说明结论在$ \mu(X)=\infty $的测度空间上不成立.
@@ -658,9 +655,9 @@
     \end{aligned}
     \]
     即$ \norm{f}_p\leqslant\norm{f}_q\cdot\mu(X)^{1/p-1/q} $, 从而$ \norm{f}_q<\infty\Longrightarrow\norm{f}_p<\infty $, 即$ L_q(X)\subset L_p(X) $.
-    
+
     若允许$ \mu(X)=\infty $, 取$ X=\R $, $ \mu $是Lebesgue测度, $ f=\frac{1}{x}1_{[1,\infty)} $即可. 此时$ f\in L_2(\R) $但$ f\notin L_1(R) $.
-    
+
     (2) 任取$ f\in L_\infty(X) $, $ \forall p<\infty $都有
     \[
     \norm{f}_p=\left(\int_X\abs{f}^p\diff\mu\right)^{1/p}\leqslant\left(\int_X\norm{f}_\infty^p\diff\mu\right)^{1/p}=\norm{f}_\infty\cdot\mu(X)^{1/p}<\infty.
@@ -682,7 +679,7 @@
     \norm{f}_\infty\leqslant\liminf_{p\to\infty}\norm{f}_p\leqslant\limsup_{p\to\infty}\norm{f}_p\leqslant\norm{f}_\infty.
     \]
     也即$ \lim\limits_{p\to\infty}\norm{f}_p=\norm{f}_\infty $.
-    
+
     (3) 用反证法, 若$ f\notin L_\infty(X) $, 则$ \forall n\in\N $, 都有$ \mu\{ \abs{f}\geqslant n \}>0 $, 设$ B=\{ \abs{f}\geqslant 0 \} $, 则有
     \[
     \norm{f}_p\geqslant\left(\int_B\abs{f}^p\diff\mu\right)^{1/p}=n\cdot\mu(B)^{1/p}.
@@ -749,7 +746,7 @@
     \end{aligned}
     \]
     于是函数$ x\mapsto\int_\R f(x-y)g(y)\diff y $在$ \R $上几乎处处有定义.
-    
+
     (2) 由于
     \[
     \abs{f\ast g(x)}=\abs{\int_\R f(x-y)g(y)\diff y}\leqslant\int_\R\abs{f(x-y)}\abs{g(y)}\diff y,
@@ -759,7 +756,7 @@
     \int_\R\abs{f\ast g(x)}\diff x\leqslant\int_\R\int_\R\abs{f(x-y)}\abs{g(y)}\diff y\diff x=\int_\R\abs{f(u)}\diff u\int_\R\abs{g(v)}\diff v,
     \]
     此即$ \norm{f\ast g}_1\leqslant\norm{f}_1\norm{g}_1 $, 且由$ \norm{f\ast g}<\infty $可知$ f\ast g\in L_1(\R) $.
-    
+
     (3) 注意到$ 1_{[0,1]}(x-t)=1_{[x-1,x]}(t) $, 从而由卷积的定义, 有
     \[
     \begin{aligned}
@@ -776,22 +773,22 @@
     \end{Proof}
 
 \section{第4章习题}
-    
-\textbf{习题4.2}\ [作业]\ \ 设 $ A $ 是 $ \ell_{2} $ 的子集, 其元素 $ x = (x_{n})_{n\geqslant1} $ 满足 $ \abs{x_{n}}\leqslant1/n, n\geqslant1 $. 证明 $ A $ 是紧集. 
+
+\textbf{习题4.2}\ [作业]\ \ 设 $ A $ 是 $ \ell_{2} $ 的子集, 其元素 $ x = (x_{n})_{n\geqslant1} $ 满足 $ \abs{x_{n}}\leqslant1/n, n\geqslant1 $. 证明 $ A $ 是紧集.
     \begin{Proof}
-        $ \ell_{2} $ 是 Hilbert空间且易证 $ A $ 是闭集, 故 $ A $ 完备. 为证 $ A $ 是紧集, 只需证 $ A $ 是预紧的. 
+        $ \ell_{2} $ 是 Hilbert空间且易证 $ A $ 是闭集, 故 $ A $ 完备. 为证 $ A $ 是紧集, 只需证 $ A $ 是预紧的.
 
         因为对任意的 $ \varepsilon>0 $, 存在 $ n_{0}\in\N $ 使得
         \[
             \begin{aligned}
                 \sum_{k\geqslant n_{0}+1}\abs{x_{k}}^{2} & \leqslant \frac{1}{(n_{0}+1)^{2}}+\frac{1}{(n_{0}+2)^{2}}+\cdots\\
                 & \leqslant \frac{1}{n_{0}(n_{0}+1)}+\frac{1}{(n_{0}+1)(n_{0}+2)}+\cdots\\
-                & = \frac{1}{n_{0}}<\frac{\varepsilon^{2}}{2}. 
+                & = \frac{1}{n_{0}}<\frac{\varepsilon^{2}}{2}.
             \end{aligned}
         \]
         对上述的 $ n_{0} $, 令 $ F=\{ (\seq[n_{0}]{x}, 0, \dots, 0, \dots) : x_{i}\in\C, 1\leqslant i\leqslant n_{0} \}\subset\ell_{2} $. 则 $ F $ 有限维, 再令
         \[
-            B = \left\{ x= (\seq[n_{0}]{x}, 0,\dots, 0\dots) : \abs{x_{i}}\leqslant\frac{1}{i} \right\}\subset A, 
+            B = \left\{ x= (\seq[n_{0}]{x}, 0,\dots, 0\dots) : \abs{x_{i}}\leqslant\frac{1}{i} \right\}\subset A,
         \]
         取 $ B $ 中元素的前 $ n_{0} $ 项构成 $ \tilde{B} $, 即
         \[
@@ -816,7 +813,7 @@
         \]
         令 $ n\to\infty $, 有
         \[
-            \lim_{n\to\infty}\norm{x_{n}-x}^{2}=\norm{x}^{2}+\norm{x}^{2}-2\Re\lrangle{x, x} = 0, 
+            \lim_{n\to\infty}\norm{x_{n}-x}^{2}=\norm{x}^{2}+\norm{x}^{2}-2\Re\lrangle{x, x} = 0,
         \]
         命题得证. \qed
     \end{Proof}
@@ -838,17 +835,17 @@
         \[
             \frac{1}{2^{n}}\sum_{(\varepsilon_{k})\in D_{n}}\norm{\varepsilon_{1}x_{1}+\cdots+\varepsilon_{n}x_{n}}^{2}=\frac{2^{n}}{2^{n}}(\norm{x_{1}}^{2}+\cdots+\norm{x_{n}}^{2})+\frac{1}{2^{n}}\sum_{(\varepsilon_{k})\in D_{k}}\sum_{i\ne j}\varepsilon_{i}\varepsilon_{j}\lrangle{x_{i}, x_{j}},
         \]
-        由对称性可知 
+        由对称性可知
         \[
             \frac{1}{2^{n}}\sum_{(\varepsilon_{k})\in D_{k}}\sum_{i\ne j}\varepsilon_{i}\varepsilon_{j}\lrangle{x_{i}, x_{j}}=0
         \]
-        命题得证. 
+        命题得证.
 
         (2) 设内积范数 $ \abs{\cdot} $ 等价于 $ \norm{\cdot} $, 则存在常数 $ m, M>0 $ 使得
         \[
             m\abs{x}\leqslant\norm{x}\leqslant M\abs{x}, \quad x\in H,
         \]
-        故 
+        故
         \[
             \begin{aligned}
                 \frac{1}{2^{n}}\sum_{(\varepsilon_{k})\in D_{n}}\norm{\sum_{k=1}^{n}\varepsilon_{k}x_{k}}^{2} & \leqslant \frac{M^{2}}{2^{n}}\sum_{(\varepsilon_{k})\in D_{k}}\abs{\sum_{k=1}^{n}\varepsilon_{k}x_{k}}^{2}  \\
@@ -862,19 +859,19 @@
                  & = m^{2}\left(\sum_{k=1}^{n}\abs{x_{k}}^{2}\right)\geqslant \frac{m^{2}}{M^{2}}\left(\sum_{k=1}^{n}\norm{x_{k}}^{2}\right)
             \end{aligned}
         \]
-        取 $ a=m^{2}/M^{2}, b=M^{2}/m^{2} $ 即可. 
+        取 $ a=m^{2}/M^{2}, b=M^{2}/m^{2} $ 即可.
 
         (3) 对 $ c_{0} $. $ \forall n\geqslant1 $, 考虑 $ \seq{e} $, 则 $ \norm{e_{k}}_{\infty}=1 $, 且 $ \norm{\sum\limits_{k=1}^{n}\varepsilon_{k}e_{k}}_{\infty}^{2}=1 $, 故若 $ \norm{\cdot}_{\infty} $ 有等价的内积范数 $ \abs{\cdot} $, 则有
         \[
             an\leqslant1\leqslant bn, \quad n\in\N
         \]
-        矛盾. $ \ell_{\infty} $ 与 $ c_{0} $ 同理. 
+        矛盾. $ \ell_{\infty} $ 与 $ c_{0} $ 同理.
 
         对 $ \ell_{p}\,(1\leqslant p<\infty) $. 考虑 $ \seq{e} $, 则 $ \norm{e_{k}}_{p}=1 $, 且 $ \norm{\sum\limits_{k=1}^{n}\varepsilon_{k}e_{k}}^{2}_{p}=n^{2/p} $, 若 $ \norm{\cdot}_{p} $ 有等价的内积范数 $ \abs{\cdot} $, 有
         \[
             an\leqslant n^{2/p} \leqslant bn\Longrightarrow a\leqslant n^{2/p-1}\leqslant b, \quad n\in\N,
         \]
-        因为 $ p\ne 2 $, 所以矛盾. 
+        因为 $ p\ne 2 $, 所以矛盾.
 
         而对 $ L_{p}[0, 1], (1\leqslant p\leqslant\infty) $, 取
         \[
@@ -896,7 +893,7 @@
                 & = 2(\norm{x-P_{C_{n}}(x)}^{2}+\norm{x-P_{C_{m}}(x)}^{2})-4\norm{x-\frac{P_{C_{n}}(x)+P_{C_{m}}(x)}{2}}^{2} \\
                 & \leqslant 2(\norm{x-P_{C_{n}}(x)}^{2}+\norm{x-P_{C_{m}}(x)}^{2}) - 4\norm{x-P_{C_{m}}(x)}^{2}\\
                 & = 2(\norm{P_{C_{n}}(x)-x}^{2}-\norm{P_{C_{m}}(x)-x}^{2})\to 0,\quad (n,m\to \infty)
-            \end{aligned}    
+            \end{aligned}
         \]
         其中的不等号可以由闭凸集投影定理~\ref{thm:闭凸集投影定理}~得出. 所以有 $ (P_{C_{n}}(x))_{n\geqslant1} $ 是 $ H $ 中的 Cauchy列, 故它收敛, 记其极限为 $ y $, 则由
         \[
@@ -929,9 +926,9 @@
     \abs{\int_0^1f(t)\diff t}\leqslant\abs{\int_0^1(f-f_n)\diff t}+\abs{\int_0^1f_n\diff t}\leqslant\norm{f-f_n}\to 0.
     \]
     即$ f\in E_0 $. 从而$ E_0 $是闭的. 而取$ h(t)=1-t $即得$ H_0\ne H $.
-    
+
     (2) (i) 对任意$ f\in E $, 注意到$ f-2f(1)h\in H $, 从而$ E=\Span\{ H,h \} $. 而对任意$ f\in E_0 $, 注意到$ f-2f(1)h\in H_0 $可知$ E_0=\Span\{ H_0,h \} $.
-    
+
     (ii) 设$ f_n $是连接$ (0,0),\ (1/n,h(1/n)), (1-1/n,h(1-1/n)), (1,0) $的分段线性函数, 那么由于$ \abs{h-f_n}\leqslant 1 $可知
     \[
     \abs{h(t)-f_n(t)}^2\leqslant\abs{h(t)-f_n(t)},\quad\forall t\in [0,1]
@@ -941,13 +938,13 @@
     \int_0^1\abs{h-f_n}^2\diff t\leqslant\int_0^1\abs{h-f_n}\diff t=2\cdot\frac{1}{2}\cdot\frac{1}{n}\cdot\frac{1}{2}=\frac{1}{2n}\to 0\qquad (n\to\infty)
     \]
     于是$ \norm{f_n-h}\to 0 $, 且$ f_n\in H_0 $, 这说明$ h $属于$ H_0 $在$ E $中的闭包.
-    
+
     (3) 当$ H $是全空间时, 由(2)可知$ E_0\subset\bar{H}_0 $, 从而任取$ f\in H_0^\bot $, 取$ g=f-\int_0^1f(t)\diff t $, 那么有$ g\in E_0\subset \bar{H}_0 $, 由$ f\in H_0^\bot $可知
     \[
     \lrangle{f,g}=\lrangle{f,f}-\abs{\int_0^1f(t)\diff t}^2=\norm{f}^2-\abs{\lrangle{f,1}}^2=0,
     \]
     也即$ \norm{f}^2\cdot\norm{1}^2=\abs{\lrangle{f,1}}^2 $, 注意到这就是Cauchy-Schwarz不等式取等, 于是由取等条件可知$ \exists\lambda\in\K $使得$ f=\lambda\cdot 1 $. 又因为$ f(1)=0 $, 从而$ \lambda=0 $, 也即$ f=0 $.
-    
+
     本题说明当内积空间$ H $不完备时, 正交分解定理未必成立. 事实上, 若此时正交分解定理成立, 那么
     \[
     H=\bar{H}_0\oplus H_0^\bot=\bar{H}_0=H_0,
@@ -966,7 +963,7 @@
     \norm{x_{n}-(x+y)}^2=\norm{x_{n}-x}^2+\norm{y}^2\to 0,\qquad n\to\infty.
     \]
     这说明$ \norm{y}^2=0 $, 也即$ y=0 $. 于是$ z\in E $, 这说明$ E $是闭的. 同理可证$ F $也是闭的.
-    
+
     (2) \textsl{充分性.}\ \ 设$ E $和$ F $都是闭集, 若有序列$ (z_n)_{n\geqslant 1}=(x_{n}+y_{n})_{n\geqslant1}\subset E+F $, 其中$ x_n\in E,\ y_n\in F $, 且$ z_n\to z $, 只需证明$ z\in E+F $即可. 由$ (z_n)_{n\geqslant 1} $收敛可知
     \[
     \begin{aligned}
@@ -977,7 +974,7 @@
     \end{aligned}
     \]
     也即$ \norm{x_n-x_m}^2+\norm{y_n-y_m}^2=\norm{z_n-z_m}^2\to 0 $, 即$ (x_n)_{n\geqslant 1} $和$ (y_n)_{n\geqslant 1} $分别是$ E $和$ F $上的Cauchy列. 由$ E $和$ F $的闭性可知存在$ x\in E,\ y\in F $使得$ x_n\to x,\ y_n\to y $, 从而$ z=x+y\in E+F $, 即$ E+F $是闭的.
-    
+
     (2) 任取$ E, F $中的序列, 它们必是这样的形式:
     \[
     \begin{aligned}
@@ -986,7 +983,7 @@
     \end{aligned}
     \]
     故若$ x=y $, 必有各$ y_n=0 $, 即$ E\cap F=\{0\} $.
-    
+
     再证$ E+F $在$ \ell_2 $中不是闭集. 取$ E $中的序列$ a_n=-\sum\limits_{k=1}^ne_{2k} $和$ F $中的序列$ b_n=\sum\limits_{k=1}^n(e_{2k}+e_{2k+1}/k) $, 那么
     \[
     a_n+b_n=\sum_{k=1}^n\frac{e_{2k+1}}{k}\in E+F,
@@ -1030,7 +1027,7 @@
             \baro{\Span\{ (e_{n})_{n\geqslant1} \}}=L_{2}[0, 1]
         \]
         从而 $ (e_{n})_{n\geqslant1} $ 是 $ L_{2}[0, 1] $ 的规范正交基. \qed
-    \end{Proof}    
+    \end{Proof}
 
 \section{第5章习题}
 
@@ -1067,13 +1064,13 @@
     \exists n_0\in\N\,(n\geqslant n_0\Rightarrow d_K(x_n,x)<\delta)
     \]
     即$ \norm{f_n(x_n)-f_n(x)}\leqslant\varepsilon $.
-    
+
     (2) 进一步, 设$ (f_n(x))_{n\geqslant 1}\to y $, 那么
     \[
     \norm{f_n(x)-y}\leqslant\norm{f_n(x_n)-f_n(x)}+\norm{f_n(x)-y},
     \]
     由(1)知右侧收敛到0, 从而结论成立.
-    
+
     (3) 设$ f_n(x)=\sin nx $, 那么$ x\ne k\pi, k\in\Z $时取$ x_n=x+\pi/n $, 则
     \[
     \abs{f_n(x)-f_n(x_n)}=\abs{\sin nx-\sin(nx+\pi)}=2\abs{\sin nx}\not\to 0,
@@ -1083,7 +1080,7 @@
     \lim_{n\to\infty}2\sin x\cos nx=\lim_{n\to\infty}\sin(n+1)x-\sin(n-1)x=0,
     \]
     又因为$ \sin x\ne 0 $, 从而$ \cos nx\to 0 $. 再由$ \sin^2 nx+\cos^2 nx=1 $, 从而$ \sin nx\to 1 $, 矛盾. 从而$ (\sin nx)_{n\geqslant 1} $在$ x\ne k\pi $时不可能收敛到0.
-    
+
     而当$ x=k\pi, k\in\Z $时, 可取$ x_n=x+\pi/2n $, 那么此时
     \[
     \abs{f_n(x)-f_n(x_n)}=\abs{\sin nx-\sin(nx+\pi)}=2\not\to 0,
@@ -1124,7 +1121,7 @@
     \]
     从而$ \cos x=1 $, 即$ x=2k\pi, k\in\Z $, 这与$ x\ne k\pi $矛盾, 因此$ (\sin nx)_{n\geqslant 1} $不收敛.
     \end{Remark}
-    
+
     \textbf{习题5.5}\ [习题课]\ \ 考虑函数序列$ (f_n)_{n\geqslant 1} $, 这里$ f_n(t)=\sin\sqrt{t+4( n\pi )^2} $, 其中$ t\in[0,\infty) $.
     \begin{enumerate}[(1)]
     \item 证明$ (f_n)_{n\geqslant 1} $等度连续并且逐点收敛到0.
@@ -1144,7 +1141,7 @@
     \lim_{n\to\infty}f_n(x)=\lim_{n\to\infty}\sin\sqrt{t+4(n\pi)^2}=\lim_{n\to\infty}\sin(\sqrt{t+4(n\pi)^2}-2n\pi)=\lim_{n\to\infty}\sin\frac{t}{\sqrt{t+4(n\pi)^2}+2n\pi}=0,
     \]
     从而$ (f_n)_{n\geqslant 1} $逐点收敛到0.
-    
+
     (2) 假设$ (f_n)_{n\geqslant 1} $相对紧, 则存在子列$ (f_{n_k})_{k\geqslant 1} $一致收敛到某$ f\in C_b([0,\infty),\R) $, 即$ \lim\limits_{k\to\infty}\norm{f_{n_k}-f}_\infty=0 $, 那么$ \forall t $都有$ \lim\limits_{k\to\infty}f_{n_k}(t)=f(t) $. 由(1)可知$ f=0 $, 又因为
     \[
     f_{n_k}(t)=\sin\frac{t}{\sqrt{t+4(n_{k}\pi)^2}+2n_{k}\pi}
@@ -1166,7 +1163,7 @@
     \begin{Remark}
     本题说明了在定理\,\ref{thm:逐点->一致}\,和\,\ref{thm:Ascoli}\,中去掉$ K $的紧性后, 结论不再成立.
     \end{Remark}
-    
+
     \textbf{习题5.10}\ [作业]\ \ 设$ (K,d) $是紧度量空间, 证明所有从$ K $到$ \R $的Lipschitz函数构成的集合在$ C(K,\R) $中稠密.
     \begin{Proof}
     设$ \CA $是$ K $到$ \R $的Lipschitz函数全体, 易证$ \CA $是一个线性空间, 且对任意$ f, g\in\CA $, 其中$ f $的常数为$ c_1 $, $ g $的常数为$ c_2 $, 由
@@ -1177,7 +1174,7 @@
     \end{aligned}
     \]
     且因$ K $是紧的而$ f, g $是连续的, 应有$ \norm{f}_\infty,\norm{g}_\infty $都是有限的, 从而$ f\cdot g\in\CA $, 也即$ \CA $是一个代数.
-    
+
     取$ d_x(y)=d(x,y) $, 由三角不等式可知$ d_x $是常数为1的Lipschitz函数, 且$ x\ne y $时$ d_x(x)\ne d_x(y) $, 故$ \CA $是可分点的. 又有$ 1\in\CA $是显然的, 则由Stone-Weierstrass定理可知命题成立.\qed
     \end{Proof}
 
@@ -1193,7 +1190,7 @@
     \[
         \norm{f-S_{N}(f)}_{\infty}\leqslant\sqrt{\frac{2}{N}}\norm{f'}_{2}, \quad N\geqslant1.
     \]
-    注意这里的导数 $ f' $ 在 $ f $ 的不可导点取左右导数. 
+    注意这里的导数 $ f' $ 在 $ f $ 的不可导点取左右导数.
     \begin{Proof}
         设 $ f $ 属于分段的 $ C^{1} $ 函数类, 可证 Newton-Leibniz公式到 $ f $ 仍然成立. 设 $ a<b\in[0, 2\pi] $, 设相应的 $ f $ 的划分 $ a=x_{0}<x_{x}<\cdots<x_{m}=b $, 则
         \[

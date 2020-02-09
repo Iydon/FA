@@ -1,5 +1,3 @@
-% !TeX root = main.tex
-
 \chapter{线性算子与线性泛函}
 
 \section{连续线性映射}
@@ -11,9 +9,9 @@
         \]
         则称$ u : E\to F $是一个\textbf{线性映射}或\textbf{线性算子}, 并记$ \CL(E,F) $是$ E $到$ F $线性算子的全体.
     \end{Definition}
-    
+
     特别地, 当$ E=F $时, 用$ \CL(E) $记$ \mathcal{L}(E,E) $.
-    
+
     \begin{Example}~
     \begin{enumerate}[(1)]
         \item $ \forall \lambda\in\K $, 定义
@@ -25,7 +23,7 @@
             T_y : E\to E,\qquad x\mapsto x+y,
         \]
         则$ T_y\notin\CL(E) $.
-        
+
         \item 设$ E=C[0,1] $, 对$ f\in C[0,1] $, 定义$ M_fg=fg $, 则$ M_f $是线性算子. 再取$ x\in[0,1] $, 定义$ \delta_x(f)=f(x) $, 则$ \delta_x $是线性算子, 再定义
         \[
             I(f)(x)=\int_0^xf(t)\diff t,
@@ -33,7 +31,7 @@
     则$ I $也是线性算子.
     \end{enumerate}
     \end{Example}
-    
+
     \begin{Remark}
         关于$ \CL(E,F) $的一些注记:
     \begin{enumerate}[(1)]
@@ -45,7 +43,7 @@
         \end{aligned}
     \]
     其中$ \lambda\in\K $, $ u, v\in\CL(E,F) $.
-    
+
     \item 对$ u\in\CL(E,F) $, 定义其\textbf{核空间}\index{H!核空间}为
     \[
     \ker u=\{ x\in E : u(x)=0 \}.
@@ -53,7 +51,7 @@
     则$ \ker u $是$ E $的线性子空间, 且$ u $是单射当且仅当$ \ker u=\{0\} $.
     \end{enumerate}
     \end{Remark}
-    
+
     \begin{Theorem}[连续性]\label{thm:线性算子连续性}
     设$ E, F $是$ \K $上的两个赋范空间, 且$ u\in\CL(E,F) $, 则下列命题等价:
     \begin{enumerate}[(1)]
@@ -65,7 +63,7 @@
     \end{Theorem}
     \begin{Proof}
         (1) $ \Rightarrow $ (2) : 显然.
-        
+
         (2) $ \Rightarrow $ (3) : 设$ u $在$ x_0\in E $连续, 那么
         \[
             \forall\varepsilon>0\,\exists r>0\,(x\in B(x_0,r)\Rightarrow\norm{u(x)-u(x_0)}<\varepsilon),
@@ -75,7 +73,7 @@
             \norm{u(y)-u(0)}=\norm{u(y)}=\norm{u(x_0+y)-u(x_0)}<\varepsilon,
         \]
         即$ u $在原点连续.
-        
+
         (3) $ \Rightarrow $ (4) : 由$ u $在原点连续可知
         \[
             \exists r_0>0\,(y\in\overline{B(0,r)}\Rightarrow\norm{u(y)}<1).
@@ -85,18 +83,18 @@
             \norm{u(x)}=\norm{u\left(\dfrac{xr}{\norm{x}}\right)}\frac{\norm{x}}{r}<\frac{\norm{x}}{r},
         \]
         取$ C=\frac{1}{r} $即可.
-        
+
         (4) $ \Rightarrow $ (1) : 由$ u\in\mathcal{L}(E,F) $, 有
         \[
             \forall x,y\in E\,(\norm{u(x)-u(y)}\leqslant C\norm{x-y}),
         \]
         即$ u $是Lipschitz的, 从而$ u $在$ E $连续.\qed
     \end{Proof}
-    
+
     \begin{Remark}
         上述定理表明在赋范空间上, 连续线性映射都是Lipschitz的, 从而连续线性映射一定一致连续.
     \end{Remark}
-    
+
     \begin{Definition}[算子范数]\index{Y!有界线性算子}
         设$ E,F $都是赋范空间, $ u\in\mathcal{L}(E,F) $. 若
         \[
@@ -108,7 +106,7 @@
         \]
         称$ \norm{u} $是算子$ u $的\textbf{范数}. 并记$ \CB(E,F) $是$ E $到$ F $的有界线性算子的全体, 且类似地记$ \mathcal{B}(E)=\mathcal{B}(E,E) $.
     \end{Definition}
-    
+
     \begin{Example}
         设$ E=\C^n $, 则$ \mathcal{L}(E)=\mathbb{M}_n(\C)=\mathcal{B}(E) $, 其中$ \mathbb{M}_n(\C) $是$ n $阶复矩阵的全体. 对$ A\in\mathbb{M}_n(\C) $, 定义
         \[
@@ -120,7 +118,7 @@
         \]
         可知$ A $是有界线性算子. 其中$ \lambda $是$ A^\dagger A $的特征值.
     \end{Example}
-    
+
     \begin{Remark}~
     \begin{enumerate}[(1)]\label{rmk:范数性质}
         \item $ \CB(E,F) $是$ \CL(E,F) $的线性子空间, 这由
@@ -128,9 +126,9 @@
             \norm{\lambda u}=\abs{\lambda}\norm{u},\qquad \norm{u+v}\leqslant\norm{u}+\norm{v}
         \]
         可知. 且$ (\mathcal{B}(E,F),\norm{\cdot}) $还是一个赋范空间. 由定理\ref{thm:线性算子连续性}可知$ u $连续等价于$ u $有界.
-        
+
         \item $ u $的有界性实际上指$ \norm{u(x)} $在$ E $的有界集上有界. 实际上除非$ u\equiv 0 $, 否则$ \norm{u(x)} $不可能在全空间上有界.
-        
+
         \item\label{rmk:范数性质最小C} 范数$ \norm{u} $也可以等价地定义为
         \[
             \norm{u}:=\sup_{\norm{x}\ne 0}\frac{\norm{u(x)}}{\norm{x}}=\sup_{\norm{x}\leqslant 1}\norm{u(x)}=\sup_{\norm{x}=1}\norm{u(x)},
@@ -143,7 +141,7 @@
          设 $ E $ 是赋范空间,  $ F $ 是Banach空间, 则 $ \CB(E, F) $ 是Banach空间.
     \end{Theorem}
     \begin{Proof}
-        取 $ (u_{n})_{n\geqslant1} $ 是 $ \CB(E, F) $ 上的 Cauchy列, 即 
+        取 $ (u_{n})_{n\geqslant1} $ 是 $ \CB(E, F) $ 上的 Cauchy列, 即
         \[
             \forall\varepsilon>0\,\exists n_{0}\in\N\,(n, m\geqslant n_{0}\Rightarrow \norm{u_{m}-u_{n}}<\varepsilon)
         \]
@@ -151,7 +149,7 @@
         \[
             \norm{u_{m}(x)-u_{n}(x)}=\norm{(u_{m}-u_{n})(x)}\leqslant\norm{u_{m}-u_{n}}\cdot\norm{x}
         \]
-        可知 $ (u_{n}(x))_{n\geqslant1} $ 是 $ F $ 中的 Cauchy列, 因 $ F $ 是Banach空间, $ \lim\limits_{n\to \infty} u_{n}(x) $ 存在, 记作 $ u(x) $, 从而定义了算子 $ u $, 下证 $ u\in\CB(E, F) $. 由 
+        可知 $ (u_{n}(x))_{n\geqslant1} $ 是 $ F $ 中的 Cauchy列, 因 $ F $ 是Banach空间, $ \lim\limits_{n\to \infty} u_{n}(x) $ 存在, 记作 $ u(x) $, 从而定义了算子 $ u $, 下证 $ u\in\CB(E, F) $. 由
         \[
             \begin{aligned}
                 u(\lambda x) & =\lim_{n\to\infty}u_{n}(\lambda x)\\
@@ -191,7 +189,7 @@
         给出几个线性泛函相关的例子:
         \begin{enumerate}[(1)]
             \item  对 $ f\in C[0, 1] $, $ x\in [0, 1] $, 定义 $ \delta_{x}(f)=f(x) $, 则 $ \delta_{x} $ 是连续线性泛函; 再对 $ g\in C[0, 1] $ 定义 $ \rho_{g}(f)=\int_{0}^{1}fg\diff x $, 则 $ \rho_{g} $ 是连续线性泛函.
-            \item 在 $ \C^{n} $ 上给定 $ y\in\C^{n} $ 定义 
+            \item 在 $ \C^{n} $ 上给定 $ y\in\C^{n} $ 定义
              \[
                 \rho_{y}(x)=\lrangle{x, y}=\sum_{i=1}^{n}x_{i}\baro{y}_{i}.
             \]
@@ -210,7 +208,7 @@
     \end{Example}
 
     \begin{Theorem}
-         设 $ E $ 是有限维线性空间,  $ F $ 是任一赋范空间, 则 $ \mathcal{L}(E, F)=\CB(E, F) $.  
+         设 $ E $ 是有限维线性空间,  $ F $ 是任一赋范空间, 则 $ \mathcal{L}(E, F)=\CB(E, F) $.
     \end{Theorem}
     \begin{Proof}
         设 $ u\in\CL(E, F) $, 取 $ E $ 的中的一组基 $ e_{1}, e_{2}, \dots e_{n} $, 则
@@ -226,7 +224,7 @@
         \]
         从而 $ u $ 有界, 即 $ \CL(E, F)\subset\CB(E, F) $, 从而 $ \CL(E, F)=\CB(E, F) $. \qed
     \end{Proof}
-    
+
     \begin{Theorem}
          设 $ E $, $ F $, $ G $都是赋范空间,  $ u\in\CB(E, F) $, $ v\in\CB(F, G) $, 则 $ v\circ u\in\CB(E, G) $, 且有 $ \norm{v\circ u}\leqslant\norm{v}\norm{u} $.
     \end{Theorem}
@@ -261,7 +259,7 @@
             \norm{\tilde{u}(x)}=\lim_{n\to\infty}\norm{u(x_{n})}\leqslant\norm{u}\lim_{n\to\infty}\norm{x_{n}}\leqslant\norm{u}\norm{x},
         \]
         故 $ \norm{\tilde{u}}\leqslant\norm{u} $, 再由 $ \tilde{u}|_{G}=u $ 知 $ \tilde{u}=\norm{u} $.\qed
-        
+
     \end{Proof}
 
     \begin{Definition}[同构]\label{def:同构}
@@ -281,7 +279,7 @@
                 0 & 1
             \end{bmatrix},
         \]
-        则有 $ \norm{T_{t}}\geqslant1+\abs{t}/2 $, 且 $ \norm{T_{t}^{-1}}\geqslant 1+\abs{t}/2 $.  
+        则有 $ \norm{T_{t}}\geqslant1+\abs{t}/2 $, 且 $ \norm{T_{t}^{-1}}\geqslant 1+\abs{t}/2 $.
     \end{Remark}
 
     \begin{Theorem}
@@ -299,7 +297,7 @@
         \]
         同理可证 $ v(\id_E-u)=\id_E $, 则 $ v=(\id_E-u)^{-1} $.\qed
     \end{Proof}
-    
+
     \begin{Theorem}
         设 $ E $是赋范空间, $ F\subset E $ 是闭线性子空间. 则
         \[
@@ -356,7 +354,7 @@
         \[
             \exists z\in E\,\bigg( \sum_{n\geqslant0}(x_{n}+y_{n})=z \bigg)
         \]
-        而 
+        而
         \[
             \begin{aligned}
                 \norm{z+F-\sum_{k=1}^{n}x_{k}+F}_{0} & =\inf\left\{ \norm{z-\sum_{k=1}^{n}x_{k}+y}:y\in F \right\}\\
@@ -365,9 +363,9 @@
         \]
         即 $ E/F $ 是Banach空间.\qed
     \end{Proof}
-    
+
 \section{内积空间}
-    
+
     \begin{Definition}[内积空间]\index{N!内积}\index{N!内积空间}
     设$ H $是$ \K $上的线性空间, 若映射$ \lrangle{\cdot,\cdot} : H\times H\to\K $满足
     \begin{enumerate}[(1)]
@@ -377,7 +375,7 @@
     \end{enumerate}
     则称$ \lrangle{\cdot,\cdot} $是一个\textbf{内积}, 并称赋予了内积的空间$ H $是\textbf{内积空间}.
     \end{Definition}
-    
+
     \begin{Example}
     一些常见的内积空间, 在不特殊说明的情况下, 以后提到下面的空间时均默认其上定义的内积是本例中定义的内积:
     \begin{enumerate}[(1)]
@@ -391,7 +389,7 @@
     \item 在$ n $阶方阵空间$ \mathbb{M}_n(\K) $上可以定义内积$ \lrangle{A,B}=\mathrm{tr(B^\dagger A)} $.
     \end{enumerate}
     \end{Example}
-    
+
     \begin{Theorem}[Cauchy-Schwarz]
     设$ H $是一个内积空间, 则$ \forall x,y\in H $, 有
     \[
@@ -409,10 +407,10 @@
     \lrangle{x,x}-\frac{\abs{\lrangle{x,y}}^2}{\lrangle{y,y}}-\frac{\abs{\lrangle{x,y}}^2}{\lrangle{y,y}}+\frac{\abs{\lrangle{x,y}}^2}{\abs{\lrangle{y,y}}^2}\lrangle{y,y}\geqslant 0,
     \]
     整理可得$ \abs{\lrangle{x,y}}^2\leqslant\lrangle{x,x}\lrangle{y,y} $.
-    
+
     由证明过程可知等号成立当且仅当$ \lrangle{x+\lambda y,x+\lambda y}=0 $, 也即$ x=-\lambda y $, 此时$ x,y $是线性相关的.\qed
     \end{Proof}
-    
+
     \begin{Corollary}\label{cor:内积诱导范数}
     设$ H $是内积空间, 则$ \norm{x}=\sqrt{\lrangle{x,x}} $是范数.
     \end{Corollary}
@@ -426,17 +424,17 @@
     \]
     从而$ \norm{x+y}\leqslant\norm x+\norm y $.\qed
     \end{Proof}
-    
+
     \begin{Definition}[Hilbert空间]\index{H!Hilbert空间}\label{def:Hilbert空间}
     设$ H $是一个内积空间, 称推论\,\ref{cor:内积诱导范数}\,中的范数$ \norm{\cdot} $是由内积$ \lrangle{\cdot,\cdot} $诱导出的范数, 从而$ (H,\norm{\cdot}) $是赋范空间. 若它是一个Banach空间, 则称$ H $是\textbf{Hilbert空间}.
     \end{Definition}
-    
+
     由Cauchy-Schwarz不等式可以导出内积相对于自身诱导的范数是连续的. 同时, 类似于赋范空间的结论, 内积空间$ H $的完备化$ \tilde{H} $是Hilbert空间.
-    
+
     \begin{Example}
     $ L_2(X) $是Hilbert空间, $ \mathbb{M}_n(\K) $也是Hilbert空间. 但$ C[0,1] $是内积空间而不是Hilbert空间, 其完备化是$ L_2[0,1] $.
     \end{Example}
-    
+
     \begin{Proposition}[极化恒等式]
     设$ H $是$ \K $上的内积空间, 则对$ \forall x,y\in H $, 有
     \[
@@ -447,16 +445,16 @@
     \lrangle{x,y}=\frac{1}{2}(\norm{x+y}^2-\norm{x}^2-\norm{y}^2).
     \]
     \end{Proposition}
-    
+
     \begin{Proposition}[平行四边形公式]
     设$ H $是$ \K $上的内积空间, 则对$ \forall x,y\in H $, 有
     \[
     \norm{x+y}^2+\norm{x-y}^2=2(\norm{x}^2+\norm{y}^2).
     \]
     \end{Proposition}
-    
+
     上面的两个命题, 即极化恒等式和平行四边形公式, 都可以将范数展开成内积之后直接证明.
-    
+
     \begin{Corollary}
     对$ \forall f,g\in L_2(X) $, 有
     \[
@@ -468,7 +466,7 @@
     \]
     上式称为\textbf{Clarkson不等式}, 其证明在正文中不再叙述.
     \end{Corollary}
-    
+
     \begin{Theorem}
     设$ H $是赋范空间, 若范数$ \norm{\cdot} $满足平行四边形公式, 则它可被$ H $上的一个内积诱导出来.
     \end{Theorem}
@@ -535,7 +533,7 @@
 
 \section{投影算子}
     \subsection{闭凸集上的投影}
-    
+
     \begin{Definition}[凸集]\label{def:凸集}
         设 $ H $ 是线性空间, $ C\subset H $. 若对 $ \forall x, y\in C $, $ 0\leqslant\lambda\leqslant1 $, 都有
         \[
@@ -544,19 +542,19 @@
         则称 $ C $ 是一个\textbf{凸集}\index{T!凸集}.
     \end{Definition}
     例如 $ \K^{n} $ 中的三角形 $ T $, 圆盘 $ D $ 和线性空间 $ E $ 的线性子空间都是凸集.
-    
+
     \begin{Proposition}
         设 $ (C_{i})_{i\in\alpha} $ 是 $ H $ 上的一族凸集, 则 $ \bigcap_{i\in\alpha}C_{i} $ 也是凸集.
     \end{Proposition}
 
     \begin{Definition}[凸包]\label{def:凸包}\index{T!凸包}
-         设 $ H $ 是一个线性空间, $ A\subset H $. 称包含 $ A $ 的最小凸集是 $ A $ 的\textbf{凸包}, 记作 $ \conv(A) $. 或等价地, 记包含 $ A $ 的凸集全体为 $ \mathcal{C} $, 则 $ \conv(A)=\bigcap \mathcal{C} $. 
+         设 $ H $ 是一个线性空间, $ A\subset H $. 称包含 $ A $ 的最小凸集是 $ A $ 的\textbf{凸包}, 记作 $ \conv(A) $. 或等价地, 记包含 $ A $ 的凸集全体为 $ \mathcal{C} $, 则 $ \conv(A)=\bigcap \mathcal{C} $.
     \end{Definition}
 
     \begin{Proposition}
-        $ \conv(A)=\left\{ \sum\limits_{i=1}^{n}\lambda_{i}x_{i}:\sum\limits_{i=1}^{n}\lambda_{i}=1, \lambda_{i}>0, x_{i}\in A, n\in \N \right\} $. 
+        $ \conv(A)=\left\{ \sum\limits_{i=1}^{n}\lambda_{i}x_{i}:\sum\limits_{i=1}^{n}\lambda_{i}=1, \lambda_{i}>0, x_{i}\in A, n\in \N \right\} $.
     \end{Proposition}
-    
+
     \begin{Proof}
         记右侧集合为 $ B $, 因为 $ A\subset B $ 且 $ B $ 是凸集, 由凸包定义有 $ \conv(A)\subset B $. 再说明反向不等式成立. 因为 $ \sum\limits_{i=1}^{n}\lambda_{i}x_{i}\in C $, 其中 $ C\supset A $ 且 $ C $ 是凸集, 故有 $ \sum\limits_{i=1}^{n}\lambda_{i}x_{i}\in\conv(A) $. 从而有 $ B\subset\conv(A) $. 即 $ \conv(A)=B $.\qed
     \end{Proof}
@@ -570,10 +568,10 @@
             \[
                 \norm{P_{C}(x)-P_{C}(x')}\leqslant \norm{x-x'};
             \]
-            \item 投影算子是幂等的, 即 $ P^{2}_{C}=P_{C} $, 且 $ P_{C}(H)=C $. 
+            \item 投影算子是幂等的, 即 $ P^{2}_{C}=P_{C} $, 且 $ P_{C}(H)=C $.
         \end{enumerate}
     \end{Theorem}
-    
+
     \begin{Proof}
         (1) 令 $ d=d(x, C)=\inf\limits_{z\in C}\norm{x-z} $, 由定义知
         \[
@@ -614,7 +612,7 @@
             2\Re\lrangle{x-y, (1-\lambda)(z-y)}\leqslant\norm{(1-\lambda)(z-y)}^{2},
         \]
         即 $ 2(1-\lambda)\Re\lrangle{x-y, z-y}\leqslant(1-\lambda)^2\norm{z-y}^{2} $, 令 $ \lambda\to 1 $ 可得 $ \Re\lrangle{x-y, z-y}\leqslant0 $.
-        
+
         \textsl{充分性}. 由 $ \forall z\in C\,(\Re\lrangle{x-y, z-y}\leqslant0) $, 有
         \[
             \begin{aligned}
@@ -636,7 +634,7 @@
             \end{aligned}
         \]
         其中第一个不等号因为\,(2)\,的必要性, 即有 $ \norm{y-y'}\leqslant\norm{x-x'} $, 即 $ \norm{P_{C}(x)-P_{C}(x')}\leqslant \norm{x-x'} $.
-        
+
         (4) $ \forall x\in H, P_{C}(x)\in C $, 故 $ P_{C}(P_{C}(x))=P_{C}(x) $, 从而 $ P_{C}^{2}=P_{C} $. 且由上可知 $ P_{C}(C)=C $, 所以 $ P_{C}(H)=C $.\qed
     \end{Proof}
 
@@ -653,7 +651,7 @@
     \begin{Definition}[正交, 正交补]\label{def:正交, 正交补}\index{Z!正交}
          设 $ H $ 是内积空间,  若 $ x, y\in H $ 使 $ \lrangle{x, y}=0 $, 则称 $ x $ 与 $ y $ \textbf{正交}, 记作 $ x\bot y $. 对任意的 $ A\subset H $, 称:
          \[
-            A^{\bot}=\{ x\in H: x\bot y, \forall y\in A \} 
+            A^{\bot}=\{ x\in H: x\bot y, \forall y\in A \}
          \]
          为 $ A $ 在 $ H $ 中的\textbf{正交补}.
     \end{Definition}
@@ -675,12 +673,12 @@
                 A^{\bot}=\baro{A}^{\bot}=(\Span A)^{\bot}=\baro{\Span A}^{\bot}.
             \]
         \end{enumerate}
-    \end{Remark}    
-    
+    \end{Remark}
+
         \begin{Theorem}[投影线性算子]
              设 $ H $ 是 Hilbert 空间, $ E\subset H $ 是闭线性子空间,  对任意 $ x\in H $, $ P_{E}(x) $ 是满足 $ x- y\bot E $ 的唯一元素 $ y $, 且 $ P_{E} $ 是从 $ H $ 到 $ E $ 的线性算子, 其范数 $ \norm{P_{E}}\leqslant1 $.
         \end{Theorem}
-            
+
         \begin{Proof}
             先说明 $ P_{E}(x) $ 唯一. 因为
             \[
@@ -706,7 +704,7 @@
             \]
             且若 $ E\ne \{ 0 \} $, 即 $ \exists x\ne 0, x\in E $ 使 $ P_{E}(x)=x $, 则 $ E\ne 0 $ 时有 $ \norm{P_{E}}=1 $.\qed
         \end{Proof}
-         
+
         \begin{Example}
             在 $ \mathbb{M}_{n}(\C) $ 上构造投影算子, 由幂等性可知其特征值非$0$即$1$, 从而可得一平凡构造
             \[
@@ -736,7 +734,7 @@
         \]
         此时 $ \lrangle{y, z}=0 $, 故
         \[
-            \norm{x}^{2}=\norm{y+z}^{2}=\norm{y}^{2}+\norm{z}^{2}.        
+            \norm{x}^{2}=\norm{y+z}^{2}=\norm{y}^{2}+\norm{z}^{2}.
         \]
         再说明这样的分解是唯一的. 若还有 $ x=y'+z' $, $ y'\in\baro{E} $, $ z'\in E^{\bot} $. 则
         \[
@@ -767,7 +765,7 @@
     \[
         \rho_{g}(f)=\int_{X}fg\diff\mu.
     \]
-    则由 $ \abs{\rho_{g}(f)}\leqslant\norm{f}_{p}\norm{g}_{q} $ 知 $ \norm{\rho_{g}}\leqslant\norm{g}_{q}<\infty $, 从而 $ \rho_{g} $ 是有界线性泛函. 
+    则由 $ \abs{\rho_{g}(f)}\leqslant\norm{f}_{p}\norm{g}_{q} $ 知 $ \norm{\rho_{g}}\leqslant\norm{g}_{q}<\infty $, 从而 $ \rho_{g} $ 是有界线性泛函.
 
     特别地, 对 $ p=q=2 $, 因为 $ L_{2}(X) $ 是Hilbert空间, 其上有内积 $ \lrangle{f, g}=\int_{X}f\baro{g}\diff\mu $, 则 $ \forall y\in H $, 可定义映射 $ \varphi_{y}:x\mapsto \lrangle{x, y} $, 有 $ \norm{\varphi_{y}}\leqslant\norm{y} $, 从而 $ H $ 到 $ H^{*} $ 上存在单射.
 
@@ -822,8 +820,8 @@
         设 $ H, K $ 是 Hilbert空间, $ u\in \CB(H, K) $, 则存在唯一的 $ \Star{u}\in \CB(K, H) $ 使得
         \[
             \forall x\in K\,\forall y\in H\,\big(\lrangle{\Star{u}(x), y}=\lrangle{x, u(y)}\big),
-        \] 
-        且 $ \norm{\Star{u}}=\norm{u} $. 称 $ \Star{u} $ 为 $ u $ 的伴随. 
+        \]
+        且 $ \norm{\Star{u}}=\norm{u} $. 称 $ \Star{u} $ 为 $ u $ 的伴随.
     \end{Theorem}
 
     \begin{Proof}
@@ -848,11 +846,11 @@
         \]
         可知 $ \Star{u}(x+x')=\Star{u}x+\Star{u}(x') $. 类似可证 $ \Star{u}(\lambda x)=\lambda\Star{u}(x) $, 从而 $ \Star{u}  $ 是线性算子, 且
         \[
-            \norm{\Star{u}}=\sup_{\norm{x}=1}\sup_{\norm{y}=1}\abs{\lrangle{\Star{u}(x), y}}=\sup_{\norm{x}=1}\sup_{\norm{y}=1}\abs{\lrangle{x, u(y)}}=\norm{u}. 
+            \norm{\Star{u}}=\sup_{\norm{x}=1}\sup_{\norm{y}=1}\abs{\lrangle{\Star{u}(x), y}}=\sup_{\norm{x}=1}\sup_{\norm{y}=1}\abs{\lrangle{x, u(y)}}=\norm{u}.
         \]
         由 $ u\in \CB(H, K) $ 知 $ \Star{u}\in\CB(K, H) $.\qed
     \end{Proof}
-    
+
     \begin{Remark}~
         \begin{enumerate}[(1)]
             \item 特别地, $ A\in\mathbb{M}_{n}(\C) $ 时, $ \Star{A}=A^{\dagger} $;
@@ -886,8 +884,8 @@
             \item 若
         $ \left[\begin{smallmatrix}
         x_{1} & x_{2}\\
-        x_{3} & x_{4}    
-        \end{smallmatrix}\right] $ 是酉算子, $ x_{i}\in\R $, 则 $ \exists\theta $ 使 
+        x_{3} & x_{4}
+        \end{smallmatrix}\right] $ 是酉算子, $ x_{i}\in\R $, 则 $ \exists\theta $ 使
         $ \left[\begin{smallmatrix}
             x_{1} & x_{2}\\
             x_{3} & x_{4}
@@ -905,8 +903,8 @@
     \[
         H=\K x_{1}\oplus \K x_{2}\oplus\cdots\oplus\K x_{n}\oplus(\K \{ x_{1}, x_{2}, \dots, x_{n} \})^{\bot}
     \]
-    且 $ \norm{x_{i}}=1 $. 由 Zorn引理, $ H=\baro{\K\{ x_{i} \}_{i\in\alpha}} $, 其中 $ \norm{x_{i}}=1 $ 且 $ (x_{i})_{i\in\alpha} $ 两两正交, 有 $ \Span(x_{i})_{i\in\alpha}=H $. 
-    
+    且 $ \norm{x_{i}}=1 $. 由 Zorn引理, $ H=\baro{\K\{ x_{i} \}_{i\in\alpha}} $, 其中 $ \norm{x_{i}}=1 $ 且 $ (x_{i})_{i\in\alpha} $ 两两正交, 有 $ \Span(x_{i})_{i\in\alpha}=H $.
+
     \begin{Definition}[规范正交基]\index{Z!正交}\index{W!完全}\index{G!规范正交}\index{G!规范正交基}
     设$ \alpha $是指标集, $ H $是Hilbert空间, $ (e_i)_{i\in\alpha} $是$ H $中的一族向量.
     \begin{enumerate}[(1)]
@@ -916,7 +914,7 @@
     \item 若$ (e_i)_{i\in\alpha} $是规范正交的且是完全的, 则称$ (e_i)_{i\in\alpha} $是$ H $的一组\textbf{规范正交基}.
     \end{enumerate}
     \end{Definition}
-    
+
     \begin{Example}
     常见空间上的规范正交基:
     \begin{enumerate}[(1)]
@@ -940,7 +938,7 @@
     即可.
     \end{enumerate}
     \end{Example}
-    
+
     \begin{Proposition}\label{prop:投影算子代数表达}
     下面给出投影算子的代数表达: 设$ H $是Hilbert空间, $ \{ e_1, \dots,e_n \} $是$ H $的规范正交集, 令$ E=\Span\{ e_1,e_2, \dots,e_n \} $, 则$ \forall x\in H $, 有
     \[
@@ -961,7 +959,7 @@
     \]
     得证.\qed
     \end{Proof}
-    
+
     利用投影算子的这一代数表达, 可以进一步刻画Hilbert空间上的正交基:
     \begin{Theorem}
     设$ H $是Hilbert空间, $ (e_n)_{n\geqslant 1} $是规范正交序列, 则下列叙述等价:
@@ -972,7 +970,7 @@
     \end{Theorem}
     \begin{Proof}
     (2) $ \Rightarrow $ (1) : 因为$ \forall x\in H $, 有$ \lim\limits_{n\to\infty}\norm{\sum\limits_{k=1}^nx_ke_k-x}=0 $且$ \sum\limits_{k=1}^nx_ke_k\in\Span(e_n)_{n\geqslant 1} $对$ \forall n\in\N $成立, 从而$ x\in\baro{\Span(e_n)_{n\geqslant 1}} $, 即$ H=\baro{\Span(e_n)_{n\geqslant 1}} $, 这说明$ (e_n)_{n\geqslant 1} $是完全的.
-    
+
     (1) $ \Rightarrow $ (2) : $ \forall x\in H $, 取$ y_n=\sum\limits_{k=1}^n\lrangle{x,e_k}e_k $, 则需验证$ \lim\limits_{n\to\infty}\norm{y_n-x}=0 $. 因为
     \[
     \norm{y_{n+p}-y_n}=\sum_{k=n+1}^{n+p}\abs{\lrangle{x,e_k}}^2,
@@ -982,14 +980,14 @@
     \lrangle{y-x,e_i}=\lrangle{y,e_i}-\lrangle{x,e_i}=\lim_{n\to\infty}\lrangle{y_n,e_i}-\lrangle{x,e_i}=0,
     \]
     从而$ y=x $, 即$ \lim\limits_{n\to\infty}\sum\limits_{k=1}^n\lrangle{x,e_k}e_k=x $.
-    
+
     令$ x_n=\lrangle{x,e_n} $, 设$ (x_n')_{n\geqslant 1} $也满足$ \lim\limits_{n\to\infty}x_k'e_k=x $, 则
     \[
     x_i=\lrangle{x,e_i}=\lrangle{\lim_{n\to\infty}\sum_{k=1}^nx'_ke_k,e_i}=\lim_{n\to\infty}\lrangle{\sum_{k=1}^nx_k'e_k,e_i}=x_i',
     \]
     从而$ x_i=x_i' $, 即$ \sum\limits_{n\geqslant 1}\lrangle{x,e_n}e_n $是$ x $的唯一级数表示.\qed
     \end{Proof}
-    
+
     \begin{Corollary}[Bessel]
     设$ H $是Hilbert空间, $ (e_n)_{n\geqslant 1} $是规范正交序列, 则$ \forall x\in H $, 都有
     \[
@@ -999,7 +997,7 @@
     \begin{Proof}
     因$ \forall n_0\in\N $, 都有$ \sum\limits_{n=1}^{n_0}\abs{\lrangle{x,e_n}}^2\leqslant\norm{x}^2 $, 令$ n_0\to\infty $即可.\qed
     \end{Proof}
-    
+
     \begin{Theorem}[Parseval]
     设$ H $是Hilbert空间, $ (e_n)_{n\geqslant 1} $是$ H $的规范正交基, 则$ \forall x\in H $, 有
     \[
@@ -1017,11 +1015,11 @@
     \]
     \qed
     \end{Proof}
-    
+
     \subsection{规范正交基的构造}
-    
+
     类似于线性代数课程中所使用的方法, 对于Hilbert空间, 也可以用类似的方法从一个线性无关集得到规范正交集.
-    
+
     \begin{Theorem}[Gram-Schmidt]
     设$ H $是Hilbert空间, $ (f_k)_{k\geqslant 1} $线性无关, 则存在规范正交序列$ (e_k)_{k\geqslant 1} $使得$ \forall n\in\N $, 都有
     \[
@@ -1030,7 +1028,7 @@
     \end{Theorem}
     \begin{Proof}
     \textbf{(Step 1)} 正交化.
-    
+
     取$ g_1=f_1 $, 再取
     \[
     g_2=f_2-\frac{\lrangle{f_2,g_1}}{\lrangle{g_1,g_1}}g_1,
@@ -1040,9 +1038,9 @@
     g_3=f_3-\frac{\lrangle{f_3,g_1}}{\lrangle{g_1,g_1}}g_1-\frac{\lrangle{f_3,g_2}}{\lrangle{g_2,g_2}}g_2,
     \]
     则$ g_1\bot g_3 $, $ g_2\bot g_3 $, 且$ g_3\ne 0 $. 以此下去可得一正交的序列$ (g_k)_{k\geqslant 1} $.
-    
+
     \textbf{(Step 2)} 规范化.
-    
+
     令$ e_n=\sgn g_n $, 则$ (e_k)_{k\geqslant 1} $是一规范正交序列, 由(Step 1)可知
     \[
     \begin{bmatrix}
@@ -1091,9 +1089,9 @@
     \]
     \qed
     \end{Proof}
-    
+
     下面的两个定理说明了Hilbert空间都具有规范正交基, 我们从可分的Hilbert空间出发, 因它可以使用Gram-Schmidt方法得到.
-    
+
     \begin{Proposition}
     设$ H $是可分的Hilbert空间, 则$ H $有规范正交基.
     \end{Proposition}
@@ -1105,18 +1103,18 @@
     即$ (e_n)_{n\geqslant 1} $是$ H $的规范正交基.\qed
     \end{Proof}
     在上一命题中, 可分性保证了$ \dim E\leqslant\aleph_0 $, 从而Gram-Schmidt正交化可以进行下去. 在去掉该条件之后, 即Hilbert空间可能是不可数维时, 仍然不可避免地要使用Zorn引理.
-    
+
     \begin{Theorem}
     任一Hilbert空间都有规范正交基.
     \end{Theorem}
     \begin{Proof}
     设$ \mathcal F $是$ H $中非空规范正交集全体, 以包含关系为偏序后有$ (\mathcal F,\leqslant) $是一个偏序集. 任取$ \mathcal F $中的全序子集$ \mathcal G $, 那么$ \bigcup\mathcal G $是$ \mathcal G $的一个上界, 由Zorn引理可知$ \mathcal F $有极大元$ M $.
-    
+
     若$ M $不是规范正交基, 则存在$ x $使得$ \norm{x}=1 $且$ x\bot M $, 这时$ \{ x \}\cup M $是规范正交集, 与$ M $的极大性矛盾. 因此$ M $是$ H $的规范正交基.\qed
     \end{Proof}
-    
+
     不过在此之后, 我们大多数情况下都在研究可分的Hilbert空间, 因此Gram-Schmidt正交化在大多数情况下还可以继续使用. 下面是一个Parseval恒等式的推论, 它说明了可分的Hilbert空间都可以等距同构成我们熟悉的空间.
-    
+
     \begin{Corollary}
     设$ H $是可分的Hilbert空间, 则当$ \dim H=n<\aleph_0 $时, $ H\cong\K^n $. 当$ \dim H=\aleph_0 $时, $ H\cong \ell_2 $. 其中$ \cong $表示左右两空间存在线性等距双射.
     \end{Corollary}
@@ -1134,11 +1132,11 @@
     \begin{Remark}
     Hilbert正交基与Hamel基不同, 在有限维情形下, Hilbert正交基一定是Hamel基, 而Hamel基也可以由Gram-Schmidt正交化得到Hilbert正交基. 但在无限维情形下, Hilbert基未必是Hamel基, 例如在$ \ell_2 $上取$ (e_n)_{n\geqslant 1} $, 其中$ e_n=(\delta_{1,n},\delta_{2,n}, \dots) $, 考虑$ \sum\limits_{n\geqslant 1}(e_n/n)\in\ell_2 $, 它不能被有限个$ e_n $生成, 从而$ (e_n)_{n\geqslant 1} $不是Hamel基. 反之, Hamel基也未必能生成Hilbert正交基.
     \end{Remark}
-    
+
     \subsection{对投影算子的进一步讨论}
-    
+
     若无特殊说明, 以下$ H $均为Hilbert空间.
-    
+
     \begin{Proposition}
     设$ P_E $是$ H $上到闭线性子空间$ E $的投影算子, 则有$ P_E^*=P_E=P_E^2 $.
     \end{Proposition}
@@ -1149,7 +1147,7 @@
     \]
     其中$ (e_i)_{i\in\alpha} $是$ E $的规范正交基, 则$ P_E^*=P_E $.\qed
     \end{Proof}
-    
+
     \begin{Proposition}
     设$ P\in\CB(H) $且$ P^*=P=P^2 $, 则存在闭线性子空间$ E\subset H $使得$ P=P_E $.
     \end{Proposition}
@@ -1159,7 +1157,7 @@
         P^{2}(H)=P(E)=P(H)=E,
     \]
     所以有 $ P(E)=E $, 即可以找到一列 $ (x_{n})_{n\geqslant1}\subset E $ 使得 $ Px_{n}=s_{n} $, 即$ Px_n\to y $, 那么$ P^2x_n\to Py $. 而由$ P=P^2 $可知$ P^2x_n=Px_n $, 从而由极限的唯一性有$ Py=y $, 这说明$ y\in E $, 从而$ E $是闭的.
-    
+
     再说明$ P=P_E $. 取$ (e_i)_{i\in\alpha} $是$ E $的规范正交基, 则
     \[
     Px=\sum_{i\in\alpha}\lambda_ie_i,
@@ -1178,7 +1176,7 @@
     \end{aligned}
     \]
     \end{Remark}
-    
+
     \begin{Proposition}
     设$ E, F $是$ H $中两个闭线性子空间, 对应的投影算子分别是$ P_E, P_F $, 那么以下条件等价:
     \begin{enumerate}[(1)]
@@ -1190,14 +1188,14 @@
     \end{Proposition}
     \begin{Proof}
     (1) $ \Rightarrow $ (2) : $ \forall x\in H : P_FP_E(x)=P_F(P_E(x))=P_E(x)\Longrightarrow P_FP_E=P_E $.
-    
+
     (2) $ \Rightarrow $ (3) : $ P_FP_E=P_E\Longrightarrow(P_FP_E)^*=P_E^*\Longrightarrow P_EP_F=P_E $.
-    
+
     (3) $ \Rightarrow $ (4) : $ \forall x\in H : \norm{P_E(x)}=\norm{P_EP_F(x)}\leqslant\norm{P_F(x)} $.
-    
+
     (4) $ \Rightarrow $ (1) : $ \forall x\in E : \norm{x}=\norm{P_E(x)}\leqslant\norm{P_F(x)}\leqslant\norm{x}\Longrightarrow\norm{P_F(x)}=\norm{x}\Longrightarrow x\in F $, 从而$ E\subset F $.\qed
     \end{Proof}
-    
+
     \begin{Corollary}
     设$ E $是$ H $中的闭线性子空间, 那么
     \[
@@ -1211,7 +1209,7 @@
     \]
     \qed
     \end{Proof}
-    
+
     对$ H $的两个闭线性子空间, 定义
     \[
     E\lor F=\baro{\{x+y : x\in E, y\in F\}}=\baro{E+F},
@@ -1221,7 +1219,7 @@
     \item $ (P_E\lor P_F)^\bot=P_{(E\lor F)^\bot}=P_{E^\bot\cap F^\bot}=P_{E^\bot}\land P_{F^\bot} $;
     \item $ (P_E\land P_F)^\bot=P_{(E\cap F)^\bot}=P_{E^\bot\lor F^\bot}=P_{E^\bot}\lor P_{F^\bot} $.
     \end{enumerate}
-    
+
     \begin{Proposition}
     设$ P_E,\ P_F $是$ H $上两个投影算子, 且它们可交换, 即$ P_EP_F=P_FP_E $, 那么
     \begin{enumerate}[(1)]
@@ -1244,25 +1242,25 @@
     \norm{x}=\norm{P_EP_F(x)}\leqslant\norm{P_F(x)}\leqslant\norm{x},
     \]
     从而$ \norm{P_F(x)}=\norm{x} $. 这说明$ x\in F $, 同理有$ x\in E $, 从而$ K\subset E\cap F $. 于是$ K=E\cap F $.
-    
+
     (2) 注意到$ P_{E^\bot}P_{F^\bot}=(\id-P_E)(\id-P_F)=P_{F^\bot}P_{E^\bot} $, 从而由(1)可知$ P_{E^\bot}\land P_{F^\bot}=P_{E^\bot}P_{F^\bot} $, 于是
     \[
     P_E\lor P_F=(P_{E^\bot}\land P_{F^\bot})^\bot=\id-(\id-P_E)(\id-P_F)=P_E+P_F-P_EP_F.
     \]
-    
+
     (3) $ \forall x\in E\lor F $, 由(2)有
     \[
     x=P_{E\lor F}(x)=(P_E+P_F-P_EP_F)(x)=P_E(x)+P_F(\id-P_E)(x)\in E+F,
     \]
     这是因为$ P_E(x)\in E $而$ P_F(\id-P_E)(x)\in F $, 故$ E\lor F\subset E+F $, 而反向不等式由定义显然, 从而$ E\lor F=E+F $.\qed
     \end{Proof}
-    
+
     上述定理说明了在$ P_E $与$ P_F $可交换时, $ E\lor F $实际上就是$ E $与$ F $的Minkowski和. 在非交换的情形下, $ P_E\land P_F $也不能简单地表示, 而是与$ \lim\limits_{n\to\infty}(P_EP_F)^n $相等.
-    
+
     设$ (e_n)_{n\geqslant 1} $是$ H $的规范正交基, $ P_N $是闭线性子空间$ \Span\{ e_1,\dots,e_N \} $的投影算子, 注意到$ \lim\limits_{n\to\infty}\norm{\id-P_N}=1 $, 它不能用来诱导拓扑. 于是我们称$ \lim\limits_{N\to\infty}\norm{P_N(x)-x}=0 $, 即$ P_N(x)\to x $刻画的拓扑为强算子拓扑, 而以$ \lrangle{x,e_n}\to 0\,(n\to\infty) $刻画的拓扑为弱拓扑.
-    
+
     \subsection{最小二乘法}
-    
+
     考虑下面的三个问题:
     \begin{enumerate}[(1)]
     \item 实际观测问题: 设几个量满足
@@ -1286,7 +1284,7 @@
     \min_{a_1,\dots,a_n}\int_\varOmega\abs{X(\omega)-\sum_{i=1}^na_iX_i(\omega)}^2\diff\mu(\omega)=\int_\varOmega\abs{X(\omega)-\sum_{i=1}^n\lambda_iX_i(\omega)}^2\diff\mu(\omega).
     \]
     \end{enumerate}
-    
+
     以上的三个问题在本质上都是Hilbert空间$ H $上给定$ x $与$ x_1,\dots,x_n $, 求$ \lambda_1,\dots,\lambda_n $满足条件
     \[
     \min_{a_1,\dots,a_n}\norm{x-\sum_{i=1}^na_ix_i}=\norm{x-\sum_{i=1}^n\lambda_ix_i},
@@ -1314,12 +1312,12 @@
     \]
     注意到
     \[
-        G(x, \seq{x})=\lrangle{x, x}G(\seq{x})+\sum_{k=1}^{n}(-1)^{k}G(x, x_{1}, \dots, \hat{x}_{k}, \dots, x_{n}) 
+        G(x, \seq{x})=\lrangle{x, x}G(\seq{x})+\sum_{k=1}^{n}(-1)^{k}G(x, x_{1}, \dots, \hat{x}_{k}, \dots, x_{n})
     \]
     与
     \[
         G(x, x_{1}, \dots, \hat{x}_{k}, \dots, x_{n}=(-1)^{k+1}G(\seq{x})
-    \] 
+    \]
     故有
     \[
         \begin{aligned}
@@ -1339,12 +1337,12 @@
         \end{bmatrix}=0\Longleftrightarrow \lrangle{\sum_{i=1}^{n}\alpha_{i}x_{i}, \sum_{i=1}^{n}\alpha_{i}x_{i}}=0,
     \]
     故由上式右端当且仅当 $ \sum\limits_{i=1}{n}\alpha_{i}x_{i} $ 知 \seq{x} 线性相关.
-    
+
 
 
 \section{Baire空间}
     \begin{Theorem}[Baire]
-        设 $ (E, d) $ 是完备度量空间,  $ (O_{n})_{n\geqslant1} $ 是 $ E $ 中一列稠密开子集, 则 $ O=\bigcap_{n\geqslant1}O_{n} $ 在 $ E $ 中稠密.  
+        设 $ (E, d) $ 是完备度量空间,  $ (O_{n})_{n\geqslant1} $ 是 $ E $ 中一列稠密开子集, 则 $ O=\bigcap_{n\geqslant1}O_{n} $ 在 $ E $ 中稠密.
     \end{Theorem}
     \begin{Proof}
         任取 $ \varOmega $ 是 $ E $ 的开子集, 只需证 $ \varOmega\cap O\ne\varnothing $.
@@ -1357,10 +1355,10 @@
     \end{Proof}
 
     \begin{Definition}[Baire空间]\index{B!Baire空间}\label{def:Baire空间}
-        设 $ E $ 是拓扑空间, 若 $ E $ 中任意可数多个稠密开集的交仍在 $ E $ 中稠密, 则称 $ E $ 是\textbf{Baire空间}, 或等价地, 若 $ E $ 中任意可数多个无内点的闭集的并仍无内点, 则称 $ E $ 是Baire空间. 
+        设 $ E $ 是拓扑空间, 若 $ E $ 中任意可数多个稠密开集的交仍在 $ E $ 中稠密, 则称 $ E $ 是\textbf{Baire空间}, 或等价地, 若 $ E $ 中任意可数多个无内点的闭集的并仍无内点, 则称 $ E $ 是Baire空间.
     \end{Definition}
 
-    下面给出的定理~(2)~的结论可用于否定一空间是 Baire空间. 
+    下面给出的定理~(2)~的结论可用于否定一空间是 Baire空间.
     \begin{Theorem}[Baire推论]
         设 $ E $ 是 Baire空间, 则
         \begin{enumerate}[(1)]
@@ -1385,7 +1383,7 @@
         这与它在 $ \varOmega $ 中稠密矛盾.\qed
     \end{Proof}
     \begin{Example}
-        由 Baire定理, 完备度量空间是 Baire空间, 则 Banach空间, Hilbert空间也是Baire空间. 进一步, 局部紧的 Hausdorff空间也是 Baire空间, 而 \Q 不是 Baire空间, 因为 $ \Q=\bigcup_{n\geqslant1}F_{n} $, 其中 $ F_{n} $ 均有限, 则 $ F_{n} $ 闭,  $ \mathring{F}_{n}=\varnothing $, 有 $ \bigcup_{n\geqslant1}\mathring{F}_{n}=\varnothing $, 由上一定理的~(2)~可知. 
+        由 Baire定理, 完备度量空间是 Baire空间, 则 Banach空间, Hilbert空间也是Baire空间. 进一步, 局部紧的 Hausdorff空间也是 Baire空间, 而 \Q 不是 Baire空间, 因为 $ \Q=\bigcup_{n\geqslant1}F_{n} $, 其中 $ F_{n} $ 均有限, 则 $ F_{n} $ 闭,  $ \mathring{F}_{n}=\varnothing $, 有 $ \bigcup_{n\geqslant1}\mathring{F}_{n}=\varnothing $, 由上一定理的~(2)~可知.
     \end{Example}
     \begin{Definition}[纲集]\index{G!纲集}\index{P!贫集}\index{S!剩余集}\label{def:纲集}
         设 $ E $ 是拓扑空间,
@@ -1405,7 +1403,7 @@
     \end{Remark}
 
     \begin{Example}
-        取 $ E=\R $, 则 $ \varnothing $ 与\R 既是 $ \CF_{\sigma} $ 集又是 $ \CG_{\delta} $ 集; $ (0, 1] $ 既是 $ \CF_{\sigma} $ 集又是 $ \CG_{\delta} $ 集, 因为 $ (0, 1]=\bigcap_{n\geqslant1}(0, 1+1/n) $, 且 $ (0, 1]=\bigcup_{n\geqslant1}[1/n, 1] $. 
+        取 $ E=\R $, 则 $ \varnothing $ 与\R 既是 $ \CF_{\sigma} $ 集又是 $ \CG_{\delta} $ 集; $ (0, 1] $ 既是 $ \CF_{\sigma} $ 集又是 $ \CG_{\delta} $ 集, 因为 $ (0, 1]=\bigcap_{n\geqslant1}(0, 1+1/n) $, 且 $ (0, 1]=\bigcup_{n\geqslant1}[1/n, 1] $.
     \end{Example}
 
     \begin{Proposition}
@@ -1447,9 +1445,9 @@
         \]
         即 $ x'\in\{ x\in E : \omega_{f}(x)<\varepsilon \} $, 从而由 $ x' $ 的任意性, $ U\subset\{ x\in E : \omega_{f}(x)<\varepsilon \}  $, 再由 $ x $ 的任意性, 可知$\{ x\in E : \omega_{f}(x)<\varepsilon \}$是开集. 由此可得 $ \cont(f) $ 是 $ \CG_{\delta} $ 集. \qed
     \end{Proof}
-        
+
     \begin{Theorem}\label{thm:连续点是Gd集}
-        设 $ E $ 是 Banach空间, $ (F, d) $  是度量空间, 并设映射序列 $ (f_{n})_{n\geqslant1}\subset C(E, F) $ 逐点收敛到 $ f $, 则 $ f $ 的连续点构成的集合 $ \cont(f) $ 是一个在 $ E $ 中稠密的 $ \CG_{\delta} $ 集. 
+        设 $ E $ 是 Banach空间, $ (F, d) $  是度量空间, 并设映射序列 $ (f_{n})_{n\geqslant1}\subset C(E, F) $ 逐点收敛到 $ f $, 则 $ f $ 的连续点构成的集合 $ \cont(f) $ 是一个在 $ E $ 中稠密的 $ \CG_{\delta} $ 集.
     \end{Theorem}
     \begin{Proof}
         因为每一个 $ f_{n} $ 连续, 定义
@@ -1485,7 +1483,7 @@
         则 $ f $ 在 $ x $ 点连续, 即 $ O\subset\cont(f) $, 而由上一引理 知 $ \cont(f) $ 是 $ \CG_{\delta} $ 集, 从而命题得证.\qed
     \end{Proof}
     上面的定理可以说明尽管连续函数列的极限函数不一定连续, 但它的连续点非常多. 而下面的定理告诉我们, 尽管Weierstrass构造出的处处连续但处处不可微的函数非常反直觉, 但实际上这样的函数才是连续函数中的``绝大部分".
-    
+
     \begin{Proposition}
     $ C[0,1] $上处处不可微的函数集合$ E $是剩余集.
     \end{Proposition}
@@ -1495,7 +1493,7 @@
     \exists s\in[0,1]\,\left(0\leqslant s+h\leqslant 1\land\abs{h}\leqslant \frac{1}{n}\Rightarrow \abs{\frac{f(s+h)-f(s)}{h}}\leqslant n \right),
     \]
     若$ f $在某点$ s $可微, 则存在$ n $使得$ f\in A_n $. 于是$ C[0,1]\sm E=\bigcup_{n\geqslant 1}A_n $.
-    
+
     往证$ \bigcup_{n\geqslant 1}A_n $是贫集, 即证$ A_n^c $是稠密开集. 注意到
     \[
     \forall f\in A_n^c\,\forall s\in[0,1]\,\exists h_s:\left( \left( \abs{h_s}\leqslant\frac{1}{n} \right)\land(\abs{f(s+h_s)-f(s)}>n\abs{h_s}), \right)
@@ -1509,7 +1507,7 @@
     \abs{g(t+h_{s_k})-g(t)}\geqslant\abs{f(t+h_{s_k})-f(t)}-2\varepsilon_{s_k}>n\abs{h_{s_k}},
     \]
     即$ g\in A_n^c $. 从而$ A_n^c $是开集.
-    
+
     再证$ A_n $无内点, 由Weierstrass定理
     \[
     \forall f\in A_n\,\forall\varepsilon>0\,\exists p\in[0,1]\left(\norm{f-p}_\infty<\frac{\varepsilon}{2}\right)
@@ -1520,7 +1518,7 @@
     \]
     设g是一个满足$ \norm{g}_\infty<\varepsilon/2 $, 且各段斜率绝对值均大于$ M+n $的分段线性函数, 那么$ p+g\in B(f,\varepsilon) $. 但$ p+g\notin A_n $, 从而$ A_n $无内点. 于是$ \bigcup_{n\geqslant 1}A_n $是贫集.\qed
     \end{Proof}
-    
+
 \section{共鸣定理、开映射定理与闭图像定理}
     \subsection{共鸣定理}
     \begin{Theorem}[Banach-Steinhaus/一致有界原理/共鸣定理]
@@ -1559,10 +1557,10 @@
     \forall i\in\alpha\,(\norm{u_i(x)-u_i(y)}\leqslant c\norm{x-y})
     \]
     即$ (u_i)_{i\in\alpha} $一致等度连续.
-    
+
     (2) 一致有界原理的逆否命题是: 若$ (u_i)_{i\in\alpha} $无界, 则存在$ x\in E $使得$ \sup\limits_{i\in\alpha}\norm{u_i(x)}=\infty $.
     \end{Remark}
-    
+
     \begin{Theorem}
     设$ E $是Banach空间, $ F $是赋范空间, $ (u_i)_{i\in\alpha}\subset\CB(E,F) $满足$ \sup\limits_{i\in\alpha}\norm{u_i}=\infty $, 则$ G=\{ x\in E: M(x)=\infty \} $是$ E $中稠密的$ \Gd $集.
     \end{Theorem}
@@ -1572,10 +1570,10 @@
     G=\bigcap_{n\geqslant 1}\{ x\in E : M(x)>n \}=\bigcap_{n\geqslant 1}\varOmega_n,
     \]
     则$ \varOmega_n=F_n^c $是开集, 故$ G $是$ \Gd $集.
-    
+
     若$ \varOmega_n $不稠密, 则$ \mathring{F}_n\ne\varnothing $, 即$ (u_i)_{i\in\alpha} $一致有界, 由共鸣定理可知矛盾. 从而$ \varOmega_n $稠密, 由Baire定理可知$ G $也稠密.\qed
     \end{Proof}
-    
+
     \begin{Corollary}\label{cor:逐点收敛}
     设$ E $是Banach空间而$ F $是赋范空间, $ (u_n)_{n\geqslant 1}\subset\CB(E,F) $. 若$ (u_n)_{n\geqslant 1} $逐点收敛到$ u $, 则$ u\in\CB(E,F) $且
     \[
@@ -1593,7 +1591,7 @@
     \]
     即$ \norm{u}<\infty $. 于是$ \norm{u}\leqslant\liminf\limits_{n\to\infty}\norm{u_n} $.\qed
     \end{Proof}
-    
+
     \begin{Corollary}\label{cor:双线性映射连续性}
     设$ E, F $是Banach空间, $ G $是赋范空间, $ B : E\times F\to G $是双线性映射. 若$ B $对两个变量均连续, 则$ B $在$ E\times F $中连续.
     \end{Corollary}
@@ -1611,13 +1609,13 @@
     \]
     同理可证$ \norm{B(x_n-x_0,y_n)}\to 0 $.\qed
     \end{Proof}
-    
+
     \subsection{开映射定理}
-    
+
     \begin{Definition}[开映射]\index{K!开映射}
     若$ u : E\to F $将$ E $中的开集映成$ F $中开集, 则称$ u $是\textbf{开映射}.
     \end{Definition}
-    
+
     \begin{Theorem}[开映射定理]\label{thm:开映射定理形式1}
     设$ E, F $是Banach空间, $ u\in\CB(E,F) $, 若$ u(E) $不是$ F $中的贫集, 则
     \begin{enumerate}[(1)]
@@ -1639,7 +1637,7 @@
     \eta B_F\subset \baro{u(nB_E)}-y_0\subset\baro{u(nB_E)}-\baro{u(nB_E)}\subset\baro{u(2nB_E)}.
     \]
     由$ u $的线性性可知$ B_F\subset \baro{u\left( \frac{2n}{\eta}B_E \right)} $.
-    
+
     往证$ B_F\subset u\left(\frac{4n}{\eta}B_E\right) $. 由$ B_F\subset\baro{u\left( \frac{2n}{\eta}B_E \right)} $可知
     \[
     \forall y\in B_F\,\exists x_0\in\frac{2n}{\eta}B_E\,\left(\norm{y-u(x_0)}<\frac{1}{2}\right)
@@ -1665,24 +1663,24 @@
     \norm{\sum_{k\geqslant 0}\frac{x_k}{2^k}}\leqslant\sum_{k\geqslant 0}\frac{\norm{x_k}}{2^k}<\frac{2n}{\eta}\sum_{k\geqslant 0}\frac{1}{2^k}=\frac{4n}{\eta}
     \]
     可知$ y\in u\left(\frac{4n}{\eta}B_E\right) $, 从而由$ y $的任意性可知$ B_F\subset u\left(\frac{4n}{\eta}B_E\right) $, 也即$ \frac{\eta}{4n}B_F\subset u(B_E) $.
-    
+
     (2) 设$ O $是开集, 往证$ u(O) $也是开集. 任意$ y_0\in u(O) $, 都存在$ x_0\in O $使得$ y_0=u(x_0) $. 由于$ O $是开集, 有
     \[
     \exists \varepsilon>0\,(x_0+\varepsilon B_E\subset O)\Longrightarrow u(x_0)+u(\varepsilon B_E)\subset u(O),
     \]
     由(1)可知$ \exists r>0\,(rB_F\subset u(B_E)) $, 从而$ y_0+r\varepsilon B_F\subset y_0+u(\varepsilon B_E)\subset u(O) $. 由$ y_0 $的任意性可知$ u(O) $是开集.\qed
     \end{Proof}
-    
+
     \begin{Corollary}[开映射定理]\label{cor:开映射定理形式2}
     设$ E, F $是Banach空间, $ u\in\CB(E,F) $是满射, 则$ u $是开映射, 且$ \exists r>0\,(rB_F\subset u(B_E)) $.
     \end{Corollary}
-    
+
     \begin{Corollary}\label{cor:开映射定理推论}
     设$ E, F $是Banach空间, $ u: E\to F $是连续线性双射, 则$ u^{-1} $连续. 即$ u $是一个同构映射.
     \end{Corollary}
-    
+
     为叙述方便, 在之后使用定理\,\ref{thm:开映射定理形式1}\,,推论\,\ref{cor:开映射定理形式2}\,,推论\,\ref{cor:开映射定理推论}\,时, 都统一称作使用了开映射定理.
-    
+
     \begin{Corollary}[范数等价定理]
     设$ E $是线性空间, 其上有范数$ \norm{\cdot}_1,\ \norm{\cdot}_2 $. 若$ E $关于两范数为Banach空间, 且$ \norm{\cdot}_2 $比$ \norm{\cdot}_1 $强, 即$ \exists c>0 $使得$ \norm{\cdot}_1\leqslant c\cdot\norm{\cdot}_2 $, 则两范数等价.
     \end{Corollary}
@@ -1697,7 +1695,7 @@
     \]
     (需要注意的是, 此处$ \norm{\id_E} $未必为1)\qed
     \end{Proof}
-    
+
     \begin{Example}
     用开映射定理证明共鸣定理.
     \end{Example}
@@ -1707,7 +1705,7 @@
     \norm x_s=\norm x+\sup_{i\in\alpha}\norm{u_i(x)},
     \]
     易证这是一个范数, 且$ \norm{\cdot}\leqslant\norm{\cdot}_s $. 只需说明$ (E,\norm{\cdot}_s) $是一个Banach空间即可.
-    
+
     任取$ (E,\norm{\cdot}_s) $中的Cauchy列$ (x_n)_{n\geqslant 1} $, 那么
     \[
     \norm{x_n-x_m}+\sup_{i\in\alpha}\norm{u_i(x_n-x_m)}=\norm{x_n-x_m}+\sup_{i\in\alpha}\norm{u_i(x_n)-u_i(x_m)}\to 0,\quad (n,m\to\infty)
@@ -1726,9 +1724,9 @@
     \]
     也即$ \sup\limits_{i\in\alpha}\norm{u_i}\leqslant M-1 $, 这即是$ (u_i)_{i\in\alpha} $一致有界.\qed
     \end{Proof}
-    
+
     \subsection{闭图像定理}
-    
+
     \begin{Definition}[图像]\index{T!图像}
     设$ E, F $都是拓扑空间, $ u : E\to F $, 称
     \[
@@ -1736,13 +1734,13 @@
     \]
     为映射$ u $的\textbf{图像}.
     \end{Definition}
-    
+
     \begin{Theorem}[闭图像定理]
     设$ E, F $都是Banach空间, $ u : E\to F $是线性映射. 则$ u $连续当且仅当$ G(u) $是闭集.
     \end{Theorem}
     \begin{Proof}
     \textsl{必要性.} 设$ ((x_n,y_n))_{n\geqslant 1}\subset G(u) $有极限点$ (x,y)\in E\times F $, 其中$ u(x_n)=y_n $, 那么$ \norm{x_n-x}\to 0 $且$ \norm{y_n-y}\to 0 $, 故$ y=u(x) $, 即$ (x,y)\in G(u) $. 这说明$ G(u) $是闭集.
-    
+
     \textsl{充分性.} 由$ G(u) $是闭集可知$ G(u) $是Banach空间, 定义
     \[
     \varPhi : G(u)\to E,\qquad (x,u(x))\mapsto x,
@@ -1757,13 +1755,13 @@
     \]
     故$ u $连续.\qed
     \end{Proof}
-    
+
     \subsection{补空间问题}
-    
+
     \begin{Definition}[代数互补]\index{D!代数互补}
     设$ E $是数域$ \K $上的线性空间, $ X, Y $是$ E $的两个线性子空间. 若$ X+Y=E $且$ X\cap Y=\{0\} $, 则称$ X, Y $在$ E $中\textbf{代数互补}.
     \end{Definition}
-    
+
     \begin{Remark}
     有关代数互补的注记:
     \begin{enumerate}[(1)]
@@ -1779,11 +1777,11 @@
     \item 定义映射$ P_X : E\to X,\ e\mapsto x $和$ P_Y : E\to Y,\ e\mapsto y $, 则$ P_X $和$ P_Y $均线性且幂等. 并且$ P_X+P_Y=\id_E $.
     \end{enumerate}
     \end{Remark}
-    
+
     \begin{Definition}[拓扑互补]\index{T!拓扑互补}
     设$ E $是赋范空间而$ X, Y $代数互补. 若$ P_X $连续, 则称$ X $与$ Y $\textbf{拓扑互补}.
     \end{Definition}
-    
+
     \begin{Proposition}\label{prop:拓扑代数}
     设$ E $是赋范空间, $ X, Y $代数互补, 则以下命题等价:
     \begin{enumerate}[(1)]
@@ -1804,7 +1802,7 @@
     \end{aligned}
     \]
     故$ \norm{\varPhi}\leqslant 2 $且$ \norm{\varPhi^{-1}}\leqslant\max\{ \norm{P_X},\norm{P_Y} \} $, 从而$ \varPhi $是同构.
-    
+
     (2) $ \Rightarrow $ (1): 由
     \[
     \norm{P_X(e)}=\norm{x}\leqslant\norm{(x,y)}=\norm{\varPhi^{-1}(e)}\leqslant\norm{\varPhi^{-1}}\norm{e}
@@ -1812,23 +1810,23 @@
     可知$ \norm{P_X}\leqslant\norm{\varPhi^{-1}}<\infty $.\qed
     \end{Proof}
     \begin{Corollary}\label{cor:代数互补成为拓扑互补的条件}
-        设 $ E $ 是 Banach 空间,  $ X, Y $ 代数互补, 则 $ X, Y $ 拓扑互补当且仅当 $ X, Y $ 是闭集. 
+        设 $ E $ 是 Banach 空间,  $ X, Y $ 代数互补, 则 $ X, Y $ 拓扑互补当且仅当 $ X, Y $ 是闭集.
     \end{Corollary}
     \begin{Proof}
-        \textsl{必要性}. 若 $ X, Y $ 拓扑互补, 则 $ P_{X}, P_{Y} $ 连续, 注意到 $ \ker P_{X} = Y $,  $ \ker P_{Y}=X $, 由 $ \{0\} $ 是闭集知 $ X, Y $ 均是闭集. 
+        \textsl{必要性}. 若 $ X, Y $ 拓扑互补, 则 $ P_{X}, P_{Y} $ 连续, 注意到 $ \ker P_{X} = Y $,  $ \ker P_{Y}=X $, 由 $ \{0\} $ 是闭集知 $ X, Y $ 均是闭集.
 
         \textsl{充分性}.  若 $ X, Y $ 均是闭集, 则 $ X, Y $ 均为 Banach 空间, 从而 $ X\times Y $ 是 Banach 空间， 而 $ \phi : X\times Y\to E $ 是线性双射, 由开映射定理可知 $ \phi $ 是同构. 再由命题~\ref{prop:拓扑代数}~知 $ X, Y $ 拓扑互补. \qed
     \end{Proof}
 
     \begin{Theorem}
-        设 $ E $ 是Banach空间,  $ F_{1}, F_{2} $ 是 $ E $ 中闭线性子空间且 $ F_{1}\cap F_{2}=\{ 0 \} $. 则 $ F_{1}+F_{2} $ 是闭集当且仅当 $ \exists c>0\,\forall x\in F_{1}\,\forall y\in F_{2}\,\left( \norm{x}\leqslant c\norm{x+y} \right) $. 
+        设 $ E $ 是Banach空间,  $ F_{1}, F_{2} $ 是 $ E $ 中闭线性子空间且 $ F_{1}\cap F_{2}=\{ 0 \} $. 则 $ F_{1}+F_{2} $ 是闭集当且仅当 $ \exists c>0\,\forall x\in F_{1}\,\forall y\in F_{2}\,\left( \norm{x}\leqslant c\norm{x+y} \right) $.
     \end{Theorem}
     \begin{Proof}
         \textsl{必要性}. 由 $ F_{1}+F_{2} $ 闭, 故 $ F_{1}+F_{2} $ 是 Banach 空间,  $ F_{1}, F_{2} $ 在 $ F_{1}+F_{2} $ 中拓扑互补, 故 $ P_{F_{1}} $ 连续. 也即 $ \exists c>0 $, 使得 $ \norm{P_{F_{1}}}\leqslant c $, 故对任意 $ x\in F_{1}, y\in F_{2} $, 有
         \[
             \norm{x} = \norm{P_{F_{1}}(x+y)}\leqslant c\norm{x+y}.
         \]
-        
+
         \textsl{充分性}. 设 $ (e_{n})_{n\geqslant1} $ 是 $ F_{1} $ 中的 Cauchy 列, 且收敛于 $ e\in E $. 往证 $ e\in F_{1}+F_{2} $. 设 $ e_{n}=x_{n}+y_{n} $, 其中 $ x_{n}\in F_{1} $, $ y\in F_{2} $, 则
         \[
             \norm{x_{n}-x_{m}}\leqslant c\norm{e_{n}-e_{m}}\to 0.
@@ -1856,7 +1854,7 @@
             \label{fig:Baire}
         \end{center}
     \end{figure}
-    
+
 
 \section{Fourier分析}
     为方便以下讨论, 先定义以下几个常用空间: 考虑在\R 上以 $ 2\pi $ 为周期的函数 $ f $, 它可以限制在 $ [0, 2\pi] $ 上, 取规范化测度 (即测度空间为概率空间的测度) $ \frac{\diff\theta}{2\pi} $, 记
@@ -1875,7 +1873,7 @@
     \[
         \mathcal{P}\subset C_{2\pi}\subset C[0, 2\pi]\subset L_{2\pi}^{p}
     \]
-    并已知 $ C[0, 2\pi] $ 在 $ L_{2\pi}^{p} $ 中稠密. 
+    并已知 $ C[0, 2\pi] $ 在 $ L_{2\pi}^{p} $ 中稠密.
 
     \begin{Lemma}
         $ \mathcal P $ 在 $ C_{2\pi} $ 中稠密.
@@ -1901,7 +1899,7 @@
         \[
             \hat{f}(n)=\frac{1}{2\pi}\int_{0}^{2\pi}f(\theta)\exp(-\imag n\theta)\diff\theta,\quad n\in\Z
         \]
-        为函数  $ f $ 的 $ n $ 阶\textbf{Fourier系数}, 并记 $ f $ 的所有Fourier系数构成的序列为 $ \CF(f)=(\hat{f}(n))_{n\in\Z} $, 称其为 $ f $ 的\textbf{Fourier变换}, 有时也以 $ \hat{f} $ 记 $ \CF(f) $. 
+        为函数  $ f $ 的 $ n $ 阶\textbf{Fourier系数}, 并记 $ f $ 的所有Fourier系数构成的序列为 $ \CF(f)=(\hat{f}(n))_{n\in\Z} $, 称其为 $ f $ 的\textbf{Fourier变换}, 有时也以 $ \hat{f} $ 记 $ \CF(f) $.
     \end{Definition}
     \begin{Theorem}
         Fourier变换具有下列的性质:
@@ -1929,7 +1927,7 @@
         \[
             \tilde{g}_{\eta}(\theta)=\begin{cases}
                 g(\theta) & , \theta\in[0, 2\pi-\eta);\\
-                \text{线性函数} & , \theta\in[2\pi-\eta, 2\pi], 
+                \text{线性函数} & , \theta\in[2\pi-\eta, 2\pi],
             \end{cases}
         \]
         且线性部分连接 $ \tilde{g}_{\eta}(2\pi-\eta)=g(2\pi-\eta) $ 与 $ \tilde{g}_{\eta}(2\pi)=g(0) $, 则 $ \tilde{g}_{\eta}\in C_{2\pi} $ 且
@@ -1941,7 +1939,7 @@
             \norm{f-\tilde{g}_{\eta}}_{L_{2\pi}^{p}}<2\varepsilon.
         \]
         即 $ C_{2\pi} $ 在 $ L_{2\pi}^{p} $ 中依范数 $ \norm{\cdot}_{p} $稠密, 而 $ \mathcal{P} $ 在 $ C_{2\pi} $ 中依范数 $ \norm{\cdot}_{\infty} $ 稠密, 由 $ \norm{\cdot}_{p}<\norm{\cdot}_{\infty} $ 可知 $ \mathcal{P} $ 在 $ L_{2\pi}^{p} $ 中稠密.
-            
+
         (2) 对 $ \forall f\in\mathcal{P} $, 存在 $ m\leqslant n\in\Z $ 以及 $ \alpha_{k}\in\C $, 使得 $ f(\theta)=\sum\limits_{k=m}^{n}\alpha_{k}\exp(\imag k\theta) $, 并且
         \[
             \hat{f}(k)=\begin{cases}
@@ -1953,7 +1951,7 @@
         \[
             \norm{\CF(f)}_{\infty}=\sup_{n\in\Z}\abs{\hat{f}(n)}=\sup_{n\in\Z}\abs{\int_{0}^{2\pi}f(\theta)\exp(-\imag n\theta)\frac{\diff\theta}{2\pi}}\leqslant\norm{f}_{L_{2\pi}^{p}}
         \]
-        知 $ \norm{\CF}\leqslant1 $, 取 $ e_{n}=\exp(-\imag n\theta) $ 后由 $ \norm{\CF(e_{n})}=1 $ 知 $ \norm{\CF}=1 $. 
+        知 $ \norm{\CF}\leqslant1 $, 取 $ e_{n}=\exp(-\imag n\theta) $ 后由 $ \norm{\CF(e_{n})}=1 $ 知 $ \norm{\CF}=1 $.
 
         下面说明 $ \forall f\in L_{2\pi}^{1} $, $ \hat{f}\in c_{0}(\Z) $, 由 $ \mathcal{P} $ 在 $ L_{2\pi}^{1} $ 中稠密可知
         \[
@@ -1964,7 +1962,7 @@
             \abs{\hat{f}(m)}=\abs{\hat{f}(m)-\hat{g}(m)}\leqslant\norm{\CF(f)-\CF(g)}_{\infty}\leqslant\norm{f-g}_{L_{2\pi}^{1}}<\varepsilon,
         \]
         故 $ (\hat{f}(n))_{n\in\Z}\in c_{0}(\Z) $.
-            
+
         最后说明 $ \CF $ 是单射, 因而 $ \ker \CF=\{ 0 \} $, 而:
         \[
             \begin{aligned}
@@ -1991,7 +1989,7 @@
             \int_{0}^{2\pi}\abs{f(\theta)}^{2}\diff\theta=2\pi\sum_{n=-\infty}^{+\infty}\abs{\hat{f}(n)}^{2}.
         \]
     \end{Remark}
-    
+
     \begin{Definition}[Fourier级数]\index{F!Fourier级数}
     设$ f\in C_{2\pi} $, 称
     \[
@@ -1999,7 +1997,7 @@
     \]
     为$ f $的\textbf{Fourier级数}, 并称$ \sum\limits_{k=-n}^n\hat{f}(k)\exp(\imag kt) $为Fourier级数的$ n $次部分和.
     \end{Definition}
-    
+
     注意到
     \[
     S_n(f)(t)=\sum_{k=-n}^n\hat{f}(k)\exp(\imag kt)=\sum_{k=-n}^n\int_{-\pi}^\pi f(x)\exp(\imag k(t-x))\frac{\diff x}{2\pi}.
@@ -2013,7 +2011,7 @@
     S_n(f)(t)=\int_{-\pi}^\pi f(x)D_n(t-x)\frac{\diff x}{2\pi},
     \]
     并称$ D_n $是\textbf{Dirichlet核}.\index{D!Dirichlet核}
-    
+
     \begin{Proposition}\label{prop:Dirichlet核反例}
     设
     \[
@@ -2055,7 +2053,7 @@
     \]
     从而由共鸣定理, $ G $是稠密的$ \Gd $集.\qed
     \end{Proof}
-    
+
     \begin{Proposition}
     Fourier变换$ \CF : L_{2\pi}^1\to c_0(\Z) $不是满射.
     \end{Proposition}
@@ -2070,32 +2068,32 @@
     \]
     由命题\,\ref{prop:Dirichlet核反例}\,可知$ \norm{D_n}_{L_{2\pi}^1}=\infty $, 矛盾.\qed
     \end{Proof}
-    
-    
+
+
 \section*{本章习题}
     \addcontentsline{toc}{section}{本章习题}
-    
+
     习题后面括号中的序号表示对应书中习题的编号.
-    
+
     \begin{enumerate}[label=\textbf{\arabic*.}, ref=\arabic*]
     \item (3.8)设$ E $是数域$ \K $上的有限维线性空间, 其维数$ \dim E=n $, $ \{ e_1,e_2,\cdots,e_n \} $是$ E $的一组基. 任取$ u\in\CL(E) $, 令$ [u] $表示$ u $在这组基下对应的矩阵
         \begin{enumerate}[(1)]
         \item 证明映射$ u\mapsto[u] $建立了$ \CL(E) $到$ \mathbb{M}_n(\K) $之间的同构映射.
         \item 假设$ E=\K^n $且$ \{ e_1,e_2,\cdots,e_n \} $是经典基(即$ e_i=[\delta_{i,1},\delta_{i,2},\cdots,\delta{i,n}] $, 这里$ \delta $是Kronecker符号), 并约定$ E=\K^n $上赋予Euclid范数. 证明: 若$ [u] $可被正交相似对角化, 则$ \norm{u}=\max\{ \abs{\lambda_1},\abs{\lambda_2},\cdots,\abs{\lambda_n} \} $, 这里$ \lambda_1,\lambda_2,\cdots,\lambda_n $是$ u $的特征值.
-        \item 取$ \{ e_1,e_2,\cdots,e_n \} $如上, 试由$ [u] $中的元素分别确定$ p=1 $与$ p=\infty $时$ u : (\K^n,\norm{\cdot}_p)\to(\K^n,\norm{\cdot}_p) $的范数. 
+        \item 取$ \{ e_1,e_2,\cdots,e_n \} $如上, 试由$ [u] $中的元素分别确定$ p=1 $与$ p=\infty $时$ u : (\K^n,\norm{\cdot}_p)\to(\K^n,\norm{\cdot}_p) $的范数.
         \end{enumerate}
     \item (3.9)设$ E $是Banach空间.
         \begin{enumerate}[(1)]
         \item 设$ u\in\CB(E) $且$ \norm{u}<1 $, 证明$ \id_E-u $在$ \CB(E) $中可逆;
         \item 设$ GL(E) $是$ \CB(E) $中可逆元构成的集合, 证明: $ GL(E) $关于复合运算构成一个群, 且它是$ \CB(E) $中的开集;
-        \item 证明$ u\mapsto u^{-1} $是$ GL(E) $上的同胚. 
+        \item 证明$ u\mapsto u^{-1} $是$ GL(E) $上的同胚.
         \end{enumerate}
-    \item (4.2)设 $ A $ 是 $ \ell_{2} $ 的子集, 其元素 $ x = (x_{n})_{n\geqslant1} $ 满足 $ \abs{x_{n}}\leqslant1/n, n\geqslant1 $. 证明 $ A $ 是紧集. 
+    \item (4.2)设 $ A $ 是 $ \ell_{2} $ 的子集, 其元素 $ x = (x_{n})_{n\geqslant1} $ 满足 $ \abs{x_{n}}\leqslant1/n, n\geqslant1 $. 证明 $ A $ 是紧集.
     \item (4.6)设 $ H $ 是内积空间,  $ x_{n}, x\in H $, 并假设
         \[
             \lim_{n\to\infty}\norm{x_{n}}=\norm{x}\ \ \text{且}\ \  \lim_{n\to\infty}\lrangle{y, x_{n}}=\lrangle{y, x},\quad y\in H
         \]
-        证明 $ \lim\limits_{n\to\infty}\norm{x_{n}-x}=0 $. 
+        证明 $ \lim\limits_{n\to\infty}\norm{x_{n}-x}=0 $.
     \item (4.10)证明以下命题:
         \begin{enumerate}[(1)]
             \item 设 $ H $ 是 Hilbert空间, $ D_{n}=\{ -1, 1 \}^{n} $. 证明
@@ -2106,9 +2104,9 @@
               \[
                 a\sum_{k=1}^{n}\norm{x_{k}}^{2}\leqslant\frac{1}{2^{n}}\sum_{(\varepsilon_{k})\in D_{n}}\norm{\sum_{k=1}^{n}\varepsilon_{k}x_{k}}^{2}\leqslant b\sum_{k=1}^{n}\norm{x_{k}}^{2}, \quad \forall x_{1}, x_{2}, \dots, x_{n} \in X.
             \]
-            \item 设 $ 1\leqslant p\ne2\leqslant\infty $ 证明空间 $ c_{0}, \ell_{p}, L_{p} $ 中没有等价的内积范数. 
+            \item 设 $ 1\leqslant p\ne2\leqslant\infty $ 证明空间 $ c_{0}, \ell_{p}, L_{p} $ 中没有等价的内积范数.
         \end{enumerate}
-    \item (4.11)设 $ (C_{n})_{n\geqslant1} $ 是 Hilbert空间 $ H $ 中的一个递增非空闭凸子集列,  $ C $ 是所有 $ C_{n} $ 并集的闭包, 证明 
+    \item (4.11)设 $ (C_{n})_{n\geqslant1} $ 是 Hilbert空间 $ H $ 中的一个递增非空闭凸子集列,  $ C $ 是所有 $ C_{n} $ 并集的闭包, 证明
         \[
             P_{C}(x) = \lim_{n\to \infty}P_{C_{n}}(x), \quad \forall x\in H.
         \]
@@ -2124,15 +2122,15 @@
         \item $ E=\Span\{H,h\} $且$ E_0=\Span\{H_0,h\} $;
         \item $ h $属于$ H_0 $在$ E $中的闭包.
         \end{enumerate}
-        \item 以$ H $为全空间, 证明$ H_0^\bot=\{0\} $, 并解释所得结果蕴涵的意义. 
+        \item 以$ H $为全空间, 证明$ H_0^\bot=\{0\} $, 并解释所得结果蕴涵的意义.
         \end{enumerate}
-    \item (补充6)计算 $ \mathbb{M}_{2}(\C) $ 中投影算子的一般形式. 
+    \item (补充6)计算 $ \mathbb{M}_{2}(\C) $ 中投影算子的一般形式.
     \item (4.15)证明下列命题:
         \begin{enumerate}[(1)]
         \item 设$ E $和$ F $是Hilbert空间$ H $的两个正交线性子空间, 证明$ E+F $是闭的当且仅当$ E, F $都是闭的.
-        \item 以$ (e_n)_{n\geqslant 1} $表示$ \ell_2 $中的标准正交基, 并设$ E $是$ \{ e_{2n} : n\geqslant 1 \} $的线性扩张的闭包, 而$ F $是$ \{ e_{2n}+\frac{1}{n}e_{2n+1} : n\geqslant 1 \} $的线性扩张的闭包. 证明$ E\cap F=\{0\} $且$ E+F $在$ \ell_2 $中不是闭的. 
+        \item 以$ (e_n)_{n\geqslant 1} $表示$ \ell_2 $中的标准正交基, 并设$ E $是$ \{ e_{2n} : n\geqslant 1 \} $的线性扩张的闭包, 而$ F $是$ \{ e_{2n}+\frac{1}{n}e_{2n+1} : n\geqslant 1 \} $的线性扩张的闭包. 证明$ E\cap F=\{0\} $且$ E+F $在$ \ell_2 $中不是闭的.
         \end{enumerate}
-    \item (4.19)令 $ H=L_{2}(0, 1) $; 并设 $ (e_{n})_{n\geqslant1} $ 是 $ H $ 中的规范正交集, 证明 $ (e_{n})_{n\geqslant1} $ 是 $ H $ 上的规范正交基的充分必要条件是 
+    \item (4.19)令 $ H=L_{2}(0, 1) $; 并设 $ (e_{n})_{n\geqslant1} $ 是 $ H $ 中的规范正交集, 证明 $ (e_{n})_{n\geqslant1} $ 是 $ H $ 上的规范正交基的充分必要条件是
         \[
             \sum_{n\geqslant1}\abs{\int_{0}^{x}e_{n}(t)\diff t}^{2} = x, \quad \forall x\in[0, 1].
         \]
@@ -2140,12 +2138,12 @@
         \begin{enumerate}[(1)]
             \item 证明 \J 是 \R 上的 \Gd 集, 并导出 \Q 不是 \Gd 集, 且不存在函数 $ f:\R\to\R $ 使得 $ \cont(f)=\Q $;
             \item 定义函数 $ f:\R\to\R $, 当 $ x\in\J $ 时, $ f(x)=0 $; $ f(0)=1 $; 若 $ x $ 是非零有理数 $ p/q $, 这里 $ p/q $ 是 $ x $ 的不可约形式, $ p\in\Z, q\in\N $, 令 $ f(x)=1/q $, 证明 $ \cont(f)=\J $;
-            \item 设 $ f=1_{\Q} $, 证明 $ f $ 不是第一纲的 (即 $ f $ 不是任一连续函数列的极限函数), 但是存在一列第一纲的函数逐点收敛于 $ f $. 
+            \item 设 $ f=1_{\Q} $, 证明 $ f $ 不是第一纲的 (即 $ f $ 不是任一连续函数列的极限函数), 但是存在一列第一纲的函数逐点收敛于 $ f $.
         \end{enumerate}
     \item (6.6)设$ E $和$ F $都是Banach空间, $ (u_n)_{n\geqslant 1} $是$ \CB(E,F) $的序列. 证明以下命题等价:
         \begin{enumerate}[(a)]
         \item $ (u_n(x))_{n\geqslant 1} $在每个$ x\in E $处收敛.
-        \item 设$ A\subset E $且$ \Span A $在$ E $中稠密, 有$ (u_n(a))_{n\geqslant 1} $对每个$ a\in A $均收敛, 且$ (u_n)_{n\geqslant 1} $有界. 
+        \item 设$ A\subset E $且$ \Span A $在$ E $中稠密, 有$ (u_n(a))_{n\geqslant 1} $对每个$ a\in A $均收敛, 且$ (u_n)_{n\geqslant 1} $有界.
         \end{enumerate}
     \item (6.8)设 $ E $ 是 $ (C[0, 1], \norm{\cdot}_{\infty}) $ 的闭线性子空间, 并假设 $ E $ 中的所有元素都是 Lipschitz 函数.
         \begin{enumerate}[(1)]
@@ -2154,20 +2152,20 @@
                 \varPhi_{x, y}(f)=\frac{f(y)-f(x)}{y-x}.
             \]
             证明 $\{ \varPhi_{x, y}:x, y\in[0, 1], x\ne y \}$ 是 $ \Star{E} $ 中的有界集.
-            \item 导出 $ E $ 中的闭单位球在 $ [0, 1] $ 上等度连续, 且 $ \dim E<\infty $. 
+            \item 导出 $ E $ 中的闭单位球在 $ [0, 1] $ 上等度连续, 且 $ \dim E<\infty $.
         \end{enumerate}
     \item (6.10)设$ E, F $都是Banach空间, $ u\in\CB(E,F) $并满足$ u(B_E) $在$ B_F $中稠密.
         \begin{enumerate}[(1)]
         \item 计算$ \norm{u} $.
         \item 证明: $ u(B_E)=B_F $, 因此$ u $是满的.
-        \item 设$ v $是$ E/\ker u $到$ F $的映射并满足$ v\circ q=u $, 其中$ q : E\to E/\ker u $是商映射. 证明: $ v $是从$ E/\ker u $到$ F $的等距映射. 
+        \item 设$ v $是$ E/\ker u $到$ F $的映射并满足$ v\circ q=u $, 其中$ q : E\to E/\ker u $是商映射. 证明: $ v $是从$ E/\ker u $到$ F $的等距映射.
         \end{enumerate}
     \item (6.13)证明下列命题:
         \begin{enumerate}[(1)]
         \item 设$ E $是赋范空间, $ F $是$ E $的线性子空间. 证明: 若$ F\ne E $, 那么$ F $在$ E $中的内部是空集.
-        \item 由此证明所有多项式构成的空间$ P $不能赋予完备范数. 
+        \item 由此证明所有多项式构成的空间$ P $不能赋予完备范数.
         \end{enumerate}
-    \item (6.14)设 $ E $ 是 Banach 空间, $ F, G $ 都是 $ E $ 是闭线性子空间, 并且 $ F+G $ 也是闭线性子空间. 证明: 存在一个常数 $ c\geqslant0 $, 使得 $ \forall x\in F+G $, $ \exists(f, g)\in F\times G $, 满足 
+    \item (6.14)设 $ E $ 是 Banach 空间, $ F, G $ 都是 $ E $ 是闭线性子空间, 并且 $ F+G $ 也是闭线性子空间. 证明: 存在一个常数 $ c\geqslant0 $, 使得 $ \forall x\in F+G $, $ \exists(f, g)\in F\times G $, 满足
         \[
             x=f+g, \norm{f}\leqslant c\norm{x}, \norm{g}\leqslant c\norm{x}.
         \]
@@ -2175,8 +2173,8 @@
         \[
             \lrangle{u(x), y}=\lrangle{x, u(y)}, \quad x, y\in H,
         \]
-        证明: $ u $ 连续. 
-    \item (6.16)设$ X=C^1([0,1],\R) $, 即由$ [0,1] $上连续可微的函数构成的集合, 其上赋予连续一致范数$ \norm\cdot_\infty $. 并设$ Y=C([0,1],\R) $, 其上也赋予一致范数. 考虑映射$ u : X\to Y $, $ u(f)=f' $. 证明: $ u $的图像是闭的, 但$ u $不连续. 并解释该结论的意义. 
+        证明: $ u $ 连续.
+    \item (6.16)设$ X=C^1([0,1],\R) $, 即由$ [0,1] $上连续可微的函数构成的集合, 其上赋予连续一致范数$ \norm\cdot_\infty $. 并设$ Y=C([0,1],\R) $, 其上也赋予一致范数. 考虑映射$ u : X\to Y $, $ u(f)=f' $. 证明: $ u $的图像是闭的, 但$ u $不连续. 并解释该结论的意义.
     \item (6.19)设 $ (X, \CA, \mu) $ 是 $ \sigma $-有限的测度空间.
         \begin{enumerate}[(1)]
             \item 假设当 $ 1\leqslant p<q\leqslant\infty $ 时, 有 $ L_{q}(X, \CA, \mu)\subset L_{p}(X, \CA, \mu) $. 证明存在常数 $ C\geqslant0 $, 使得对任意的 $ f\in L_{q}(X, \CA, \mu) $, 有 $ \norm{f}_{p}\leqslant c\norm{f}_{q} $.
@@ -2184,7 +2182,7 @@
             \begin{enumerate}[a. ]
                 \item 存在 $ 1\leqslant p<q\leqslant\infty $, 使得 $ L_{q}(X, \CA, \mu)\subset L_{p}(X, \CA, \mu) $;
                 \item $ \mu(X)<\infty $;
-                \item 任取 $ 1\leqslant p<q\leqslant\infty $, 有 $ L_{q}(X, \CA, \mu)\subset L_{p}(X, \CA, \mu) $. 
+                \item 任取 $ 1\leqslant p<q\leqslant\infty $, 有 $ L_{q}(X, \CA, \mu)\subset L_{p}(X, \CA, \mu) $.
             \end{enumerate}
         \end{enumerate}
     \item (5.15, \textbf{Fourier级数})设 $ f\in L_{2\pi}^{1} $, 其 \textbf{Fourier 级数}定义为
@@ -2199,18 +2197,18 @@
         \[
             \norm{f-S_{N}(f)}_{\infty}\leqslant\sqrt{\frac{2}{N}}\norm{f'}_{2}, \quad N\geqslant1.
         \]
-        注意这里的导数 $ f' $ 在 $ f $ 的不可导点取左右导数. 
-    \item (5.17)对任意$ a\in\R $, 相应的平移变换$ \tau_a(f)(x):=f(x-a) $. 证明对任意$ f\in L_{2\pi}^p $和$ 0<p<\infty $, 都有 
+        注意这里的导数 $ f' $ 在 $ f $ 的不可导点取左右导数.
+    \item (5.17)对任意$ a\in\R $, 相应的平移变换$ \tau_a(f)(x):=f(x-a) $. 证明对任意$ f\in L_{2\pi}^p $和$ 0<p<\infty $, 都有
         \[
         \lim_{a\to 0}\norm{\tau_a(f)-f}_p=0.
         \]
     \end{enumerate}
-\section*{本章注记}    
+\section*{本章注记}
     \addcontentsline{toc}{section}{本章注记}
-    
+
     \begin{enumerate}
     \item 本章中以下命题/结论/注记未在正文中进行证明, 其证明参见附录A的相关内容:
-    
+
     \hspace{4em}定义\,\ref{def:Hilbert空间}\,下的注记, 注\,\ref{rmk:正交性与正交补}.
     \item 以下习题给出了一部分反例:
         \begin{enumerate}[(1)]

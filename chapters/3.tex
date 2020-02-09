@@ -1,5 +1,3 @@
-% !TeX root = main.tex
-
 \chapter{Banach空间的对偶理论}
 \section{半范数}
     \begin{Definition}[半范数]\label{def:半范数}\index{B!半范数}
@@ -9,7 +7,7 @@
             \item 齐次性: $ \forall \lambda\in\K\,(p(\lambda x)=\abs{\lambda}p(x)) $;
             \item 三角不等式: $ \forall x, y\in E\,(p(x+y)\leqslant p(x)+p(y)) $.
         \end{enumerate}
-        则称 $ p $ 是 $ E $ 的一个\textbf{半范数}. 
+        则称 $ p $ 是 $ E $ 的一个\textbf{半范数}.
     \end{Definition}
     例如: $ E $ 上的范数 $ \norm{\cdot} $ 是一个半范数, 且对 $ f\in \Star{E} $, $ \abs{f} $ 是一个半范数.
     \begin{Definition}[平衡, 吸收]\label{def:平衡吸收}
@@ -17,16 +15,16 @@
         \begin{enumerate}[(1)]
             \item 若 $ \forall\abs{\lambda}\leqslant1\,\forall x\in A\,(\lambda x\in A) $, 则称 $ A $ 是\textbf{平衡}的;\index{P!平衡}
             \item 若 $ \forall x\in E\,\exists \alpha>0\,(\abs{\lambda}\leqslant\alpha\Rightarrow\lambda x \in A) $, 则称 $ A $ 是\textbf{吸收}的. \index{X!吸收}
-            \item 若 $ x\in A\Rightarrow -x\in A $, 则称 $ A $ 是\textbf{对称}的. \index{D!对称} 
+            \item 若 $ x\in A\Rightarrow -x\in A $, 则称 $ A $ 是\textbf{对称}的. \index{D!对称}
         \end{enumerate}
     \end{Definition}
     可以从图~\ref{fig:平衡吸收}~来理解平衡和吸收的概念
     \begin{figure}[hp!]
-        \begin{center}    
+        \begin{center}
         \begin{tikzpicture}
             \draw[-latex] (-1,0) -- (1,0) node[below] {$ \scriptstyle{x} $};
             \draw[-latex] (0,-1) -- (0,1) node[right] {$ \scriptstyle{y} $};
-            \draw (-1,-0.5) -- (1,0.5); 
+            \draw (-1,-0.5) -- (1,0.5);
             \node (A1) at (0,-1.3) {\zihao{6} 平衡, 不吸收};
             \node (B1) at (0.75,-0.75) {$ \mathbb{R}^{2} $};
             \filldraw[fill=gray!30] (4,0) circle[radius=0.75];
@@ -34,7 +32,7 @@
             \draw[-latex] (4,-1) -- (4,1) node[right] {$ \scriptstyle{y} $};
             \node (A2) at (4,-1.3) {\zihao{6} 平衡, 吸收};
             \node (B2) at (4.8,-0.8) {$ \mathbb{C} $};
-            \filldraw[fill=gray!30] (7.25,-0.75) rectangle (8.75,0.75); 
+            \filldraw[fill=gray!30] (7.25,-0.75) rectangle (8.75,0.75);
             \draw[-latex] (7,0) -- (9,0) node[below] {$ \scriptstyle{x} $};
             \draw[-latex] (8,-1) -- (8,1) node[right] {$ \scriptstyle{y} $};
             \node (A3) at (8,-1.3) {\zihao{6} 平衡, 吸收, 凸集};
@@ -94,7 +92,7 @@
         \[
             I_{\varOmega_{1}}=\left\{ \lambda>0:\frac{x}{\lambda}\in\varOmega_{1} \right\}\subset\left\{ \lambda>0:\frac{x}{\lambda}\in\varOmega_{2} \right\} = I_{\varOmega_{2}}(x)
         \]
-        可知 $ p_{\varOmega_{1}}\geqslant p_{\varOmega_{2}} $. 
+        可知 $ p_{\varOmega_{1}}\geqslant p_{\varOmega_{2}} $.
 
         (3) 因为 $ \varOmega_{3}\subset\varOmega_{1}, \varOmega_{3}\subset\varOmega_{2} $. 由~(2)~知 $ p_{\varOmega_{3}}\geqslant p_{\varOmega_{1}} $, $ p_{\varOmega_{3}}\geqslant p_{\varOmega_{2}} $, 故 $ p_{\varOmega_{3}}\geqslant\max\left\{ p_{\varOmega_{1}}, p_{\varOmega_{2}} \right\} $.\qed
     \end{Proof}
@@ -104,7 +102,7 @@
         \begin{enumerate}[(1)]
             \item $ \varOmega = \{ x\in E : p_{\varOmega}(x)\leqslant 1 \} $;
             \item 若 $ \varOmega $ 有界, 则 $ p_{\varOmega}(x)=0 $ 的充分必要条件是 $ x=0 $;
-            \item 若 $ 0 $ 是 $ \varOmega $ 的内点, 则 $ p_{\varOmega} $ 一致连续. 
+            \item 若 $ 0 $ 是 $ \varOmega $ 的内点, 则 $ p_{\varOmega} $ 一致连续.
         \end{enumerate}
     \end{Proposition}
     \begin{Proof}
@@ -145,9 +143,9 @@
             \item 齐次性: $ \forall t>0\,\forall x\in E\,(p(tx)=tp(x)) $;
             \item 次加性: $ \forall x, y\in E\,(p(x+y)\leqslant p(x)+p(y)) $.
         \end{enumerate}
-        则称泛函 $ p $ 是 $ E $ 上的\textbf{次线性泛函}. 
+        则称泛函 $ p $ 是 $ E $ 上的\textbf{次线性泛函}.
     \end{Definition}
-    例如: $ E $ 上的线性泛函是次线性泛函; Minkowski 泛函是次线性泛函; 半范数也是次线性泛函. 
+    例如: $ E $ 上的线性泛函是次线性泛函; Minkowski 泛函是次线性泛函; 半范数也是次线性泛函.
 
 \section{Hahn-Banach定理}
     \subsection{分析形式的 Hahn-Banach定理}
@@ -177,7 +175,7 @@
         由 $ \codim F =1 $ 可知 $ \exists x_{0}\in E\sm F $ 使得 $ E = \R x_{0}+F $. 设 $ \tilde{f}:E\to\R $ 是 $ f $ 的线性延拓, 即 $ \tilde{f} $ 线性且 $ \tilde{f}|_{F}=f $. 则
         \[
             \forall\lambda\in\R\,\forall x\in F\,(\tilde{f}(\lambda x_{0}+x)=\lambda\tilde{f}(x_{0})+f(x)),
-        \] 
+        \]
         即 $ \tilde{f} $ 由其在 $ x_{0} $ 处的取值唯一确定, 不妨设 $ \tilde{f}(x_{0})=a $, 则
         \[
             \begin{aligned}
@@ -317,9 +315,9 @@
         B(x,\cdot)\in\Star{(\Star{E})}=: E^{**}\quad x\mapsto B(x, \cdot)
     \]
     是等距同构, 此时记 $ E\hookrightarrow E^{**} $, 称 $ E $ 可\textbf{等距嵌入} $ E^{**} $.
-    
+
     之所以使用嵌入是因为$ E $未必完备, 当$ E $不完备时, 若将$ \hat{x}=B(x,\cdot) $与$ x $等同, 则有$ E\subset E^{**} $.
-    
+
     \begin{Corollary}\label{cor:HB4}
     设$ E $是赋范空间, $ F\subset E $是闭线性子空间, 且$ F\ne E $. 取定$ x\in E\sm F $, 则存在$ f\in\Star{E} $使得$ \norm{f}=1 $, $ f\rvert_F $=0且$ f(x)=d(x,F) $.
     \end{Corollary}
@@ -342,18 +340,18 @@
     \]
     令$ n\to\infty $后可知$ \norm{\varphi}\geqslant 1 $, 于是$ \norm{\varphi}=1 $. 由推论~\ref{cor:保范延拓}~可知存在$ f\in\Star{E} $使得$ f\rvert_{\K x+F}=\varphi $, 且$ \norm{f}=\norm{\varphi}=1 $. 而$ f\rvert_F=\varphi\rvert_F=0 $, 且有$ f(x)=d(x,F) $.\qed
     \end{Proof}
-    
+
     \begin{Corollary}
     设$ E $是赋范空间, $ F\subset E $, $ x_0\in E $, 则$ x_0\in\bar{F} $当且仅当对任意满足$ f\rvert_F=0 $的$ f\in\Star{E} $, 都有$ f(x_0)=0 $成立.
     \end{Corollary}
     \begin{Proof}
     \textsl{必要性.} 若$ x_0\in \bar{F} $, 由$ f\rvert_F=0 $与$ f $的连续性可知$ f\rvert_{\bar{F}}=0 $, 于是$ f(x_0)=0 $.
-    
+
     \textsl{充分性.} 若$ x_0\notin \bar{F} $, 由推论~\ref{cor:HB4}~可知存在$ g\in\Star{E} $使得$ g\rvert_{\bar{F}}=0 $, 且$ g(x_0)=d(x_0,\bar{F})>0 $, 这与$ g(x_0)=0 $是矛盾的. 故$ x_0\in\bar{F} $.\qed
     \end{Proof}
-    
+
     \subsection{几何形式的 Hahn-Banach 定理(凸集隔离定理)}
-    
+
     \begin{Theorem}[Hahn-Banach/凸集隔离定理]\label{thm:凸集隔离定理}
     设$ E $是$ \K $上的线性空间, $ A, B $都是非空凸子集且$ A\cap B=\varnothing $, 若$ A $是开集, 则$ \exists f\in\Star{E} $, $ \exists\alpha\in \R $使得
     \[
@@ -369,7 +367,7 @@
     \item $ x_0\notin C $, 此因$ A\cap B=\varnothing $.
     \end{enumerate}
     从而$ C $是一个吸收凸集, 且$ C $是开集, 于是$ C $上的Minkowski泛函$ p_C $是一个次线性泛函. 且$ C=\{ x : p_C(x)<1 \} $. 由0是$ C $的内点可知存在$ r>0 $使得$ p_C(x)\leqslant\frac{2\norm{x}}{r} $, 从而$ p_C $一致连续.
-    
+
     取$ f_0 $是$ \K x_0 $上的线性泛函, 且$ f_0(x_0)=p_C(x_0)\geqslant 1 $, 由Hahn-Banach定理可知存在$ f\in\Star{E} $使得$ f(x_0)=p_C(x_0) $且$ f(x)\leqslant p_C(x) $, 则$ \forall x\in E $, 都有
     \[
     -f(x)=f(-x)\leqslant p_C(-x)\leqslant\frac{2\norm{x}}{r},
@@ -383,7 +381,7 @@
     f(a)\leqslant f(b)+1-p_C(x_0)\leqslant f(b),
     \]
     即$ \forall a\in A\,\forall b\in B\,(f(a)\leqslant f(b)) $.
-    
+
     还需说明$ f(A) $是一个开集. 因为$ A $是凸集, 故$ f(A) $是区间, 取$ x\in A $, 由$ A $是开集可知存在$ \eta>0 $使得$ \abs{t}<\eta $时, 有$ x+tx_0\in A $, 则
     \[
     f(x+tx_0)=f(x)+tf(x_0)\in f(A),
@@ -393,14 +391,14 @@
     \varnothing\ne(f(x)-\eta f(x_0),f(x)+\eta f(x_0))\subset f(A),
     \]
     即$ f(A) $是开区间, 记$ f(A)=(\beta,\alpha) $后有$ \forall a\in A\,\forall b\in B\,(f(a)<\alpha\leqslant f(b)) $.
-    
+
     当$ \K=\C $时, 将$ E $看作实线性空间, 则由$ \K=\R $的讨论可知存在$ \varphi : E\to \R $与常数$ \alpha\in\R $使得$ \forall a\in A\,\forall b\in B\,(\varphi(a)<\alpha\leqslant\varphi(b)) $. 取
     \[
     f(x)=\varphi(x)-\imag\varphi(\imag x)
     \]
     后可知$ f\in\Star{E} $满足条件.\qed
     \end{Proof}
-    
+
     \begin{Theorem}[Hahn-Banach严格隔离定理]
     设$ E $是赋范空间, $ A, B $是非空凸子集且$ A\cap B=\varnothing $. 若$ A $是紧集且$ B $是闭集, 则存在$ f\in\Star{E} $与常数$ \alpha,\beta\in\R $使得
     \[
@@ -426,7 +424,7 @@
     \]
     命题成立.\qed
     \end{Proof}
-    
+
     \begin{Definition}[超平面]\index{C!超平面}
     设$ E $是是线性空间, $ f $是$ E $上的线性泛函, 则$ \forall\alpha\in\R $, 称
     \[
@@ -441,22 +439,22 @@
     \]
     每一部分称为一个半空间. 则若$ A\cap B=\varnothing $, 则可使得$ A, B $分别位于两个半空间中.
     \end{Remark}
-    
+
     将几何概念明确之后, 我们可以不使用分析形式的Hahn-Banach定理来证明定理~\ref{thm:凸集隔离定理}~.
-    
+
     \textbf{另证}\ \ 不妨设$ E $是实线性空间, 考虑$ A-B $, 这是一个开凸集, 且由$ A\cap B=\varnothing $可知$ 0\notin A-B $.
-    
+
     \textbf{(Step 1)} 构造最大凸集$ C $.
-    
+
     令$ \mathcal{C} $是以下开凸集全体: $ 0\notin C $, $ A-B\subset C $. 并在$ \mathcal C $上以包含关系作为偏序关系, 则$ (\mathcal C,\leqslant) $是一个偏序集. 取$ \mathcal C_0 $是$ \mathcal C $的全序子集, 作$ \tilde{C}=\bigcup\mathcal C_0 $, 则$ \tilde{C} $是$ \mathcal C_0 $的上界. 由Zorn引理可知$ \mathcal C $有极大元$ C $.
-    
+
     再考虑集合$ D=\{\lambda x : x\in C,\lambda>0\} $. 由$ C $是开凸集可知$ D $也是开凸集, 且$ C\subset D $, $ 0\notin D $. 于是$ A-B\subset D $, 这说明$ D\in\mathcal C $. 由$ C $的极大性可知$ C=D $. 且由这一形式可知$ C\cap -C=\varnothing $, 于是
     \[
     \forall x,y\in C\,\forall\lambda,\mu>0\,(\lambda x+\mu y\in C)
     \]
-    
+
     \textbf{(Step 2)} 证明$ E\sm(C\cup-C) $是线性空间.
-    
+
     为此, 只需证明$ \forall x,y\notin C\,\forall\lambda,\mu>0\,(\lambda x+\mu y\notin C) $即可. 用反证法, 若$ \lambda x+\mu y\in C $, 则$ \forall r>0 $, 有
     \[
     r((\lambda x+\mu y)+(\lambda x-\mu y))=2r\lambda x\notin C,
@@ -470,7 +468,7 @@
     \lambda x+\mu y-(\lambda x-\mu y)=2\mu y\in C,
     \]
     这说明$ y\in C $, 矛盾. 从而只能$ \lambda x+\mu y\notin C $.
-    
+
     再任取$ x', y'\in E\sm(C\cup-C) $, 往证$ \forall\lambda,\mu\in\R\,(\lambda x'+\mu y'\in E\sm(C\cup -C)) $. 当$ \lambda,\mu $至少一个为零时命题显然成立, 故只需考虑$ \lambda,\mu $均不为零的情形. 由$ x',y'\in E\sm(C\cup-C) $可知$ x'\notin C,\ x'\notin -C,\ y'\notin C,\ y\notin -C $. 从而对$ \lambda,\mu>0 $, 注意到
     \[
     \begin{aligned}
@@ -479,9 +477,9 @@
     \end{aligned}
     \]
     从而命题成立, 于是$ E\sm(C\cup-C) $是一个线性空间.
-    
+
     \textbf{(Step 3)} 构造超平面.
-    
+
     记$ E_0=E\sm(C\cup-C) $, 往证$ E_0 $余1维. 设$ \tilde{x},\tilde{y}\in E\sm E_0 $, 则$ \tilde{x},\tilde{y}\ne 0 $. 往证$ \exists \lambda,\mu\ne 0 $ 使得 $ \lambda\tilde{x}+\mu\tilde{y}\in E_0 $. 不妨$ \tilde{x}\in C $而$ \tilde{y}\in -C $. 令
     \[
     S_0=\{ s\in[0,1] : \tilde{x}+s(\tilde{y}-\tilde{x})\in C \},\qquad S_1=\{ s\in[0,1] : \tilde{x}+s(\tilde{y}-\tilde{x})\in -C \}
@@ -491,7 +489,7 @@
     (1-s)\tilde{x}+s\tilde{y}\in E_0.
     \]
     从而$ E_0 $是余1维的.
-    
+
     由$ C\cup -C $是开集可知$ E_0=E\sm(C\cup-C) $是闭集. 于是可以定义$ E $上的线性泛函$ f $使得$ f(\lambda x_0+x)=\lambda d(x_0,E_0) $,(这里$ E_0 $的闭性保证了距离well-defined), 其中$ x_0\in E\sm E_0 $. 从而$ \lambda\ne 0 $时对任意$ x\in E_0 $, 都有
     \[
     \abs{f(\lambda x_0+x)}=\abs{\lambda}d(x_0,E_0)\leqslant\abs{\lambda}\cdot\norm{x_0+\frac{r}{\lambda}}=\norm{\lambda x_0+x}.
@@ -505,11 +503,11 @@
     \forall a\in A\,\forall b\in B\,(f(a)<\alpha\leqslant f(b))
     \]
     即超平面$ \{ x : f(x)=\alpha \} $分离$ A, B $.
-    
+
     复线性空间的情形与原证明方法类似.\qed
-    
+
     注意到另证本质上只用到了$ f $的连续性, 于是上面的证明可以毫无困难地推广到$ E $是局部凸的Hausdorff空间的情形.
-    
+
     \begin{Corollary}\label{cor:HB严格1}
     设$ E $是赋范空间, $ B $是平衡的闭凸集, $ x_0\in B^c $. 则存在$ f\in\Star{E} $使得$ f(x_0)>1 $且$ \sup\limits_{x\in B}\abs{f(x)}< 1 $.
     \end{Corollary}
@@ -519,7 +517,7 @@
     (\Re\tilde{f})(b)<\alpha<\beta<(\Re\tilde{f})(x_0)
     \]
     注意到$ B $是平衡集, 于是$ 0\in B $, 从而$ x_0\ne 0 $, 且$ 0<\alpha<\beta<(\Re\tilde{f})(x_0) $.
-    
+
     取$ f=\frac{1}{\alpha}\sgn\tilde{f}(x_0)\tilde{f} $, 则有
     \[
     f(x_0)=\frac{\tabs{\tilde f(x_0)}}{\alpha}>\frac{(\Re \tilde{f})(x_0)}{\alpha}>1,
@@ -530,14 +528,14 @@
     \]
     \qed
     \end{Proof}
-    
+
     \begin{Corollary}
     设$ E $是赋范空间, $ B $是闭线性子空间, $ x_0\notin B $. 则存在$ f\in\Star{E} $使得$ f(x_0)=1 $且$ f\rvert_B=0 $.
     \end{Corollary}
     \begin{Proof}
     在推论~\ref{cor:HB严格1}~中取$ f=\sgn\tilde{f}(x_0)\tilde{f} $类似可证.\qed
     \end{Proof}
-    
+
     \begin{Corollary}\label{cor:E*可分点}
     设$ E $是赋范空间, 则$ \Star{E} $可分点.
     \end{Corollary}
@@ -548,7 +546,7 @@
     \]
     故$ f(x)\ne f(y) $, 即$ \Star{E} $可分点.\qed
     \end{Proof}
-    
+
     \begin{Corollary}[Mazur]
     设$ E $是线性空间, $ \tau_1,\ \tau_2 $是$ E $上的Hausdorff拓扑, 且$ (E,\tau_1) $与$ (E,\tau_2) $都是局部凸空间, 若$ \forall f\in\Star{E} $, 都有$ f $是$ \tau_1 $-连续的当且仅当$ f $是$ \tau_2 $-连续, 即
     \[
@@ -566,10 +564,10 @@
     \begin{Remark}
     若$ A $不是凸集, 则结论未必成立. 另外, 凸的$ \tau_1 $-开集未必是$ \tau_2 $-开集.
     \end{Remark}
-    
-\section{弱拓扑与弱*拓扑}    
+
+\section{弱拓扑与弱*拓扑}
     \subsection{弱收敛与弱*收敛}
-    
+
     \begin{Definition}[弱收敛]\index{R!弱收敛}\index{R!弱极限}
     设$ E $是赋范空间, $ (x_n)_{n\geqslant 1} $是$ E $中序列. 若存在$ x\in E $使得$ \forall f\in\Star{E} $都有
     \[
@@ -577,7 +575,7 @@
     \]
     则称$ (x_n)_{n\geqslant 1} $\textbf{弱收敛}到$ x $, 记作$ x_n\weakto x $, 并称$ x $是$ (x_n)_{n\geqslant 1} $的\textbf{弱极限}.
     \end{Definition}
-    
+
     \begin{Remark}
         下面是一些关于弱收敛的注记:
         \begin{enumerate}[(1)]
@@ -630,7 +628,7 @@
             则 $ \norm{m^{n}x}=\norm{x} $ 可知 $ (m^{n})_{n\geqslant1} $ 不强收敛到 0. 但是 $ \forall y=(y_{n})_{n\geqslant1}\in\ell_{2}^{*}=\ell_{2} $, 有
             \[
                 \abs{y(m^{n}x)}=\Babs{\sum_{k\geqslant1}y_{n+k}x_{k}}\leqslant\Babs{\sum_{k\geqslant1}\abs{y_{n+k}}^{2}}^{1/2}\norm{x}_{2}\to 0
-            \] 
+            \]
             故 $ m^{n}\weakto 0 $.
             \item 考虑 Riemann-Lebesgue 引理 (证明见《实分析》笔记中例3.4.13). 设 $ (f_{n})_{n\geqslant1} $ 是 $ L_{1}^{*}[0, 2\pi] $ 上的序列, 定义为
             \[
@@ -688,7 +686,7 @@
 
     \subsection{极性}
     以下讨论中因涉及 $ E, \Star{E}, E^{**} $, 故接下来只用所带星号数目的不同来区分不同空间中的元素.
-    
+
     \begin{Definition}[极]\index{J!极}\label{def:极}
         设 $ E $ 是赋范空间, $ A\subset E $, 则 $ \Star{E} $ 中的子集
         \[
@@ -760,7 +758,7 @@
         \]
         从而 $ \forall x\in\baro{\convba A}\,(\abs{\Star{x}(x)}\leqslant1) $, 即 $ \Star{x}\in(\baro{\convba A})\degree $, 也即 $ A\degree\subset(\baro{\convba A})\degree $.\qed
     \end{Proof}
-    
+
     \begin{Definition}[对偶空间的极]\label{def:对偶空间的极}
         设 $ E $ 是赋范空间, $ \Star{E} $ 是 $ E $ 是对偶空间, 对 $ B\subset\Star{E} $, 称
         \[
@@ -829,7 +827,7 @@
         \]
         即 $ \norm{\Star{u}}=\norm{u} $. \qed
     \end{Proof}
-    
+
     上一定理的交换图如图所示.
     % \begin{figure}[!hp]
         \begin{center}
@@ -872,7 +870,7 @@
             \Star{\varphi}: \Star{E}\to\Star{F}\qquad f\mapsto f|_{F}.
         \]
         特别地, 若 $ E=F $, 则 $ \varphi=\id_{E} $, 从而有 $ \Star{\id_{E}}=\id_{\Star{E}} $.
-    \end{Example}    
+    \end{Example}
     \begin{Theorem}
         设 $ E, F $ 是赋范空间, $ u\in\CB(E, F) $
         \begin{enumerate}[(1)]
@@ -916,7 +914,7 @@
         设 $ E $ 是赋范空间, $ F $ 是 $ E $ 的线性子空间, $ G $ 是 $ \Star{E} $ 的线性子空间, 称
         \[
             F^{\bot}:=\{ \Star{x}\in\Star{E}:\lrangle{\Star{x}, x}=0, \forall x\in F \}
-        \]    
+        \]
         为 $ F $ 的\textbf{零化子空间}, 再称
         \[
             G_{\bot}:=\{ x\in E:\lrangle{\Star{x}, x}=0, \forall \Star{x}\in G \}
@@ -981,7 +979,7 @@
         \begin{enumerate}[(1)]
             \item $ \Star{u} $ 是单射当且仅当 $ u(E) $ 在 $ F $ 中稠密;
             \item $ u $ 是单射当且仅当 $ \Star{u}(\Star{F}) $ 在 $ \Star{E} $ 中 $ \Star{w} $--稠密.
-        \end{enumerate}    
+        \end{enumerate}
     \end{Corollary}
 
 \section{自反性}
@@ -991,9 +989,9 @@
     \begin{Remark}
         若 $ E $ 是自反空间, 则由 $ E^{**} $ 完备可知 $ E $ 完备, 即 $ E $ 是 Banach 空间.
     \end{Remark}
-    
+
     下面我们给出几个自反空间的例子. 前两个例子是平凡的, 即有限维赋范空间和Hilbert空间. 后两个例子与对赋范空间的讨论相同, 我们考虑一类特殊的空间, 即$ \ell_p $空间与$ L_p $空间.
-    
+
     \begin{Proposition}
         有限维赋范空间都是自反的.
     \end{Proposition}
@@ -1005,7 +1003,7 @@
         对 $ \seq{f} $, 取 $ \seq{\tilde{e}}\in E^{**} $ 使得 $ \tilde{e}_{j}(f_{k})=\delta_{j, k} $, 且 $ \norm{\tilde{e}_{j}}=1 $, 则注意到 $ \forall f\in\Star{E} $ 都有
         \[
             (\tilde{e}_{k}-\hat{e}_{k})(f)=\sum_{j=1}^{n}(\tilde{e}_{k}-\hat{e}_{k})f_{j}=\tilde{e}_{k}(f_{k})-f_{k}(e_{k})=0,
-        \] 
+        \]
         故 $ \tilde{e}_{k}=\hat{e}_{k} $, 则 $ \forall z\in E^{**} $ 有
         \[
             z=\sum_{k=1}^{n}z_{k}\tilde{e}_{k}=\sum_{k=1}^{n}z_{k}\hat{e}_{k}=\widehat{\sum_{k=1}^{n}z_{k}e_{k}}
@@ -1029,9 +1027,9 @@
         \]
         从而 $ f=\hat{y} $, 故 $ H $ 是自反的.\qed
     \end{Proof}
-    
+
     需要注意到``括号''的性质在Banach空间上与在Hilbert空间上性质的不同. 在Hilbert空间上的内积是共轭线性的, 而在Banach空间上约定的``括号''只具有线性性.
-    
+
     \begin{Proposition}
         设$ 1<p<\infty $, $ (p,q) $是一对共轭指数, 则$ \Star{\ell_p}\simeq\ell_q $. 另外, 有$ \Star{c_0}\simeq\ell_1 $.
     \end{Proposition}
@@ -1045,7 +1043,7 @@
         \norm{\sum_{k=1}^nx_ke_k-x}_\infty=\sup_{k\geqslant n+1}\abs{x_k}\to 0,\qquad(n\to\infty)
         \]
         即$ x=\sum\limits_{n\geqslant 1}x_ne_n=\lim\limits_{n\to\infty}\sum\limits_{k=1}^nx_ke_k $.
-        
+
         先证$ \ell_p $的情形, $ \forall x=(x_k)_{k\geqslant 1}\in\ell_p,\ \forall f\in\Star{\ell_p} $, 则有
         \[
         f(x)=f\Big( \sum_{n\geqslant 1}x_ne_n \Big)=\sum_{n\geqslant 1}x_nf(e_n),
@@ -1077,7 +1075,7 @@
         \norm{\varphi(f)}_q\leqslant\norm{f}<\infty,
         \]
         即$ \varphi : \Star{\ell_p}\to\ell_q $.
-        
+
         往证$ \varphi $是等距同构, 由
         \[
         \varphi(f)=0\Longrightarrow\forall k\geqslant 1\,(f(e_k)=0)\Longrightarrow\forall x\in\ell_p\,(f(x)=0)\Longrightarrow f=0
@@ -1091,7 +1089,7 @@
         \norm{\varphi^{-1}(y)}=\norm{f_y}\leqslant\norm{y}_q
         \]
         知$ \norm{\varphi^{-1}}\leqslant 1 $. 取$ y=e_k $后$ \norm{\varphi^{-1}}=1 $, 于是$ \varphi $是等距同构, 故$ \Star{\ell_p}\simeq\ell_q $.
-        
+
         再证$ c_0 $的情形. 对任意$ x=(x_n)_{n\geqslant 1}\in c_0 $和任意$ f\in\Star{c_0} $, 有
         \[
         f(x)=f\Big( \sum_{n\geqslant 1}x_ne_n \Big)=\sum_{n\geqslant 1}x_nf(e_n),
@@ -1113,11 +1111,11 @@
         \]
         与$ \ell_p $情形类似可证$ \varphi $是等距同构, 故$ \Star{c_0}\simeq\ell_1 $.\qed
     \end{Proof}
-    
+
     \begin{Corollary}
         $ c_0 $不是自反的, $ \ell_p $当$ 1<p<\infty $时是自反的.
     \end{Corollary}
-    
+
     \begin{Theorem}
         Banach空间是自反的当且仅当它的对偶也是自反的.
     \end{Theorem}
@@ -1127,16 +1125,16 @@
         (\Star{E})^{**}=E^{***}=(E^{**})^*,
         \]
         即$ \Star{E} $是自反的.
-    
+
         \textsl{充分性.} 设$ \Star{E} $是自反的, 则有
         \[
         \Star{E}=(\Star E)^{**}=(E^{**})^*,
         \]
         假设$ E\subset E^{**} $且$ E\ne E^{**} $, 则由Hahn-Banach定理可知存在$ f\in(E^{**})^* $且$ f\ne 0 $使得$ f|_E=0 $. 又由$ (E^{**})^*=\Star{E} $可知$ f\in\Star{E} $, 且由$ f|_E=0 $可知$ f=0 $, 这与$ f\ne 0 $矛盾. 于是$ E=E^{**} $, 即$ E $是自反的.\qed
     \end{Proof}
-    
+
     下面开始讨论$ L_p $空间的对偶, 设$ (X,\CA,\mu) $是一个$ \sigma $-有限的测度空间, 并以$ L_p $记$ L_p(X,\CA,\mu) $, $ (p,q) $是一对共轭指数.
-    
+
     \begin{Theorem}
         设$ 1\leqslant p<\infty,\ \forall g\in L_q $, 定义
         \[
@@ -1150,7 +1148,7 @@
         \abs{J(g)(f)}=\abs{\int_Xfg\diff\mu}\leqslant\norm{f}_p\norm{g}_q,
         \]
         从而$ \norm{J(g)}\leqslant\norm{g}_q $, 可知$ \norm{J}\leqslant 1 $.
-    
+
         当$ p>1 $时取$ f=\frac{\bar{g}}{\abs{g}}\cdot\frac{\abs{g}^{q-1}}{\norm g_q^{q-1}} $, 则因
         \[
         \int_X\abs{f}^p\diff\mu=\int_X\frac{(\norm{g}^{q-1})^p}{(\norm{g}_q^{q-1})^p}\diff\mu=\frac{1}{\norm{g}_q^q}\int_X\abs{g}^q\diff\mu=\frac{\norm{g}_q^q}{\norm{g}_q^q}=1,
@@ -1160,13 +1158,13 @@
         \abs{J(g)(f)}=\abs{\int_Xfg\diff\mu}=\int_X\frac{\abs{g}^q}{\norm{g}_q^{q-1}}\diff\mu=\norm{g}_q,
         \]
         即$ \norm{J(g)}\geqslant\norm{g}_q $可知$ \norm{J}\geqslant 1 $, 于是$ \norm{J}=1 $, 即$ J $是等距的.
-    
+
         当$ p=1 $时, 取$ A_\varepsilon=\{ x : \abs{g(x)}\geqslant\norm        g_\infty-\varepsilon \} $. 由本性上确界的定义可知$ \mu(A_\varepsilon)\ne 0 $. 因为$ \mu $是$ \sigma $-有限的, 不妨设$ \mu(A_\varepsilon)<\infty $. 令$ f_\varepsilon=\frac{1}{\mu(A_\varepsilon)}\cdot\frac{\bar{g}}{\abs{g}}1_{A_\varepsilon} $, 则$ \norm{f_\varepsilon}_1=1 $, 且
         \[
         \abs{J(g)(f_\varepsilon)}=\frac{1}{\mu(A_\varepsilon)}\int_{A_\varepsilon}\frac{\bar{g}}{\abs{g}}g\diff\mu\geqslant\frac{1}{\mu(A_\varepsilon)}(\norm{g}_\infty-\varepsilon)\mu(A_\varepsilon)=\norm{g}_\infty-\varepsilon,
         \]
         由$ \varepsilon $的任意性可知$ \norm{J(g)}\geqslant\norm{g}_\infty $, 即$ \norm{J}\geqslant 1 $, 于是$ J $是等距的.
-    
+
         由
         \[
         \abs{J(g)}=0\Longrightarrow\forall f\in L_p\,\left(\int_Xfg\diff\mu=0\right)\Longrightarrow g=0
@@ -1180,7 +1178,7 @@
         \abs{\nu(A)}=\abs{\varphi(1_A)}\leqslant\norm{\varphi}\int_X1_A\diff\mu=\norm{\varphi}\mu(A)=0
         \]
         于是$ \nu(A)=0 $. 这说明$ \nu $依$ \mu $绝对连续. 由Radon-Nikodym定理, 存在可测函数$ g $使得$ \diff\nu=g\diff\mu $. 下证$ g\in L_q $.
-    
+
         形式上, 有$ \varphi(f)=\int_Xfg\diff\mu $, 当$ 1<p<\infty $时, 令$ E_n=\{ x : \abs{g(x)}\leqslant n \} $, 并令$ f=1_{E_n}\abs{g}^{q-2}\bar{g} $. 则
         \[
         \int_{E_n}\abs{g}^q\diff\mu=\int_Xfg\diff\mu=\varphi(f)\leqslant\norm{\varphi}\cdot\norm{f}_p=\norm{\varphi}\left(\int_{E_n}\abs{g}^q\diff\mu\right)^{1/p}
@@ -1190,7 +1188,7 @@
         \left(\int_{E_n}\abs{g}^q\diff\mu\right)^{1-1/p}=\left( \int_{E_n}\abs{g}^q\diff\mu \right)^{1/q}\leqslant\norm{\varphi},
         \]
         令$ n\to\infty $, 注意到$ ((\int_{E_n}\abs{g}^q\diff\mu)^{1/q})_{n\geqslant 1} $单调递增有上界, 故极限存在. 则$ \norm{g}_q\leqslant\norm{\varphi}<\infty $, 故$ g\in L_q $.
-    
+
         当$ p=1 $时, $ q=\infty $, 作$ A_\varepsilon=\{ x : \abs{g(x)}\geqslant\norm{\varphi}+\varepsilon \} $, 往证$ \mu(A_\varepsilon)=0 $. 取$ f=1_{E_n}\cdot1_{A_\varepsilon}\cdot\frac{\bar{g}}{\abs{g}} $, 则$ \norm{f_n}_1=\int_{E_n\cap A_\varepsilon}1\diff\mu=\mu(E_n\cap A_\varepsilon) $, 则
         \[
         \varphi(f_n)=\int_{A_\varepsilon\cap E_n}\abs{g}\diff\mu\geqslant(\norm{\varphi}+\varepsilon)\mu(E_n\cap A_\varepsilon),
@@ -1205,25 +1203,25 @@
         \]
         只能$ \mu(E_n\cap A_\varepsilon)=0 $, 令$ n\to\infty $就有$ \mu(A_\varepsilon)=0 $. 从而$ \norm{g}_\infty\leqslant\norm{\varphi}<\infty $, 即$ g\in L_\infty $.\qed
     \end{Proof}
-    
+
     \begin{Corollary}
         $ L_p(X,\mu) $在$ 1<p<\infty $时是自反的.
     \end{Corollary}
-    
+
 \section{弱*紧性}
-    
+
     \begin{Theorem}[Banach-Alaoglu]
     设$ E $是赋范空间, 则$ \bar{B}_{\Star{E}} $是$ w^* $--紧的.
     \end{Theorem}
     \begin{Proof}
     \textsl{这是一个不正式的证明.}
-    
+
     对$ f\in\bar{B}_{\Star{E}} $, 有$ f : E\to\C $使得$ \abs{f(x)}\leqslant\norm{x} $. 定义$ D_x=\{ z\in\C : \abs{z}\leqslant\norm{x} \} $, 下面建立$ f $与$ \prod\limits_{x\in E}D_x $的映射. 定义
     \[
     \varPhi : \bar{B}_{\Star{E}}\to\prod_{x\in E}D_x,\qquad f\mapsto(f(x))_{x\in E},
     \]
     这是一个单射, 往证$ \varPhi $与$ \varPhi^{-1} $都连续.
-    
+
     (方法1, 使用开集的方式) 取$ D_{x_0} $中的开圆盘$ B(y_0,r) $, 则$ \prod\limits_{x\ne x_0}D_x\times B(y_0,r) $是一个基础开集, 则其在$ \varPhi $下的原像
     \[
     \{ f : \abs{f(x_0)-y_0}<r \}
@@ -1233,7 +1231,7 @@
     \{ f : \abs{f(x_i)-y_i}<r_i,\ \forall i = 1,2,\dots,n \}
     \]
     是$ w^* $--拓扑下的开集, 故$ \varPhi $是连续的.
-    
+
     注意到$ \varPhi(\bar{B}_{x\in E}) $是由$ \prod\limits_{\Star{E}}D_x $的乘积拓扑限制得到, 取$ \bar{B}_{\Star{E}} $中$ w^* $--拓扑开集
     \[
     V(f_0,\seq{x},\varepsilon):=\{ f : \abs{f(x_i)-f_0(x_i)}<\varepsilon_i,\ \forall i=1,2,\dots,n \}
@@ -1243,7 +1241,7 @@
     \varPhi(V(f_0,\seq{x},\varepsilon))=\varPhi(\bar{B}_{\Star{E}})\cap\left(\prod_{x\ne x_j}D_x\times\prod_{i=1}^nB(f_0(x_i),\varepsilon_i)\right)
     \]
     是开集, 故$ \varPhi^{-1} $是连续的.
-    
+
     (方法2, 使用网的极限) 取$ (f_i)_{i\uparrow\alpha} $是$ \bar{B}_{\Star{E}} $中的网, 且$ f_i\sweakto f $, 则
     \[
     \forall x\in E\,(f_i(x)\to f(x))\Longrightarrow (f_i(x))_{x\in E}\to(f(x))_{x\in E}
@@ -1253,7 +1251,7 @@
     \forall x\in E\,(f_i(x)\to f(x))\Longrightarrow f_i\sweakto f.
     \]
     故$ \varPhi^{-1} $连续.
-    
+
     往证$ \varPhi(\bar{B}_{\Star{E}}) $是$ \prod\limits_{x\in E}D_x $中的闭集(\textsl{这一结果并非平凡的}). 因为
     \[
     \begin{aligned}
@@ -1270,35 +1268,35 @@
     \]
     即$ \varPhi(\bar{B}_{\Star{E}}) $是闭的. 由Tychonoff定理可知$ \prod\limits_{x\in E}D_x $紧, 从而$ \varPhi(\bar{B}_{\Star{E}}) $也是紧的, 于是$ \bar{B}_{\Star{E}} $是$ w^* $--紧的.\qed
     \end{Proof}
-    
+
     \begin{Corollary}
     设$ H $是Hilbert空间, 则$ \bar{B}_H $是$ w $--紧的.
     \end{Corollary}
-    
+
     \begin{Theorem}[Goldstine]
     设$ E $是赋范空间, 则$ \bar{B}_E^{\Star{w}}=\bar{B}_{E^{**}} $.
     \end{Theorem}
-    
+
     这一定理的证明超出本课程要求, 此处略去.
-    
+
     \begin{Corollary}[Banach]
     设$ E $是赋范空间, 则$ E $是自反的当且仅当$ \bar{B}_E $是$ w $--紧的.
     \end{Corollary}
     \begin{Proof}
     \textsl{必要性}. 由$ E $是自反的可知$ E=E^{**} $, 从而$ \bar{B}_E=\bar{B}_{E^{**}} $. 由Banach-Alaoglu定理可知$ \bar{B}_{E^{**}} $是$ w $--紧的, 于是$ \bar{B}_E $是$ w $--紧的.
-    
+
     \textsl{充分性}. 由$ \bar{B}_E $是$ w $--紧的可知$ \bar{B}_E\hookrightarrow\bar{B}_{E^{**}} $, 因为 $ \bar{B}_{E^{**}} $ 是$ \Star{w} $--紧的, 故$ \bar{B}_E $是$ \Star{w} $--紧的. 则$ \bar{B}_E $在$ \bar{B}_{E^{**}} $中$ \Star{w} $--闭, 即$ \bar{B}_E=\bar{B}_E^{\Star{w}} $. 由Goldstine定理可知$ \bar{B}_E^{\Star{w}}=\bar{B}_{E^{**}} $, 从而$ \bar{B}_E=\bar{B}_{E^{**}} $, 这说明$ E=E^{**} $, 即$ E $是自反的.\qed
     \end{Proof}
-    
+
     \begin{Remark}
     在$ E $上有三种拓扑, 其中范数拓扑强于弱拓扑, 而弱拓扑强于弱*拓扑. 在三种拓扑下$ \Star{E} $的单位球的紧性对应了$ E $的不同性质. 其中$ \bar{B}_{\Star{E}} $紧等价于$ \dim \Star{E}<\infty $, 进一步等价于$ \dim E<\infty $. 而$ \bar{B}_{\Star{E}} $$ w $--紧当且仅当$ \Star{E} $是自反的, 它等价于$ E $是自反的. 而$ \bar{B}_{\Star{E}} $总是$ \Star{w} $--紧的.
     \end{Remark}
-    
+
 \section*{本章习题}
     \addcontentsline{toc}{section}{本章习题}
-    
+
     习题后面括号中的序号表示对应书中习题的编号.
-    
+
     \begin{enumerate}[label=\textbf{\arabic*.}, ref=\arabic*]
         \item (补充7) 设 $ E $ 是\R 上的赋范空间, $ \varOmega $ 是 $ E $ 中原点处的吸收凸邻域, $ p_{\varOmega} $ 是 $ \varOmega $ 上的 Minkowski 泛函, 验证 $ p_{\varOmega} $ 是 $ E $ 上的次线性泛函.
         \item (8.1) 设 $ 1\leqslant p\leqslant\infty $, 考虑 $ \R^{2} $ 上的 $ p $ 范数:
@@ -1367,10 +1365,10 @@
         \item (9.1) 设 $ E $ 是赋范空间, 并设 $ \Star{E} $ 是可分的.
         \begin{enumerate}[(1)]
             \item 令 $ (f_{n})_{n\geqslant1} $ 是 $ \Star{E} $ 中的稠密子集. 选出 $ E $ 中的序列 $ (x_{n})_{n\geqslant1} $ 使得 $ f_{n}(x_{n})\geqslant \norm{f_{n}}/2 $.
-            \item 任取 $ f\in\Star{E} $. 证明: 若对每个 $ x_{n} $ 有 $ f(x_{n})=0 $, 则 $ f=0 $. 
+            \item 任取 $ f\in\Star{E} $. 证明: 若对每个 $ x_{n} $ 有 $ f(x_{n})=0 $, 则 $ f=0 $.
             \item 由此导出 $ \Span(x_{1}, x_{2}, \dots) $ 在 $ E $ 中稠密且 $ E $ 是可分的.
             \item 证明: 一个 Banach 空间是可分且自反的当且仅当它的对偶空间是可分且自反的.
-            \item 举一个可分赋范空间但其对偶空间不可分的例子. 
+            \item 举一个可分赋范空间但其对偶空间不可分的例子.
         \end{enumerate}
         \item (9.2) 设$ E $是Banach空间, $ B\subset\Star{E} $
         \begin{enumerate}[(1)]
