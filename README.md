@@ -20,11 +20,6 @@ make tex show
 ```
 $ tree -F --dirsfirst
 .
-├── appendix/
-│   ├── a.tex
-│   ├── b-2.tex
-│   ├── b.tex
-│   └── c.tex
 ├── chapters/
 │   ├── 1.tex
 │   ├── 2.tex
@@ -41,11 +36,11 @@ $ tree -F --dirsfirst
 ├── README.md
 └── ref.bib
 
-3 directories, 17 files
+2 directories, 13 files
 ```
 
 
 # 0x03 TODO
 - 使用 `physics` 宏包替换符号
 - 使用 `subcaption` 宏包制作子图
-- 在自己的理解上修改笔记内容
+- 在自己的理解上继续修改笔记内容
